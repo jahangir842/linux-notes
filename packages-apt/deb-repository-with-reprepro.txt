@@ -1,0 +1,115 @@
+*********************************************
+******Local Deb repository with reprepro*****
+*********************************************
+
+install reprepro
+	sudo apt install reprepro
+make a folder for deb packages
+	mkdir deb-repo
+make a conf directory within that directory
+	mkdir -p conf
+inside conf directory make a distributions file (nano distributions)
+and put the following line inside that file:
+	Codename: jammy
+	Suite: stable
+	Components: main
+	Architectures: amd64 i386
+	
+Next, use the reprepro command with the export action to create the repository structure:
+	reprepro -b . export
+	
+After exporting, update the repository metadata:
+	reprepro -b . update
+	
+Initialize the Repository with the following command to initialize the repository:
+	reprepro -b . init
+
+
+Serve the Repository:
+You can use any web server to serve the repository. For example, you can use nginx or apache2. Copy your repository directory to the web server's root directory:
+
+
+*******************************************************************
+To modify the default virtual host, edit the file /etc/apache2/sites-available/000-default.conf. 
+and copy the following lines;
+*******************************************************************
+	<VirtualHost *:80>
+	    ServerName localhost
+	    RailsEnv production
+	    DocumentRoot /var/www/repos/
+	</VirtualHost>
+
+<Directory /var/www/repos/ >
+        # We want the user to be able to browse the directory manually
+        Options Indexes FollowSymLinks Multiviews
+        Order allow,deny
+        Allow from all
+</Directory>
+
+# This syntax supports several repositories, e.g. one for Debian, one for Ubuntu.
+# Replace * with debian, if you intend to support one distribution only.
+<Directory "/var/www/repos/apt/*/db/">
+        Order deny,allow
+        Deny from all
+</Directory>
+
+<Directory "/var/www/repos/apt/*/conf/">
+        Order deny,allow
+        Deny from all
+</Directory>
+
+<Directory "/var/www/repos/apt/*/incoming/">
+        Order allow,deny
+        Deny from all
+</Directory>
+
+<Directory "/var/www/repos/apt/*/dists/">
+        Order allow,deny
+        Deny from all
+</Directory>
+
+*******************************************************************
+*******************************************************************
+*******************************************************************
+
+Access the Repository:
+You should now be able to access your local repository using a URL like http://localhost/myrepo. Replace localhost with the IP address or hostname of your server if accessing from another machine.
+
+Suppose we have a package vim_2%3a8.2.3995-1ubuntu2.15_amd64.deb
+add this package in repository
+
+	sudo reprepro -b /var/www/repos/apt/debian includedeb buster ~/Downloads/deb-packages/vim_2%3a8.2.3995-1ubuntu2.15_amd64.deb
+
+
+
+Configure APT to Use the Repository:
+On the client machines where you want to use the local repository, add a new source list file under /etc/apt/sources.list.d/. For example:
+
+	echo "deb http://localhost:81/apt/debian ./" | sudo tee /etc/apt/sources.list.d/myrepo.list
+*******************************************************************
+******************************done*************************************
+*******************************************************************
+create a release file  sudo apt-ftparchive release . > Release
+
+
+
+Generate a GPG Key Pair (if you haven't already):
+If you don't have a GPG key pair, you can generate one using the gpg command:
+
+	gpg --gen-key      (note: my passphrase is pakistan)
+	
+Once you have a GPG key pair, you can sign the Release file using the gpg command:
+
+	gpg --default-key <your_key_id> -abs -o Release.gpg Release
+
+
+
+Replace your-server-ip-or-hostname with the IP address or hostname of your server, and bionic with the appropriate codename for your Ubuntu release.
+
+Update APT Package Lists:
+Update the APT package lists to include packages from the new repository:
+
+	sudo apt update
+
+Now, you should be able to install packages from your local repository using APT on the client machines.
+

@@ -1,0 +1,42 @@
+
+**************************************************************
+sql backup from podman container
+**************************************************************
+
+
+
+
+*/30 * * * * podman exec -i Mariadb /usr/bin/mysqldump -uredmine -p<password> redmine | gzip > /home/user/redmineData/redmine_db_backup.gz
+*/1 * * * * cd /home/user/redmineData/git_repositories/repo-name.git && git remote update --prune
+
+
+
+**************************************************************************
+syncing git repositry to another user in linux
+**************************************************************************
+
+
+*/1 * * * * sudo rsync -av /home/git/user/* /home/user/redmineData/Git-Backup/backupbare
+
+
+**************************************************************************
+shutdown a system at 1700 hours
+**************************************************************************
+0 17 * * * /sbin/poweroff
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

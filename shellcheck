@@ -1,0 +1,19 @@
+ShellCheck is a static analysis tool for shell scripts.
+It is designed to identify and suggest corrections for common bugs and stylistic issues
+in shell scripts written for various Unix shells like bash, sh, ksh, and zsh.
+ShellCheck helps improve the quality and robustness of shell scripts by providing insights
+into potential errors, bad practices, and portability issues.
+
+Installing ShellCheck on Ubuntu/Debian:
+
+	sudo apt install shellcheck
+	
+Running ShellCheck:
+
+	shellcheck myscript.sh
+	
+Integrating ShellCheck with Editors:
+
+Many text editors and IDEs have plugins to integrate ShellCheck, providing real-time feedback as you write your scripts. Popular options include:
+
+    Visual Studio Code: ShellCheck extension

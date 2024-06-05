@@ -1,0 +1,32 @@
+*********************************************************************
+		Line-Ending-Errors-in-Linux
+*********************************************************************
+
+When you see the error message `$'\r': command not found` while running a shell script in Unix/Linux,
+it indicates that the script has Windows-style line endings (CRLF) instead of Unix/Linux-style line endings (LF).
+
+*********************************************************************
+
+Unix/Linux systems and Windows systems use different characters to represent the 
+end of a line in a text file. Unix/Linux uses LF (Line Feed, `\n`), while Windows uses CRLF (Carriage Return + Line Feed, `\r\n`).
+
+*********************************************************************
+
+The error message `$'\r': command not found` specifically mentions the carriage return character (`\r`),
+which is part of Windows-style line endings. Unix/Linux interprets this carriage return as part of the 
+command and cannot find a valid command with just the carriage return.
+
+*********************************************************************
+			dos2unix
+*********************************************************************
+
+To resolve this issue, you can use a tool like `dos2unix` to convert the line endings of your script from CRLF to LF.
+This tool strips out the carriage returns (`\r`) and replaces them with line feeds (`\n`), making the script compatible with Unix/Linux systems.
+
+
+   dos2unix disk-usage.sh
+
+This command converts the file `disk-usage.sh` to Unix/Linux line endings, fixing the error related to line endings when running the script.
+
+
+*********************************************************************

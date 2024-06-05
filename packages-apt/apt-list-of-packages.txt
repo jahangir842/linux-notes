@@ -1,0 +1,15 @@
+vlc
+vscode
+nmap
+wireshark
+zoom
+cmatrix
+nano
+vim
+shellcheck
+openssh-server
+awscli
+apt-rdepends
+neofetch
+virtualbox ---- from official site 7.0
+vscode  https://code.visualstudio.com/docs/setup/linux

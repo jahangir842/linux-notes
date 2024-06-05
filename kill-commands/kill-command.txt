@@ -1,0 +1,17 @@
+ kill is a tool used to send signals to processes. Signals are a form of inter-process communication.
+ 
+********************************
+        Common Signals
+********************************
+Signals are used to control processes in various ways. Each signal has a name and a corresponding number. Here are some of the most commonly used signals:
+
+    SIGTERM (15): Default signal sent by kill. Requests the process to terminate gracefully.
+    SIGKILL (9): Forces the process to terminate immediately. The process cannot catch or ignore this signal.
+    SIGHUP (1): Hangs up the process. Often used to reload configuration files.
+    SIGINT (2): Interrupts the process, typically sent when you press Ctrl+C in the terminal.
+    SIGQUIT (3): Quits the process and produces a core dump, typically sent when you press Ctrl+.
+    SIGSTOP (19): Stops (pauses) the process. The process cannot catch or ignore this signal.
+    SIGCONT (18): Continues a stopped process.
+ 
+ 
+ 

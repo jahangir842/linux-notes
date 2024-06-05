@@ -1,0 +1,12 @@
+miniconda environmet configuration
+
+
+
+export PATH="/home/itadmin/miniconda3/bin:$PATH"
+
+
+
+
+
+
+

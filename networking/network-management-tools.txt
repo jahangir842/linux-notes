@@ -1,0 +1,54 @@
+********************************************************************************
+************* Network Management Tools *****************************************
+********************************************************************************
+
+for checking which tool is being used in a system:
+
+systemctl status systemd-networkd
+systemctl status NetworkManager
+systemctl status netplan
+
+ps aux | grep -E 'systemd-networkd|NetworkManager|netplan'
+
+Inspect Network Configuration Files:
+        /etc/systemd/network/: Configuration files for systemd-networkd.
+        /etc/netplan/: YAML configuration files for Netplan.
+        /etc/NetworkManager/: Configuration files for NetworkManager.
+
+
+Network Configuration Utilities:
+
+    Run utility commands specific to each network tool to see their status or configurations:
+        For systemd-networkd: networkctl status
+        For NetworkManager: nmcli general status
+        For Netplan: netplan --debug generate
+
+For Debian-based systems (e.g., Ubuntu), edit /etc/network/interfaces:
+For Red Hat-based systems (e.g., CentOS, Fedora), edit /etc/sysconfig/network-scripts/ifcfg-eth0:
+Create or modify a network configuration file for the interface, e.g., /etc/systemd/network/10-static-en.network:
+Edit the netplan configuration file, e.g., /etc/netplan/01-netcfg.yaml:
+
+******************************** Detail *****************************************
+
+Networkd vs network manager  vs netplan 
+
+systemd-networkd (Networkd):
+	Used to manage network configurations at a low level.Ideal for servers and headless systems.
+
+
+NetworkManager:
+    NetworkManager is a more advanced and feature-rich network management tool suitable for desktops and laptops.
+    
+   
+Netplan:
+
+    Netplan is a YAML-based network configuration tool introduced in Ubuntu 17.10 and later versions.
+    view the contents of the Netplan configuration file and look for the renderer key to determine
+    which backend tool is being used by Netplan. netplan points to /usr/sbin/netplan, it's clear that Netplan itself 
+    is installed and functioning as expected. The absence of a netplan.service in systemctl is because Netplan is not 
+    a standalone service but rather a configuration tool that generates files for the network management services 
+    (like systemd-networkd or NetworkManager) to apply.
+********************************************************************************
+
+
+

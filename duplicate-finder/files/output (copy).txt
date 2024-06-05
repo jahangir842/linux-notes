@@ -1,0 +1,4 @@
+This will be written to output.txt
+output.txt
+xyx.bash
+This will also be written to output.txt

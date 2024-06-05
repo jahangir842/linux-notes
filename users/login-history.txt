@@ -1,0 +1,20 @@
+-------------------------------------------------------------
+	Make a script file (lgoin-history.sh) of following code
+-------------------------------------------------------------
+
+#!/bin/bash
+
+cd /home
+
+sudo echo "-----------------" >> /home/user/user_login_history ; 
+sudo date >> /home/user/user_login_history ;
+sudo echo "-----------------" >> /home/user/user_login_history ; 
+sudo last -20 >>/home/user/user_login_history
+
+
+-------------------------------------------------------------
+Crontab for above script that will run on 1500 hours daily
+-------------------------------------------------------------
+
+00 15 * * * cd /home/user/ && bash lgoin-history.sh
+

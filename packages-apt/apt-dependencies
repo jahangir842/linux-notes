@@ -1,0 +1,89 @@
+
+********************************************************************************
+### Troubleshooting apt packages
+********************************************************************************      
+    sudo apt check
+
+This will list any issues with package dependencies.
+
+	sudo apt --fix-broken install
+	or
+	sudo apt install -f
+	
+This command attempts to correct any broken dependencies: 
+an internet connection is typically required when using sudo apt --fix-broken install or sudo apt install -f commands
+
+
+	sudo dpkg-reconfigure <package_name>
+       
+	sudo dpkg-reconfigure tzdata
+
+command is used to reconfigure an already installed package. This can be useful for resetting or changing the configuration options of a package that were set during its initial installation
+
+********************************************************************************
+ **List package dependencies:**
+********************************************************************************       
+    apt-cache depends <package_name>
+         
+    Example:
+       
+    apt-cache depends nginx
+         
+23. **List packages that depend on a specific package:**
+       
+    apt-cache rdepends <package_name>
+         
+    Example:
+       
+    apt-cache rdepends nginx
+    
+********************************************************************************
+ **download package along with all its dependencies**
+********************************************************************************      
+    apt download $(apt-rdepends <package>|grep -v "^ ")
+eg.
+    apt download $(apt-rdepends sssd|grep -v "^ ")
+
+********************************************************************************
+                **apt-rdepends**
+********************************************************************************   
+
+`apt-rdepends` is a command-line tool in Ubuntu and other Debian-based Linux distributions that helps you to recursively list package dependencies. It's a convenient way to explore the dependencies of a package and understand the software ecosystem around it.
+
+Here's a breakdown of how `apt-rdepends` works and an example to illustrate its usage:
+
+1. **Installation**:
+   First, ensure that `apt-rdepends` is installed on your system. If it's not already installed, you can install it using the following command:
+     
+   sudo apt-get install apt-rdepends
+     
+
+2. **Basic Usage**:
+   Once installed, you can use `apt-rdepends` to list dependencies for a specific package. For example, to list dependencies for the `firefox` package, you would run:
+     
+   apt-rdepends firefox
+     
+   This command will output a list of packages that `firefox` depends on directly.
+
+3. **Recursive Dependency Listing**:
+   One of the powerful features of `apt-rdepends` is its ability to recursively list dependencies. This means it can show not only the direct dependencies of a package but also the dependencies of those dependencies, and so on. To do this, you add the `-r` flag:
+     
+   apt-rdepends -r firefox
+     
+   This command will show the entire dependency tree for the `firefox` package, including all levels of dependencies.
+
+4. **Output Formatting**:
+   By default, `apt-rdepends` outputs the dependencies in a simple text format. If you prefer a more visual representation, you can pipe the output to `graphviz` and generate a dependency graph. First, install `graphviz`:
+     
+   sudo apt-get install graphviz
+     
+   Then, generate a graph for the `firefox` package:
+     
+   apt-rdepends -r firefox | dot -Tpng -o firefox-dependencies.png
+     
+   This command will create a PNG image (`firefox-dependencies.png`) representing the dependency graph of `firefox`.
+
+5. **Additional Options**:
+   `apt-rdepends` offers other options as well, such as filtering by architecture (`-a`), excluding certain packages (`-e`), or limiting the depth of recursion (`-d`). You can explore these options in the command's manual page (`man apt-rdepends`).
+
+Overall, `apt-rdepends` is a handy tool for understanding package dependencies in Ubuntu and Debian-based systems, especially when you need to delve deep into the dependency tree of a particular package.

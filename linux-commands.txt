@@ -1,0 +1,38 @@
+Remove unused packages:
+Use the following command to list all installed packages sorted by size:
+
+    	dpkg-query -W --showformat='${Installed-Size}\t${Package}\n' | sort -nr | less
+    	
+list specific packages
+  
+  	dpkg -l | grep package_name
+
+remove packages
+
+	sudo apt remove --purge package_name
+
+directories disk usage in current directory and sorting:
+
+    	sudo du -sh * | sort -nr
+
+file system disk usage in current directory and sorting:
+
+	sudo df -h
+
+to show listening (ports only tcp4): 
+
+	netstat -tln4 
+	or
+	ss -tln4
+	
+to check which services is using port 25:
+
+	sudo lsof -i :25
+	sudo lsof -i TCP      # all tcp files opened
+	
+configuration files of a package
+
+	sudo dpkg --listfiles package-name
+	or
+	dpkg-query -L package-name
+

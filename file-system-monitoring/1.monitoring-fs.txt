@@ -1,0 +1,15 @@
+*********************************************************************************
+What is Inotify
+
+notify (inode notify) is a Linux kernel subsystem that acts to extend filesystems to notice changes to the filesystem, and reports those changes to applications through the APIs provided. This particular subsystem support was added to Glibc version in 2006; to use inotify, you must have a Linux machine with kernel 2.6.13 or later.
+
+*********************************************************************************
+What is Inotify Watch
+
+Inotify Watch helps to keep track of the file changes under the directories on “watch” and report back to the application in a standard format using the API calls. We can monitor multiple file events under the watched directory using the API calls. There is a default limit for the number of watches that can be enabled on the system and this limit should be increased for cPGuard to function. if you hit inotify watch limit, it may interrupt the system performance and you may see the “upper limit on inotify watches reached” message from the system log.
+
+*********************************************************************************
+Inotify vs Inotify-tools
+
+
+

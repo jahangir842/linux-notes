@@ -1,0 +1,9 @@
+Resolve Dependencies Automatically:
+Run the following command after installing the .deb file:
+
+sudo apt install -f
+
+This command tells apt to fix broken dependencies (-f flag) by installing any missing dependencies required by packages already installed on your system.
+
+Consult External Repositories:
+If the required package is not available in the default Ubuntu repositories, you may need to add external repositories or PPAs that provide the necessary packages. Make sure to use reputable sources when adding external repositories.

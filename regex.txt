@@ -1,0 +1,101 @@
+ Regular Expressions (Regex) in Linux
+
+Regular expressions (regex) are patterns used to match character combinations in strings. In Linux, regex is commonly used with tools like `grep`, `sed`, `awk`, and within scripting languages like Python, Perl, and others. Here are some key concepts and examples to help understand and use regex in Linux.
+***************************************************************************
+# Basic Syntax
+Literal Characters Matches exact characters.
+  - Example: `cat` matches "cat" in "concatenate".
+***************************************************************************  
+Metacharacters Special characters that define patterns.
+***************************************************************************
+  - `.`: Matches any single character except newline.
+    - Example: `c.t` matches "cat", "cot", "cut".
+  - `*`: Matches 0 or more of the preceding character.
+    - Example: `ca*t` matches "ct", "cat", "caaat".
+  - `^`: Matches the start of a line.
+    - Example: `^cat` matches "cat" at the beginning of a line.
+  - `$`: Matches the end of a line.
+    - Example: `cat$` matches "cat" at the end of a line.
+  - `[]`: Matches any one of the enclosed characters.
+    - Example: `[cb]at` matches "cat" and "bat".
+  - `|`: Acts as a logical OR.
+    - Example: `cat|dog` matches "cat" or "dog".
+  - `()`: Groups expressions.
+    - Example: `(cat|dog)s` matches "cats" or "dogs".
+***************************************************************************
+# Quantifiers
+***************************************************************************
+- `?`: Matches 0 or 1 of the preceding character.
+  - Example: `ca?t` matches "ct" or "cat".
+- `+`: Matches 1 or more of the preceding character.
+  - Example: `ca+t` matches "cat", "caat".
+- `{n}`: Matches exactly n occurrences of the preceding character.
+  - Example: `a{3}` matches "aaa".
+- `{n,}`: Matches n or more occurrences.
+  - Example: `a{2,}` matches "aa", "aaa".
+- `{n,m}`: Matches between n and m occurrences.
+  - Example: `a{2,3}` matches "aa" or "aaa".
+***************************************************************************
+# Character Classes and Shorthand
+- `\d`: Matches any digit (0-9).
+  - Example: `\d{2,4}` matches "12", "123", "1234".
+- `\w`: Matches any word character (alphanumeric plus `_`).
+  - Example: `\w+` matches "word", "another_word".
+- `\s`: Matches any whitespace character.
+  - Example: `\s+` matches spaces, tabs, newlines.
+- `\b`: Matches a word boundary.
+  - Example: `\bcat\b` matches "cat" as a whole word.
+***************************************************************************
+# Examples with Common Linux Tools
+***************************************************************************
+1. **grep
+   - Search for lines containing "error" in a log file:
+     ```sh
+     grep "error" /var/log/syslog
+     ```
+   - Case-insensitive search:
+     ```sh
+     grep -i "error" /var/log/syslog
+     ```
+   - Search for lines starting with "error":
+     ```sh
+     grep "^error" /var/log/syslog
+     ```
+***************************************************************************
+2. **sed
+   - Replace "cat" with "dog" in a file:
+     ```sh
+     sed 's/cat/dog/g' file.txt
+     ```
+   - Delete lines containing "error":
+     ```sh
+     sed '/error/d' file.txt
+     ```
+***************************************************************************
+3. **awk
+   - Print lines where the second field is "error":
+     ```sh
+     awk '$2 == "error"' file.txt
+     ```
+   - Replace "cat" with "dog" in the third field:
+     ```sh
+     awk '{gsub(/cat/, "dog", $3); print}' file.txt
+     ```
+***************************************************************************
+# Advanced Usage
+***************************************************************************
+Lookahead and Lookbehind
+  - Positive Lookahead: `(?=...)`
+    - Example: `cat(?=s)` matches "cat" only if followed by "s".
+  - Negative Lookahead: `(?!...)`
+    - Example: `cat(?!s)` matches "cat" only if not followed by "s".
+  - Positive Lookbehind: `(?<=...)`
+    - Example: `(?<=the )cat` matches "cat" only if preceded by "the ".
+  - Negative Lookbehind: `(?<!...)`
+    - Example: `(?<!the )cat` matches "cat" only if not preceded by "the ".
+***************************************************************************
+Non-capturing Groups
+  - Syntax: `(?:...)`
+    - Example: `(?:cat|dog)s` matches "cats" or "dogs" but does not capture "cat" or "dog" as a group.
+***************************************************************************
+Understanding regex can significantly enhance your ability to perform powerful text processing tasks in Linux. Experimenting with these expressions in different tools will help you master their use.

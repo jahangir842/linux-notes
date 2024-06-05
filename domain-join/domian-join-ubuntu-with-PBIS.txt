@@ -1,0 +1,74 @@
+Joining an Ubuntu system to a Windows Active Directory (AD) domain using PowerBroker Identity Services (PBIS) involves several steps. Below is a step-by-step guide to accomplish this:
+
+*****************************************************************************************
+1. **Download PBIS:**
+
+   wget https://download.beyondtrust.com/PBISO/9.0.1/pbis-open-9.0.1.20200222.x86_64.deb.sh
+   ```
+
+2. **Make the script executable and run it:**
+
+   chmod +x pbis-open-9.0.1.20200222.x86_64.deb.sh
+   sudo ./pbis-open-9.0.1.20200222.x86_64.deb.sh
+   ```
+*****************************************************************************************
+1. **Join the domain:**
+
+   sudo /opt/pbis/bin/domainjoin-cli join yourdomain.com Administrator
+   ```
+
+   - Replace `yourdomain.com` with your actual domain name.
+   - Replace `Administrator` with the AD user account that has privileges to join computers to the domain.
+
+2. **Enter the password:**
+   - You will be prompted to enter the password for the Administrator account.
+*****************************************************************************************
+### Step 3: Verify the Domain Join
+
+   sudo /opt/pbis/bin/domainjoin-cli query
+   ```
+
+   This command will display the domain information and confirm that the Ubuntu system is joined to the domain.
+*****************************************************************************************
+### Step 4: Configure and Test
+
+1. **Update configuration (if needed):**
+   - PBIS should work out of the box, but you might want to configure it further depending on your environment.
+   - Configuration files are typically located in `/etc/pbis`.
+
+2. **Verify user information:**
+
+   ```bash
+   /opt/pbis/bin/get-status
+   /opt/pbis/bin/get-dc-name
+   /opt/pbis/bin/get-krb5-keytab
+   ```
+*****************************************************************************************
+3. **Test login with AD credentials:**
+
+   su - ad_username
+   ```
+
+   - Replace `ad_username` with a valid AD user account. You should be able to log in with the AD credentials.
+*****************************************************************************************
+1. **Check PBIS logs:**
+   - Logs are located in `/var/log/pbis`.
+*****************************************************************************************
+2. **Check domain join status:**
+
+   ```bash
+   sudo /opt/pbis/bin/lwsm list
+   sudo /opt/pbis/bin/lsa ad-cache --enum-users
+   ```
+*****************************************************************************************
+3. **Ensure network connectivity:**
+   - Ensure the Ubuntu system can reach the AD domain controllers and DNS is properly configured.
+*****************************************************************************************
+4. **Check time synchronization:**
+   - Time synchronization is crucial for Kerberos authentication. Ensure the Ubuntu system’s time is in sync with the AD domain controllers.
+   ```bash
+   sudo ntpdate time_server
+   ```
+*****************************************************************************************
+By following these steps, you should be able to join an Ubuntu system to a Windows Active Directory domain using PBIS, allowing for centralized authentication and management.
+*****************************************************************************************

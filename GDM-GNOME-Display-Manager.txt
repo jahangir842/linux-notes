@@ -1,0 +1,59 @@
+Ubuntu system booted into a terminal mode instead of the graphical user interface (GUI). This can happen due to various reasons, such as a configuration issue or a problem with the display manager.
+
+Check Display Manager:
+
+cat /etc/X11/default-display-manager
+
+you can reconfigure it using:
+
+sudo dpkg-reconfigure lightdm  
+# or
+sudo dpkg-reconfigure gdm3 
+
+Restart Display Manager:
+
+sudo systemctl restart display-manager
+
+Check for Updates:
+
+sudo apt update
+sudo apt upgrade
+
+Check for Errors related to the display manager or X server in the system logs.
+
+journalctl -xe
+
+Reinstall GUI Packages:
+If the issue persists, you might consider reinstalling the GUI components.
+
+sudo apt install ubuntu-gnome-desktop --reinstall
+
+reinstalling GDM. Here's how you can do it:
+
+sudo apt purge gdm3
+
+Install GDM Again:
+
+sudo apt install gdm3
+
+Configure GDM:
+
+sudo dpkg-reconfigure gdm3
+
+This command will bring up a configuration window where you can select GDM as the default display manager.
+
+Restart the Display Manager:
+
+sudo systemctl restart display-manager
+
+Reconfigure Desktop Environment:
+
+sudo dpkg-reconfigure gnome-shell
+
+To reinstall GNOME:
+
+sudo apt install --reinstall ubuntu-desktop gnome-shell
+
+Check Disk Space:
+
+df -h

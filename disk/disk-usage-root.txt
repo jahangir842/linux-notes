@@ -1,0 +1,58 @@
+### Disk Space Usage Commands in Linux
+
+#### `df -T /`
+The `df` command in Unix-like operating systems is used to display information about the file system disk space usage. The `-T` option provides details about the type of each file system.
+
+**Example Command:**
+```sh
+df -T /
+```
+
+**Example Output:**
+```sh
+Filesystem     Type  1K-blocks    Used Available Use% Mounted on
+/dev/sda1      ext4  102400000  6000000  91200000   7% /
+```
+
+**Explanation of Output Columns:**
+- **Filesystem**: The name of the file system (e.g., `/dev/sda1`).
+- **Type**: The type of the file system (e.g., `ext4`).
+- **1K-blocks**: The total size of the file system in 1K blocks.
+- **Used**: The amount of space used in 1K blocks.
+- **Available**: The amount of space available in 1K blocks.
+- **Use%**: The percentage of space used.
+- **Mounted on**: The mount point of the file system (e.g., `/`).
+
+#### Checking Only the Percentage Used
+
+If you want to check only the percentage of disk space used for the root directory (`/`), you can use a combination of commands.
+
+**Using `awk`:**
+```sh
+df -h / | awk 'NR==2 {print $5}'
+```
+
+**Explanation:**
+- `df -h /`: Displays disk space usage for the root directory in a human-readable format.
+- `awk 'NR==2 {print $5}'`: Extracts the percentage of used disk space from the second row, fifth column.
+
+**Example Output:**
+```sh
+7%
+```
+
+**Without `awk` (using `grep` and `cut`):**
+```sh
+df -h / | grep '/' | tr -s ' ' | cut -d ' ' -f 5
+```
+
+**Explanation:**
+- `df -h /`: Displays disk space usage for the root directory in a human-readable format.
+- `grep '/'`: Filters the output to include only the line containing the root directory.
+- `tr -s ' '`: Translates sequences of spaces into a single space.
+- `cut -d ' ' -f 5`: Splits the line by spaces and selects the fifth field, which is the percentage of used disk space.
+
+**Example Output:**
+```sh
+7%
+```

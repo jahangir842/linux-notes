@@ -1,0 +1,40 @@
+
+********************************************************************************
+			Docker Install on Offline Ubuntu
+********************************************************************************
+
+To install Docker Compose on Ubuntu, follow these steps:
+
+### Step 1: Download Docker Compose Binary
+Download the current stable release of Docker Compose:
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
+
+### Step 2: Apply Executable Permissions
+Apply executable permissions to the binary:
+```sh
+sudo chmod +x /usr/local/bin/docker-compose
+```
+
+### Step 3: Verify Installation
+Verify the installation by checking the version:
+```sh
+docker-compose --version
+```
+
+### Step 4: Optional - Create a Symlink
+If `/usr/local/bin` is not in your PATH or you prefer a different location, you can create a symbolic link:
+```sh
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+```
+
+### Summary of Commands
+```sh
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.17.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+```
+
+Following these steps will install Docker Compose on your Ubuntu system, allowing you to manage multi-container Docker applications.
+

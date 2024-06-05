@@ -1,0 +1,109 @@
+
+********************************************************************************
+			Docker Prometheous on Offline Ubuntu
+********************************************************************************
+
+Download Prometheus Docker Image on Online System
+
+   
+   docker pull prom/prometheus
+   docker pull grafana/grafana
+
+   
+********************************************************************************
+2. **Save the Docker image to a tar file:**
+
+   
+   docker save -o prometheus.tar prom/prometheus
+   docker save -o grafana.tar grafana/grafana
+
+   
+********************************************************************************
+Transfer the prometheus.tar and grafana.tar files to the offline Ubuntu system
+
+
+copy the file from current directory
+
+
+
+********************************************************************************
+Load Prometheus Docker Image on Offline System
+********************************************************************************
+
+2. **Load the Docker image from the tar file:**
+
+	docker load -i prometheus.tar
+	docker load -i grafana.tar
+
+   
+********************************************************************************
+# 3. Run Prometheus Container on Offline System
+
+1. **Create a Prometheus configuration file (`prometheus.yml`):**
+
+
+   global:
+     scrape_interval: 15s
+
+   scrape_configs:
+     - job_name: 'prometheus'
+       static_configs:
+         - targets: ['localhost:9090']
+   
+********************************************************************************
+   Save this file as `prometheus.yml`.
+********************************************************************************
+2. **Run the Prometheus Docker container:**
+********************************************************************************
+   
+   docker run -d \
+     -p 9090:9090 \
+     -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
+     --name prometheus \
+     prom/prometheus
+   
+********************************************************************************
+   This command does the following:
+   - Runs the container in detached mode (`-d`).
+   - Maps port 9090 of the host to port 9090 of the container (`-p 9090:9090`).
+   - Mounts the `prometheus.yml` configuration file to the appropriate location in the container (`-v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml`).
+   - Names the container `prometheus` (`--name prometheus`).
+********************************************************************************
+
+
+
+
+
+
+******************************************************************************** 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Example of Commands Summary
+
+# On Online System:
+
+docker pull prom/prometheus
+docker save -o prometheus.tar prom/prometheus
+# Transfer prometheus.tar to the offline system
+
+
+# On Offline System:
+
+docker load -i prometheus.tar
+# Create prometheus.yml file in the current directory
+docker run -d -p 9090:9090 -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml --name prometheus prom/prometheus
+
+
+This procedure ensures that Prometheus is installed and running on the offline Ubuntu system using Docker.

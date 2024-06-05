@@ -1,0 +1,128 @@
+
+********************************************************************************
+************** Quota in Linux with External Quota files ************************
+********************************************************************************
+
+Check Existing Filesystem:
+
+	df -T /
+
+Check Kernel Support for Quotas
+	
+	grep -i "CONFIG_QUOTA" /boot/config-$(uname -r)
+   
+If you see CONFIG_QUOTA with a value of y (enabled) or m (module), then quotas are supported.
+If it's not enabled, you might need to recompile the kernel with quota support.
+
+your default Ubuntu Linux installation may not have the kernel modules needed to support quota management.
+To check, you will use find to search for the quota_v1 and quota_v2 modules in the /lib/modules/... directory:
+
+	find /lib/modules/ -type f -name '*quota_v*.ko*'
+
+If you get no output from the above command, install the linux-image-extra-virtual package:
+
+	sudo apt install linux-image-extra-virtual
+
+Install Required Packages:
+
+	sudo update
+	sudo install quota
+	
+Edit /etc/fstab for Quota Mount Options and add the usrquota and grpquota options to the filesystems you want to enable quotas on. For example:
+
+	sudo nano /etc/fstab
+	UUID=<filesystem-uuid> / ext4 defaults,usrquota,grpquota 0 1
+	
+Remount the filesystem to apply the changes made in /etc/fstab.
+
+	sudo mount -o remount /
+
+You can verify that the new options were used to mount the filesystem :
+
+	cat /proc/mounts | grep ' / '
+
+Initialize Quota Database:
+
+	sudo quotacheck -cug /
+
+This command creates the necessary quota files (aquota.user and aquota.group) and sets up the initial quota information.
+cug stands for create user and group.
+
+Enable Quotas:
+
+	sudo quotaon -v / 
+
+Set Quotas for Users and Groups:
+
+	sudo edquota -u username
+
+This command opens a text editor where you can set soft and hard quotas for the user.
+These entries typically include:
+
+    blocks: Represents disk blocks (usually in 1KB units).
+    soft: Defines the soft quota limit.
+    hard: Defines the hard quota limit.
+
+For example, the quota editor might display something like this:
+
+	Disk quotas for user john (uid xxx):
+	Filesystem     blocks   soft   hard   inodes   soft   hard
+	/dev/sda1      1024     11M     15M   100      0      0
+
+Set quota with command:
+
+	sudo setquota -u username 200M 220M 0 0 /
+	
+Verify Quota Settings:
+
+	quota -u john
+
+To generate a report on current quota usage for all users on a particular filesystem, use the repquota command:
+
+    sudo repquota -s /
+
+
+***********************************************************************
+************** Quota in Linux with ext4 Quota  ************************
+***********************************************************************
+
+
+Note that you must do this on an unmounted filesystem.
+
+Unmount the Filesystem:
+Before enabling quotas, unmount the filesystem using: (Boot from live usb if required)
+
+	sudo umount /dev/sdb1
+
+Enable Quotas:
+If quotas are not already enabled, you can enable them using tune2fs
+
+	sudo tune2fs -O quota /dev/sdb1
+
+
+
+Remount the Filesystem:
+
+	sudo mount /dev/sdb1 /mnt/mydisk
+
+Create Quota Files (if needed):
+
+	sudo touch /mnt/mydisk/aquota.user /mnt/mydisk/aquota.group
+	sudo chmod 600 /mnt/mydisk/aquota.user /mnt/mydisk/aquota.group
+
+Enable Quotas on Mount (if needed):
+Open /etc/fstab in a text editor and add the usrquota and/or grpquota options to the mount options for the filesystem entry. 
+
+Initialize Quotas:
+
+    sudo quotacheck -cug /mnt/mydisk
+
+After completing these steps, quotas should be enabled and active on your /dev/sdb1 filesystem. You can then use tools like edquota to set quota limits for users or groups.
+
+
+
+
+
+
+
+

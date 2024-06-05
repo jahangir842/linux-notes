@@ -1,0 +1,68 @@
+Create the Shell Script
+
+Create a shell script (e.g., git_sync.sh) in your home directory or any preferred location.
+
+**************************************************************************************************
+
+#!/bin/bash
+
+# Navigate to your Git repository
+cd /path/to/your/git/repo || exit
+
+# Pull the latest changes
+git pull
+
+# Add all changes
+git add .
+
+# Commit changes with a message
+git commit -m "Auto-commit before shutdown"
+
+# Push the changes
+git push
+
+**************************************************************************************************
+Make the script executable:
+
+bash
+
+chmod +x /path/to/git_sync.sh
+**************************************************************************************************
+
+Create a systemd service that will run the script at shutdown.
+
+Create a new service file, e.g., git-sync.service:
+
+	sudo nano /etc/systemd/system/git-sync.service
+	
+Add the following content to the file and Replace /path/to/git_sync.sh with the actual path to your script.
+**************************************************************************************************
+[Unit]
+Description=Git Sync Service
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash /path/to/git_sync.sh
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
+**************************************************************************************************
+Enable the service so that it runs at shutdown:
+
+	sudo systemctl enable git-sync.service
+**************************************************************************************************
+Test the Service
+
+	sudo systemctl start git-sync.service
+**************************************************************************************************
+Check the status to ensure it ran without errors:
+
+	sudo systemctl status git-sync.service
+**************************************************************************************************
+Summary
+
+By following these steps, your Git repository will be automatically pulled and pushed every time your computer shuts down. This approach leverages systemd to ensure the script runs during the shutdown process, making it a reliable solution compared to using cron, which is not designed to handle shutdown events.
+**************************************************************************************************
+

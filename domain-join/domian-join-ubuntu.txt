@@ -1,0 +1,114 @@
+********************************************************************************
+	Ubuntu domain join with Windows server active directory
+********************************************************************************
+
+Update the System
+
+	sudo apt update
+	sudo apt upgrade
+***************************************************************************************
+2. Install Required Packages
+
+You need to install the necessary packages to join the domain. These packages include realmd, sssd, krb5-user, samba-common-bin, and packagekit.
+
+	sudo apt install realmd sssd sssd-tools libnss-sss libpam-sss adcli krb5-user samba-common-bin packagekit
+	
+***************************************************************************************
+3. Discover the Domain
+
+Use the realm command to discover your Active Directory domain.
+
+	realm discover your_domain.com
+
+Replace your_domain.com with the name of your domain. This command should return information about your domain if everything is set up correctly.
+***************************************************************************************
+4. Join the Domain
+
+Join the domain using the realm command. You will need domain administrator credentials for this step.
+
+	sudo realm join your_domain.com -U 'Administrator'
+
+You will be prompted to enter the password for the Administrator account. Replace your_domain.com with your actual domain and Administrator with the username of a user who has permissions to join machines to the domain.
+***************************************************************************************
+5. Configure SSSD
+
+The sssd service should be configured automatically by the realm command, but it's good to verify the configuration in /etc/sssd/sssd.conf.
+
+	sudo nano /etc/sssd/sssd.conf
+
+Ensure the file looks something like this:
+
+[sssd]
+domains = your_domain.com
+config_file_version = 2
+services = nss, pam
+
+[domain/your_domain.com]
+ad_domain = your_domain.com
+krb5_realm = YOUR_DOMAIN.COM
+realmd_tags = manages-system joined-with-samba
+cache_credentials = True
+id_provider = ad
+krb5_store_password_if_offline = True
+default_shell = /bin/bash
+ldap_id_mapping = True
+use_fully_qualified_names = False
+fallback_homedir = /home/%u@%d
+access_provider = ad
+
+Save and close the file.
+***************************************************************************************
+6. Configure PAM and NSS
+
+Ensure that PAM and NSS are configured to use sssd.
+
+Edit /etc/nsswitch.conf:
+
+	sudo nano /etc/nsswitch.conf
+
+Ensure the following lines are included:
+
+passwd:         compat sss
+group:          compat sss
+shadow:         compat sss
+***************************************************************************************
+Edit /etc/pam.d/common-session:
+
+sudo nano /etc/pam.d/common-session
+
+Add this line if it's not already present:
+
+	session required pam_mkhomedir.so skel=/etc/skel/ umask=077
+
+This ensures that home directories are created automatically for AD users.
+***************************************************************************************
+7. Restart the SSSD Service
+
+Restart the SSSD service to apply the changes.
+
+sudo systemctl restart sssd
+***************************************************************************************
+8. Test the Configuration
+
+Try logging in with an Active Directory user account:
+
+su - username@your_domain.com
+
+Replace username@your_domain.com with an actual username in your domain. If everything is configured correctly, you should be able to log in with the AD credentials.
+***************************************************************************************
+Additional Configuration
+
+    Automatic Home Directory Creation: Ensure home directories are created automatically by verifying the PAM configuration (/etc/pam.d/common-session).
+    Sudo Access: If you need to give AD users sudo access, you can add them to the sudoers file.
+    
+sudo visudo
+
+Add a line like:
+
+    %domain^admins ALL=(ALL) ALL
+
+Adjust the group name as necessary to fit your AD group names.
+***************************************************************************************
+Conclusion
+
+Following these steps, your Ubuntu PC should be successfully joined to a Windows Active Directory domain, allowing AD users to log in using their domain credentials. If you encounter any issues, ensure that network settings and DNS are configured correctly, as they are critical for domain joining to work smoothly.

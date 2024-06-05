@@ -1,0 +1,124 @@
+Joining an Ubuntu system to a Windows Active Directory (AD) domain can be achieved through several methods, each with its own advantages and complexities. Here are the primary methods:
+
+1. **Using PowerBroker Identity Services (PBIS):**
+2. **Using System Security Services Daemon (SSSD):**
+3. **Using Winbind (part of Samba):**
+4. **Using Realmd:**
+
+### Method 1: Using PowerBroker Identity Services (PBIS)
+
+#### Steps:
+1. **Install PBIS:**
+   ```bash
+   wget https://download.beyondtrust.com/PBISO/9.0.1/pbis-open-9.0.1.20200222.x86_64.deb.sh
+   chmod +x pbis-open-9.0.1.20200222.x86_64.deb.sh
+   sudo ./pbis-open-9.0.1.20200222.x86_64.deb.sh
+   ```
+
+2. **Join the AD domain:**
+   ```bash
+   sudo /opt/pbis/bin/domainjoin-cli join yourdomain.com Administrator
+   ```
+
+3. **Verify the join:**
+   ```bash
+   sudo /opt/pbis/bin/domainjoin-cli query
+   ```
+
+### Method 2: Using System Security Services Daemon (SSSD)
+
+#### Steps:
+1. **Install required packages:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install sssd realmd adcli
+   ```
+
+2. **Discover the AD domain:**
+   ```bash
+   realm discover yourdomain.com
+   ```
+
+3. **Join the AD domain:**
+   ```bash
+   sudo realm join --user=Administrator yourdomain.com
+   ```
+
+4. **Configure SSSD:**
+   - Ensure `/etc/sssd/sssd.conf` is properly configured (usually done automatically by `realm join`).
+
+5. **Start and enable SSSD:**
+   ```bash
+   sudo systemctl enable sssd
+   sudo systemctl start sssd
+   ```
+
+### Method 3: Using Winbind (part of Samba)
+
+#### Steps:
+1. **Install Samba and Winbind:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install samba winbind libpam-winbind libnss-winbind
+   ```
+
+2. **Configure Samba (`/etc/samba/smb.conf`):**
+   ```ini
+   [global]
+   workgroup = YOURDOMAIN
+   security = ADS
+   realm = YOURDOMAIN.COM
+   ...
+   ```
+
+3. **Join the AD domain:**
+   ```bash
+   sudo net ads join -U Administrator
+   ```
+
+4. **Configure PAM and NSS:**
+   - Update `/etc/nsswitch.conf` to include Winbind:
+     ```ini
+     passwd:         compat winbind
+     group:          compat winbind
+     ```
+   - Configure PAM modules in `/etc/pam.d/common-session` and `/etc/pam.d/common-auth`.
+
+5. **Start and enable Winbind:**
+   ```bash
+   sudo systemctl enable winbind
+   sudo systemctl start winbind
+   ```
+
+### Method 4: Using Realmd
+
+#### Steps:
+1. **Install Realmd and other required packages:**
+   ```bash
+   sudo apt-get update
+   sudo apt-get install realmd sssd adcli
+   ```
+
+2. **Discover the AD domain:**
+   ```bash
+   realm discover yourdomain.com
+   ```
+
+3. **Join the AD domain:**
+   ```bash
+   sudo realm join --user=Administrator yourdomain.com
+   ```
+
+4. **Verify the join:**
+   ```bash
+   realm list
+   ```
+
+### Choosing the Right Method
+
+- **PBIS:** Best for organizations that need a robust, feature-rich solution with extensive support for policies and centralized management.
+- **SSSD:** Suitable for environments requiring seamless integration with AD and is often preferred for its flexibility and integration with modern Linux systems.
+- **Winbind:** Useful for legacy environments or specific use cases where Samba compatibility is needed.
+- **Realmd:** Simplifies the domain joining process, particularly useful for straightforward setups and quick integration.
+
+Each method has its specific use cases, and the choice depends on your organization's requirements, existing infrastructure, and preferred management tools.

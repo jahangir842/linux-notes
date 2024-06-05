@@ -1,1 +1,2 @@
-# linux
+# commands
+linux related commands

@@ -1,0 +1,14 @@
+**************************************************************************
+		Inode in Operating System
+**************************************************************************
+
+In Unix based operating system each file is indexed by an Inode. Inode are special disk 
+blocks they are created when the file system is created. The number of Inode limits the 
+total number of files/directories that can be stored in the file system. 
+
+An Inode is a data structure in UNIX operating system that contains important information pertaining to 
+files within a file system. When a file system is created in UNIX, a set amount of indoes is created as well. 
+
+**************************************************************************
+about 1 percent of the file system disk space is allocated to the inode table.
+**************************************************************************

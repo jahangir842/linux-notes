@@ -1,0 +1,19 @@
+-------------------------------------------------------------
+ Make a script file (disk-usage-report.sh) of following code
+-------------------------------------------------------------
+
+#!/bin/bash
+
+cd /home
+sudo echo "-----------------" >> /home/user/users_profile_logs ; 
+sudo date >> /home/user/users_profile_logs ;
+sudo echo "-----------------" >> /home/user/users_profile_logs ; 
+sudo du -sh  * | sort -nr >>/home/user/users_profile_logs
+sudo echo "-----------------" >> /home/user/user_login_history ; 
+
+-------------------------------------------------------------
+Crontab for above script that will run on 1700 hours daily
+-------------------------------------------------------------
+
+00 17 * * * cd /home/user/ && bash disk-usage-report.sh
+

@@ -1,0 +1,149 @@
+Create a Python Script
+
+First, we will create a simple Python script that the systemd service will run. For example, let's create a script that logs the current date and time to a file.
+
+Create a file called `example_script.py`:
+
+
+nano /home/yourusername/example_script.py
+
+
+Add the following Python code to the file:
+*********************************************************************************************
+python
+#!/usr/bin/env python3
+
+import time
+
+with open("/home/yourusername/example_log.txt", "a") as log_file:
+    log_file.write(f"Current time: {time.ctime()}\n")
+
+*********************************************************************************************
+Make sure the script is executable:
+
+
+chmod +x /home/yourusername/example_script.py
+
+*********************************************************************************************
+ Step 2: Create a systemd Service Unit File
+
+Next, create a systemd service unit file for this script. Let's name it `example.service`.
+
+Create the service unit file:
+
+
+sudo nano /etc/systemd/system/example.service
+
+
+Add the following content to the file:
+*********************************************************************************************
+
+[Unit]
+Description=Example Python Script Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/yourusername/example_script.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
+
+*********************************************************************************************
+ Step 3: Reload systemd Configuration
+
+Reload the systemd configuration to recognize the new service:
+
+
+sudo systemctl daemon-reload
+
+*********************************************************************************************
+ Step 4: Enable the Service
+
+Enable the service to start at boot:
+
+
+sudo systemctl enable example
+
+*********************************************************************************************
+ Step 5: Start the Service
+
+Start the service immediately:
+
+
+sudo systemctl start example
+*********************************************************************************************
+
+ Step 6: Check the Status of the Service
+
+Check the status of the service to ensure it is running correctly:
+
+
+sudo systemctl status example
+
+
+You should see an output indicating that the service is active and running.
+*********************************************************************************************
+ Step 7: Verify the Script Output
+
+Check the log file to verify that the script is running as expected:
+
+
+cat /home/yourusername/example_log.txt
+
+*********************************************************************************************
+You should see the current date and time logged in the file.
+
+ Summary
+
+This example demonstrates how to create a systemd service that runs a Python script. The service is configured to start at boot, and the script logs the current time to a file. By following these steps, you can create and manage systemd services for your own scripts or applications.
+
+
+
+
+
+
+
+
+
+
+
+
+Create a systemd service that will run the script at shutdown.
+
+Create a new service file, e.g., git-sync.service:
+
+	sudo nano /etc/systemd/system/git-sync.service
+	
+Add the following content to the file and Replace /path/to/git_sync.sh with the actual path to your script.
+**************************************************************************************************
+[Unit]
+Description=Git Sync Service
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+Type=oneshot
+ExecStart=/path/to/git_sync.sh
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target
+**************************************************************************************************
+Enable the service so that it runs at shutdown:
+
+	sudo systemctl enable git-sync.service
+**************************************************************************************************
+Test the Service
+
+	sudo systemctl start git-sync.service
+**************************************************************************************************
+Check the status to ensure it ran without errors:
+
+	sudo systemctl status git-sync.service
+**************************************************************************************************
+Summary
+
+By following these steps, your Git repository will be automatically pulled and pushed every time your computer shuts down. This approach leverages systemd to ensure the script runs during the shutdown process, making it a reliable solution compared to using cron, which is not designed to handle shutdown events.
+**************************************************************************************************
+
