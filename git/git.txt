@@ -81,7 +81,7 @@ To check the status of your files in the working directory and the staging area:
 	git status
 
 ******************************************************************
-# 4.4 Adding Files
+Adding Files
 Stage files for commit:
 
 	git add filename
