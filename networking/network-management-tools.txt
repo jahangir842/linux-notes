@@ -4,9 +4,10 @@
 
 for checking which tool is being used in a system:
 
-systemctl status systemd-networkd
-systemctl status NetworkManager
-systemctl status netplan
+	systemctl status systemd-networkd
+	systemctl status NetworkManager
+	networkctl status    (for netplan)
+
 
 ps aux | grep -E 'systemd-networkd|NetworkManager|netplan'
 
