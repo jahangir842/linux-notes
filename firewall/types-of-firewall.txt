@@ -1,0 +1,135 @@
+*************************************************************************
+          		  Types of Firewall
+*************************************************************************
+`Firewalls are essential components in network security, acting as barriers between trusted and untrusted networks. In Linux, several types of firewalls are available, each with distinct features and uses. 
+*************************************************************************
+To check which type of firewall is running on your Linux system:
+*************************************************************************
+### iptables
+sudo systemctl status iptables
+sudo iptables -L
+
+### nftables
+sudo systemctl status nftables
+sudo nft list ruleset
+
+### ufw
+sudo systemctl status ufw
+sudo ufw status
+
+### firewalld
+sudo systemctl status firewalld
+sudo firewall-cmd --state
+
+*************************************************************************
+1. iptables
+*************************************************************************
+- `iptables` is a user-space utility program that allows a system administrator to configure the IP packet filter rules of the Linux kernel firewall.
+- It is the traditional and widely used firewall for Linux systems.
+*************************************************************************
+**Features:**
+- Allows packet filtering, network address translation (NAT), and port forwarding.
+- Operates based on tables which contain chains of rules.
+- Chains include INPUT, OUTPUT, FORWARD, PREROUTING, and POSTROUTING.
+- Rules specify actions like ACCEPT, DROP, REJECT, and LOG.
+*************************************************************************
+**Example Commands:**
+*************************************************************************
+- Block an IP address:
+  iptables -A INPUT -s 192.168.1.100 -j DROP
+*************************************************************************  
+- Allow incoming HTTP traffic:
+  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+*************************************************************************  
+
+**Usage:**
+- Suitable for both personal and enterprise-level applications.
+- Requires manual rule management, which can become complex for large rule sets.
+*************************************************************************
+2. nftables
+*************************************************************************
+**Overview:**
+- `nftables` is the successor to `iptables`, designed to simplify the rule management and improve performance.
+- Provides a single framework for both IPv4 and IPv6 packet filtering.
+*************************************************************************
+**Features:**
+- Uses a simpler and more flexible syntax compared to `iptables`.
+- Supports atomic rule replacement, reducing the risk of inconsistencies.
+- Offers better performance and scalability.
+*************************************************************************
+**Example Commands:**
+- Create a table and add a rule to allow HTTP traffic:
+*************************************************************************
+  nft add table inet filter
+  nft add chain inet filter input { type filter hook input priority 0 \; }
+  nft add rule inet filter input tcp dport 80 accept
+  
+*************************************************************************
+**Usage:**
+- Recommended for new projects or when migrating from `iptables` for improved performance and ease of management.
+*************************************************************************
+3. ufw (Uncomplicated Firewall)
+*************************************************************************
+**Overview:**
+- `ufw` is a user-friendly front-end for managing `iptables` rules.
+- Designed to be an easy-to-use firewall for novice users.
+*************************************************************************
+**Features:**
+- Simple command syntax for common tasks.
+- Provides both command-line and graphical interfaces.
+- Default settings are designed to be secure.
+*************************************************************************
+**Example Commands:**
+*************************************************************************
+- Enable the firewall:
+  ufw enable
+************************************************************************* 
+- Allow SSH traffic:
+  ufw allow ssh
+*************************************************************************  
+- Deny incoming traffic on port 8080:
+  ufw deny 8080
+*************************************************************************  
+**Usage:**
+- Ideal for desktop users or administrators looking for a straightforward firewall management tool.
+*************************************************************************
+4. firewalld
+*************************************************************************
+**Overview:**
+- `firewalld` is a dynamic firewall manager with support for network/firewall zones.
+- It is used by default in many Linux distributions like CentOS and Fedora.
+*************************************************************************
+**Features:**
+- Supports runtime and permanent configurations.
+- Uses zones to define the trust level of network connections.
+- Provides both command-line and graphical interfaces.
+- Integrates with services like NetworkManager.
+*************************************************************************
+**Example Commands:**
+*************************************************************************
+- Start `firewalld`:
+
+  systemctl start firewalld
+*************************************************************************  
+- Add a service to the public zone:
+
+  firewall-cmd --zone=public --add-service=http --permanent
+  firewall-cmd --reload
+ ************************************************************************* 
+- List active zones:
+
+  firewall-cmd --get-active-zones
+ ************************************************************************* 
+
+**Usage:**
+- Suitable for environments requiring dynamic management of firewall rules and network configurations.
+*************************************************************************
+Comparison and Recommendations:
+*************************************************************************
+- **iptables**: Best for administrators familiar with traditional firewall management and scripting.
+- **nftables**: Recommended for new installations or migrations for better performance and easier management.
+- **ufw**: Ideal for users needing a simple, user-friendly interface for firewall management.
+- **firewalld**: Best for systems requiring dynamic and flexible firewall rules with zone-based management.
+*************************************************************************
+Each of these firewalls offers unique advantages and can be selected based on the specific needs and expertise of the user or the organization's requirements.
+*************************************************************************
