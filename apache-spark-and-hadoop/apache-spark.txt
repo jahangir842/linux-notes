@@ -16,36 +16,70 @@ How to Use Apache Spark:
 #1. Setup and Installation:
 To start using Apache Spark, you need to set up a Spark cluster or run it locally on your machine. Here are the steps for a local setup:
 ****************************************************************
+Install Java:
+****************************************************************
+for Ubuntu:
+sudo apt install default-jdk
+for RHEL:
+sudo yum install java-devel
+
+****************************************************************
 Download and Install Apache Spark:
 ****************************************************************
   wget https://archive.apache.org/dist/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
   tar -xvzf spark-3.1.2-bin-hadoop3.2.tgz
-  cd spark-3.1.2-bin-hadoop3.2
+ 
+  sudo mv spark-3.2.0-bin-hadoop3.2 /opt/spark
+  sudo chmod -R 777 /opt/spark
 
+****************************************************************  
+Update bashrc: 
 ****************************************************************
-Set environment variables:
+ Open the bashrc file with following command:
+ 	sudo nano ~/.bashrc 
+**************************************************************** 
+Write the follwing lines in bashrc file:
 ****************************************************************
-  Add the following lines to your `.bashrc` or `.zshrc` file:
-****************************************************************
-  export SPARK_HOME=/path/to/spark-3.1.2-bin-hadoop3.2
-  export PATH=$SPARK_HOME/bin:$PATH
+ 	export SPARK_HOME=/opt/spark
+	export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+  	source ~/.bashrc
+
 ****************************************************************
 Step 3 Start the Spark in Terminal:
      - Scala: `spark-shell`
      - Python: `pyspark`
+****************************************************************
+To view the Spark Web user interface, open a web browser and enter the localhost IP address on port 4040.
+
+http://<IP ADDRESS>:4040
+
+The page shows your Spark URL, status information for workers, hardware resource utilization, etc.   ****************************************************************    
+Start Standalone Spark Master Server
+****************************************************************
+In the terminal, type:
+
+start-master.sh
+start-worker.sh
+http://<IP ADDRESS>:8080
 ****************************************************************
 #2. Writing and Running Spark Applications:
 ****************************************************************
 Spark applications can be written in Scala, Python, Java, and R. Below are examples in Python (using PySpark).
 ****************************************************************
 **Example: Word Count Application**
+****************************************************************
+Create a text file with following command:
+****************************************************************
+	touch textfile.txt
+	echo 'this is a test file for apache spark' > textfile.txt
+****************************************************************
 Step 1 Write the PySpark script (word_count.py):
 ****************************************************************
   from pyspark import SparkContext
 
   if __name__ == "__main__":
       sc = SparkContext("local", "Word Count")
-      text_file = sc.textFile("path/to/textfile.txt")
+      text_file = sc.textFile("./textfile.txt")
       counts = text_file.flatMap(lambda line: line.split(" ")) \
                         .map(lambda word: (word, 1)) \
                         .reduceByKey(lambda a, b: a + b)
