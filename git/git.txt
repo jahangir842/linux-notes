@@ -170,12 +170,36 @@ git revert commit_hash
 
 ******************************************************************
 # 7.4 Resetting Changes
-Reset to a previous commit:
+******************************************************************
 
-git reset --hard commit_hash
+git reset is used to reset the current HEAD to a specific state, which can be a commit, a branch, or a specific file.
+******************************************************************
+Modes
+   Soft Moves HEAD to the specified commit, keeping changes in the staging area.
+   Mixed Moves HEAD to the specified commit, unstaging changes (moves them to working directory).
+   Hard Moves HEAD to the specified commit and discards all changes (working directory and staging area).
+******************************************************************
+Syntax
+   - `git reset --soft <commit>`: Moves HEAD to \<commit\>, keeps changes in staging area.
+   - `git reset --mixed <commit>` or `git reset <commit>` (default): Moves HEAD to \<commit\>, unstages changes.
+   - `git reset --hard <commit>`: Moves HEAD to \<commit\>, discards all changes.
+******************************************************************
+Use Cases
+   Undoing Commits Resetting to a previous commit to undo changes.
+   Unstaging Changes Removing changes from the staging area but keeping them in the working directory.
+   Discarding Changes Completely discarding changes in both staging area and working directory.
+******************************************************************
+Caution
+   Data Loss Using `git reset --hard` can lead to data loss as it discards changes irreversibly.
+   Use with Care Ensure you understand the consequences of resetting, especially with `--hard`.
+******************************************************************
+Best Practices
+   Commit First Commit any important changes before resetting.
+   Review Changes Review changes carefully before performing a reset.
+   Backup Consider creating backups or using `git reflog` to recover lost commits if needed.
 ******************************************************************
 # 7.5 Viewing Commit History
-View the commit history:
+******************************************************************
 
 git log
 
