@@ -30,8 +30,9 @@ Set environment variables:
   export SPARK_HOME=/path/to/spark-3.1.2-bin-hadoop3.2
   export PATH=$SPARK_HOME/bin:$PATH
 ****************************************************************
-Step 3 Start the Spark shell:
-  spark-shell
+Step 3 Start the Spark in Terminal:
+     - Scala: `spark-shell`
+     - Python: `pyspark`
 ****************************************************************
 #2. Writing and Running Spark Applications:
 ****************************************************************

@@ -1,0 +1,77 @@
+************************************************************
+		       Checksum Auto
+************************************************************
+To verify the checksums of multiple files against the checksums stored in a single file, you can use the `sha256sum --check` command. This command reads the checksums from the file and verifies them against the actual files.
+************************************************************
+Example Script for Verification
+************************************************************
+Assuming you have a checksum file named `checksums.sha256` generated as described earlier, you can use the following script to verify the checksums.
+
+Step 1: Write the Verification Script
+************************************************************
+Create a script called `verify_checksums.sh`:
+************************************************************
+
+#!/bin/bash
+
+# Checksum file
+checksum_file="checksums.sha256"
+
+# Check if the checksum file exists
+if [[ ! -f "$checksum_file" ]]; then
+  echo "Checksum file $checksum_file does not exist."
+  exit 1
+fi
+
+# Verify the checksums
+sha256sum --check "$checksum_file"
+
+# Capture the result
+if [[ $? -eq 0 ]]; then
+  echo "All checksums are correct."
+else
+  echo "Some checksums are incorrect."
+  exit 1
+fi
+
+************************************************************
+Step 2: Make the Script Executable
+
+
+chmod +x verify_checksums.sh
+
+************************************************************
+Step 3: Run the Script
+
+
+./verify_checksums.sh
+
+************************************************************
+### Explanation
+************************************************************
+- `checksum_file="checksums.sha256"`: This variable specifies the checksum file containing the known checksums.
+- `if [[ ! -f "$checksum_file" ]]; then ... fi`: This block checks if the checksum file exists.
+- `sha256sum --check "$checksum_file"`: This command reads each line from the checksum file, calculates the checksum of the corresponding file, and compares it with the provided checksum.
+- `if [[ $? -eq 0 ]]; then ... fi`: This block captures the result of the verification. If the result is 0 (indicating all checksums are correct), it prints "All checksums are correct." Otherwise, it prints "Some checksums are incorrect."
+************************************************************
+### Running the Script
+************************************************************
+When you run the script, it will output whether all checksums are correct or if some are incorrect.
+
+### Example Checksum File
+
+Here is an example of what the `checksums.sha256` file might look like:
+
+
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  ./files/file1.txt
+d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2  ./files/file2.txt
+b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3b3  ./files/file3.txt
+************************************************************
+
+### Notes
+************************************************************
+- Ensure the paths in the checksum file match the actual paths of the files. If the paths are relative, make sure to run the script from the correct directory or adjust the paths accordingly.
+- Replace `sha256sum` with `md5sum` or `sha1sum` if you are using a different checksum algorithm.
+************************************************************
+By using this method, you can easily automate the process of verifying the integrity of multiple files against their checksums.
+************************************************************
