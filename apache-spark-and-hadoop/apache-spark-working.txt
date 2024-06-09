@@ -72,6 +72,23 @@ For example, to start a worker with 512MB of memory, enter this command:
 Reload the Spark Master Web UI to view the worker’s status and confirm the configuration
 
 
+****************************************************************
+To stop the master instance started by executing the script above, run:
+
+stop-master.sh
+
+To stop a running worker process, enter this command:
+
+stop-slave.sh
+
+****************************************************************
+You can start both master and server instances by using the start-all command:
+
+start-all.sh
+
+Similarly, you can stop all instances by using the following command:
+
+stop-all.sh
 
 
 ****************************************************************
