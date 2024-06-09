@@ -1,0 +1,42 @@
+**********************************************************
+If your NTFS USB drive is not mounting on your Linux system that need repair.
+**********************************************************
+1. Install Required Tools
+**********************************************************
+sudo apt update
+sudo apt install ntfs-3g ntfsprogs
+
+**********************************************************
+2. Identify the Device
+
+lsblk
+
+Look for your USB drive in the output.
+**********************************************************
+3. Unmount the Device
+
+sudo umount /dev/sdX1
+**********************************************************
+4. Repair the NTFS Filesystem
+
+sudo ntfsfix /dev/sdX1
+
+**********************************************************
+5. Check the Drive in Windows (if necessary)
+
+If `ntfsfix` does not resolve the issue, you may need to check and repair the filesystem on a Windows machine using `chkdsk`. Plug the USB drive into a Windows machine and run:
+
+chkdsk /f X:
+Replace `X:` with the drive letter assigned to the USB drive.
+**********************************************************
+6. Remount the Drive
+After repairing the filesystem, try mounting the drive again in Linux
+sudo mount /dev/sdX1 /mnt
+**********************************************************
+
+
+
+
+
+
+

@@ -35,21 +35,16 @@ Download and Install Apache Spark:
 ****************************************************************  
 Update bashrc: 
 ****************************************************************
- Open the bashrc file with following command:
- 	sudo nano ~/.bashrc 
-**************************************************************** 
-Write the follwing lines in bashrc file:
+echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
+echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.bashrc
+source ~/.bashrc
 ****************************************************************
- 	export SPARK_HOME=/opt/spark
-	export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-  	source ~/.bashrc
-
+Start the Spark in Terminal:
 ****************************************************************
-Step 3 Start the Spark in Terminal:
      - Scala: `spark-shell`
      - Python: `pyspark`
-****************************************************************
-To view the Spark Web user interface, open a web browser and enter the localhost IP address on port 4040.
+     
+To view the Spark Web user interface:
 
 http://<IP ADDRESS>:4040
 
@@ -62,4 +57,22 @@ start-master.sh
 start-worker.sh
 http://<IP ADDRESS>:8080
 ****************************************************************
+Additionaly Install Python:
+****************************************************************
+Install Python 3 Pip: If pip (Python package installer) is not already installed, you can install it using 
+	sudo apt install python3-pip
 
+Install PySpark with Pip:
+	pip3 install pyspark
+
+Verify Installation:
+	pyspark
+****************************************************************
+By following above steps: We did 2 type of installations:
+****************************************************************
+    Core Spark Installation: The tar file provides the core Spark installation, including all necessary binaries and configuration files needed to run Spark.
+
+    Python Integration: Installing PySpark with pip3 sets up the Python bindings and dependencies, making it possible to use Spark with Python and ensuring compatibility with other Python packages.
+
+This dual approach ensures that your Spark installation is complete and that you can effectively use Spark within your Python environment.
+****************************************************************

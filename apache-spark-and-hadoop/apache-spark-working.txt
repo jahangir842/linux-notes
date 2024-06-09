@@ -1,53 +1,83 @@
+*****************************************************************
+list of commands for PySpark
+*****************************************************************
+------------------------------------------------------------------------------------------------------
+| Command                               | Function                                                   |
+|---------------------------------------|------------------------------------------------------------|
+| `pyspark`                             | Starts the PySpark shell, allowing interactive Spark usage.|
+| `spark-submit <Python/Spark script>`  | Submits a Spark application for execution.                 |
+| `spark-shell`                         | Starts the Spark shell for Scala-based Spark development.   |
+| `spark-sql`                           | Starts the Spark SQL CLI for executing SQL commands.       |
+| `spark-class <class>`                 | Runs a Java/Scala class within the Spark environment.      |
+| `spark-submit --master <master_url> ...` | Submits a Spark application to a specific master URL.     |
+| `spark-submit --packages <package_name>` | Submits a Spark application with specified packages.      |
+| `spark-submit --jars <jar_file>`      | Submits a Spark application with additional JAR files.     |
+| `spark-submit --help`                 | Displays help information for using `spark-submit`.         |
+
 ****************************************************************
 Start the Spark in Terminal:
+****************************************************************
      - Scala: `spark-shell`
      - Python: `pyspark`
-****************************************************************
-To view the Spark Web user interface, open a web browser and enter the localhost IP address on port 4040.
+     
+To view the Spark Web user interface:
 
 http://<IP ADDRESS>:4040
 
 The page shows your Spark URL, status information for workers, hardware resource utilization, etc.   ****************************************************************    
-Start Standalone Spark Master Server
+Start the Spark Master Server in Standalone setup:
 ****************************************************************
-Basic Commands to Start and Stop Master Server and Workers
+In the terminal, type:
+	start-master.sh
 
-start-master.sh
-start-worker.sh
-http://<IP ADDRESS>:8080
-****************************************************************
-#2. Writing and Running Spark Applications:
-****************************************************************
-Spark applications can be written in Scala, Python, Java, and R. Below are examples in Python (using PySpark).
-****************************************************************
-**Example: Word Count Application**
-****************************************************************
-Create a text file with following command:
-****************************************************************
-	touch textfile.txt
-	echo 'this is a test file for apache spark' > textfile.txt
-****************************************************************
-Step 1 Write the PySpark script (word_count.py):
-****************************************************************
-  from pyspark import SparkContext
+open a web browser and enter the localhost IP address on port 8080.
+	http://<IP ADDRESS>:8080
 
-  if __name__ == "__main__":
-      sc = SparkContext("local", "Word Count")
-      text_file = sc.textFile("./textfile.txt")
-      counts = text_file.flatMap(lambda line: line.split(" ")) \
-                        .map(lambda word: (word, 1)) \
-                        .reduceByKey(lambda a, b: a + b)
-      counts.saveAsTextFile("output")
+The page will show your Spark URL, status information for workers, hardware resource utilization, etc.
+****************************************************************
+Start a Worker Process in Standalone setup:
+****************************************************************
+In the terminal, type:
+
+	start-worker.sh spark://<master-ip>:port
+
+The master in the command can be an IP or hostname.
+
+For example:
+
+	start-worker.sh spark://<master-ip>:port
+
+Now that a worker is up and running, if you reload Spark Master’s Web UI, you should see it on the list:
+****************************************************************
+Specify Resource Allocation for Workers
+****************************************************************
+The default setting when starting a worker on a machine is to use all available CPU cores. You can specify the number of cores by passing the -c flag to the start-slave command.
+
+For example, to start a worker and assign only one CPU core to it, enter this command:
+
+	start-slave.sh -c 1 spark://<master-ip>:port
+
+Reload Spark Master’s Web UI to confirm the worker’s configuration.
 
 ****************************************************************
-Step 2 Run the script:
-****************************************************************
-  spark-submit word_count.py
-****************************************************************
-Apache Spark can run in two primary deployment modes: client mode and cluster mode. These modes determine where the Spark Driver and Spark Executors are located and how they communicate. Understanding the differences between these modes is crucial for effectively deploying and managing Spark applications.
 
+Similarly, you can assign a specific amount of memory when starting a worker. The default setting is to use whatever amount of RAM your machine has, minus 1GB.
+
+To start a worker and assign it a specific amount of memory, add the -m option and a number. For gigabytes, use G and for megabytes, use M.
+
+For example, to start a worker with 512MB of memory, enter this command:
+
+	start-slave.sh -m 512M spark://<master-ip>:port
+
+Reload the Spark Master Web UI to view the worker’s status and confirm the configuration
+
+
+
+
+****************************************************************
+Apache Spark can run in two primary deployment modes: client mode and cluster mode. ****************************************************************
 ### Client Mode
-
+****************************************************************
 In client mode, the Spark Driver runs on the machine from which the Spark application is submitted (often a user's local machine or an edge node in a cluster). The Spark Executors run on the worker nodes in the cluster.
 
 **Key Characteristics of Client Mode:**
@@ -60,22 +90,22 @@ In client mode, the Spark Driver runs on the machine from which the Spark applic
 ```shell
 spark-submit --master yarn --deploy-mode client my_spark_app.py
 ```
-
+****************************************************************
 ### Cluster Mode
-
+****************************************************************
 In cluster mode, the Spark Driver runs inside the cluster. When the application is submitted, the cluster manager (e.g., YARN, Kubernetes, Mesos) launches the driver inside the cluster.
-
+****************************************************************
 **Key Characteristics of Cluster Mode:**
 1. **Driver Location:** The driver runs on a worker node inside the cluster, not on the client machine.
 2. **Network Communication:** Since the driver runs in the cluster, it has a better network proximity to the executors, which can reduce communication latency.
 3. **Use Case:** Suitable for production jobs and batch processing where the application needs to run reliably without user interaction and the client machine does not need to remain connected.
 4. **Resource Management:** The cluster handles the resources for both the driver and the executors, ensuring better resource utilization and management.
-
+****************************************************************
 **Example:**
 ```shell
 spark-submit --master yarn --deploy-mode cluster my_spark_app.py
 ```
-
+****************************************************************
 ### Key Differences
 
 1. **Driver Location:**
@@ -93,7 +123,7 @@ spark-submit --master yarn --deploy-mode cluster my_spark_app.py
 4. **Resource Management:**
    - **Client Mode:** Client machine must be resourceful enough to handle the driver process.
    - **Cluster Mode:** Cluster resources are used to run both driver and executors.
-
+****************************************************************
 ### Conclusion
 
 Choosing between client mode and cluster mode depends on the specific requirements of your Spark application. For development and interactive use cases, client mode offers a convenient way to run and test applications. For production environments, where stability and resource management are crucial, cluster mode is typically preferred.
@@ -140,52 +170,6 @@ To start the PySpark shell, open your terminal and type:
 This command initializes the PySpark environment and opens an interactive shell where you can start writing Spark commands in Python.
 ****************************************************************
 it automatically creates a SparkSession and a SparkContext for you:
-****************************************************************
-Try the following Python code
-****************************************************************
-from pyspark.sql import SparkSession
-
-# SparkSession automatically created as 'spark'
-print(spark)
-
-# SparkContext available as 'sc'
-print(sc)
-****************************************************************
-Creating RDDs:
-****************************************************************
-You can create Resilient Distributed Datasets (RDDs) from a Python collection or an external data source. use this code:
-****************************************************************
-
-# Create an RDD from a Python list
-data = [1, 2, 3, 4, 5]
-rdd = sc.parallelize(data)
-
-# Perform a transformation (map) and action (collect)
-squares = rdd.map(lambda x: x * x)
-print(squares.collect())
-****************************************************************
-Working with DataFrames:
-****************************************************************
-DataFrames provide a higher-level abstraction over RDDs and are optimized for performance. use this code:
-****************************************************************
-# Creating a DataFrame from a JSON file
-df = spark.read.json("path/to/json/file")
-
-# Show the first few rows of the DataFrame
-df.show()
-
-# Print the schema of the DataFrame
-df.printSchema()
-****************************************************************
-
-
-
-    
-****************************************************************
-6. Spark Web UI
-****************************************************************
-   Purpose Web-based interface for monitoring Spark applications and cluster resources.
-   Access Typically available at `http://<driver-node>:4040`.
 ****************************************************************
 7. Spark History Server
 ****************************************************************
