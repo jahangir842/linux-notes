@@ -1,0 +1,11 @@
+****************************************************************
+5. Spark MLlib (machine learning library)
+****************************************************************
+   Purpose Provides machine learning algorithms and utilities.
+   Usage Import MLlib classes in Spark applications for machine learning tasks.
+****************************************************************
+Example (Scala)
+****************************************************************
+     import org.apache.spark.ml.classification.LogisticRegression
+     val lr = new LogisticRegression()
+

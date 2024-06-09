@@ -1,0 +1,65 @@
+****************************************************************
+        		Apache Spark (a processing engine)
+****************************************************************
+Apache Spark is an open-source, distributed computing system designed for fast processing of large-scale data. It provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Here’s an overview of its key components and capabilities:
+****************************************************************
+Key Components of Apache Spark:
+****************************************************************
+1. Spark Core: The foundation of Spark, providing basic I/O functionalities, task scheduling, and memory management.
+2. Spark SQL: Module for structured data processing. It provides a programming interface for working with structured data using SQL.
+3. Spark Streaming: Enables processing of live data streams.
+4. MLlib: Spark’s machine learning library.
+5. GraphX: API for graphs and graph-parallel computation.
+****************************************************************
+How to Use Apache Spark:
+****************************************************************
+#1. Setup and Installation:
+To start using Apache Spark, you need to set up a Spark cluster or run it locally on your machine. Here are the steps for a local setup:
+****************************************************************
+Install Java:
+****************************************************************
+for Ubuntu:
+sudo apt install default-jdk
+for RHEL:
+sudo yum install java-devel
+
+****************************************************************
+Download and Install Apache Spark:
+****************************************************************
+  wget https://archive.apache.org/dist/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
+  tar -xvzf spark-3.1.2-bin-hadoop3.2.tgz
+ 
+  sudo mv spark-3.2.0-bin-hadoop3.2 /opt/spark
+  sudo chmod -R 777 /opt/spark
+
+****************************************************************  
+Update bashrc: 
+****************************************************************
+ Open the bashrc file with following command:
+ 	sudo nano ~/.bashrc 
+**************************************************************** 
+Write the follwing lines in bashrc file:
+****************************************************************
+ 	export SPARK_HOME=/opt/spark
+	export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+  	source ~/.bashrc
+
+****************************************************************
+Step 3 Start the Spark in Terminal:
+     - Scala: `spark-shell`
+     - Python: `pyspark`
+****************************************************************
+To view the Spark Web user interface, open a web browser and enter the localhost IP address on port 4040.
+
+http://<IP ADDRESS>:4040
+
+The page shows your Spark URL, status information for workers, hardware resource utilization, etc.   ****************************************************************    
+Start Standalone Spark Master Server
+****************************************************************
+In the terminal, type:
+
+start-master.sh
+start-worker.sh
+http://<IP ADDRESS>:8080
+****************************************************************
+

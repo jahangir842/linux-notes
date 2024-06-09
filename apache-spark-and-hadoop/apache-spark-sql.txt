@@ -1,0 +1,69 @@
+****************************************************************
+			Using Spark SQL
+****************************************************************
+Start the Spark in Terminal:
+     - Scala: `spark-shell`
+     - Python: `pyspark`
+****************************************************************
+To view the Spark Web user interface, open a web browser and enter the localhost IP address on port 4040.
+
+http://<IP ADDRESS>:4040
+
+The page shows your Spark URL, status information for workers, hardware resource utilization, etc.   ****************************************************************    
+Start Standalone Spark Master Server
+****************************************************************
+In the terminal, type:
+
+start-master.sh
+start-worker.sh
+http://<IP ADDRESS>:8080
+
+****************************************************************
+**Example: Using Spark SQL**
+****************************************************************
+Step 1 Write the PySpark script (spark_sql_example.py):
+****************************************************************
+  from pyspark.sql import SparkSession
+
+  spark = SparkSession.builder.appName("Spark SQL Example").getOrCreate()
+
+  # Create a DataFrame
+  data = [("James", "Smith", "USA", 30),
+          ("Anna", "Rose", "UK", 25),
+          ("Robert", "Williams", "USA", 45)]
+  columns = ["firstname", "lastname", "country", "age"]
+
+  df = spark.createDataFrame(data, columns)
+  df.createOrReplaceTempView("people")
+
+  # Run SQL queries
+  sqlDF = spark.sql("SELECT * FROM people WHERE age > 30")
+  sqlDF.show()
+  spark.stop()
+****************************************************************
+Step 2 Run the script:
+****************************************************************
+  spark-submit spark_sql_example.py
+****************************************************************
+Running SQL Queries:
+****************************************************************
+You can run SQL queries directly on DataFrames by registering them as temporary views. use this code:
+****************************************************************
+
+# Register the DataFrame as a SQL temporary view
+df.createOrReplaceTempView("table")
+
+# Running a SQL query
+result = spark.sql("SELECT * FROM table WHERE age > 21")
+result.show()
+
+
+****************************************************************
+3. Spark SQL (spark-sql for SQL queries)
+****************************************************************
+   Purpose Executes SQL queries against Spark data sources.
+   Usage `spark-sql`
+   Example
+****************************************************************
+     SELECT * FROM table WHERE column = 'value';
+****************************************************************

@@ -1,0 +1,15 @@
+
+****************************************************************
+4. Spark Streaming (spark-submit for streaming jobs)
+****************************************************************
+   Purpose Real-time processing of streaming data.
+   Usage `spark-submit` with streaming-specific configurations.
+   Example
+****************************************************************
+     spark-submit \
+       --class com.example.StreamingApp \
+       --master yarn \
+       --deploy-mode cluster \
+       --executor-memory 2g \
+       --total-executor-cores 4 \
+       my-streaming-app.jar arg1 arg2

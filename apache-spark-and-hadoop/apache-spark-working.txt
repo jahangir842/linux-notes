@@ -1,51 +1,5 @@
 ****************************************************************
-        		Apache Spark (a processing engine)
-****************************************************************
-Apache Spark is an open-source, distributed computing system designed for fast processing of large-scale data. It provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Here’s an overview of its key components and capabilities:
-****************************************************************
-Key Components of Apache Spark:
-****************************************************************
-1. Spark Core: The foundation of Spark, providing basic I/O functionalities, task scheduling, and memory management.
-2. Spark SQL: Module for structured data processing. It provides a programming interface for working with structured data using SQL.
-3. Spark Streaming: Enables processing of live data streams.
-4. MLlib: Spark’s machine learning library.
-5. GraphX: API for graphs and graph-parallel computation.
-****************************************************************
-How to Use Apache Spark:
-****************************************************************
-#1. Setup and Installation:
-To start using Apache Spark, you need to set up a Spark cluster or run it locally on your machine. Here are the steps for a local setup:
-****************************************************************
-Install Java:
-****************************************************************
-for Ubuntu:
-sudo apt install default-jdk
-for RHEL:
-sudo yum install java-devel
-
-****************************************************************
-Download and Install Apache Spark:
-****************************************************************
-  wget https://archive.apache.org/dist/spark/spark-3.1.2/spark-3.1.2-bin-hadoop3.2.tgz
-  tar -xvzf spark-3.1.2-bin-hadoop3.2.tgz
- 
-  sudo mv spark-3.2.0-bin-hadoop3.2 /opt/spark
-  sudo chmod -R 777 /opt/spark
-
-****************************************************************  
-Update bashrc: 
-****************************************************************
- Open the bashrc file with following command:
- 	sudo nano ~/.bashrc 
-**************************************************************** 
-Write the follwing lines in bashrc file:
-****************************************************************
- 	export SPARK_HOME=/opt/spark
-	export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
-  	source ~/.bashrc
-
-****************************************************************
-Step 3 Start the Spark in Terminal:
+Start the Spark in Terminal:
      - Scala: `spark-shell`
      - Python: `pyspark`
 ****************************************************************
@@ -56,7 +10,7 @@ http://<IP ADDRESS>:4040
 The page shows your Spark URL, status information for workers, hardware resource utilization, etc.   ****************************************************************    
 Start Standalone Spark Master Server
 ****************************************************************
-In the terminal, type:
+Basic Commands to Start and Stop Master Server and Workers
 
 start-master.sh
 start-worker.sh
@@ -90,31 +44,60 @@ Step 2 Run the script:
 ****************************************************************
   spark-submit word_count.py
 ****************************************************************
-**Example: Using Spark SQL**
-****************************************************************
-Step 1 Write the PySpark script (spark_sql_example.py):
-****************************************************************
-  from pyspark.sql import SparkSession
+Apache Spark can run in two primary deployment modes: client mode and cluster mode. These modes determine where the Spark Driver and Spark Executors are located and how they communicate. Understanding the differences between these modes is crucial for effectively deploying and managing Spark applications.
 
-  spark = SparkSession.builder.appName("Spark SQL Example").getOrCreate()
+### Client Mode
 
-  # Create a DataFrame
-  data = [("James", "Smith", "USA", 30),
-          ("Anna", "Rose", "UK", 25),
-          ("Robert", "Williams", "USA", 45)]
-  columns = ["firstname", "lastname", "country", "age"]
+In client mode, the Spark Driver runs on the machine from which the Spark application is submitted (often a user's local machine or an edge node in a cluster). The Spark Executors run on the worker nodes in the cluster.
 
-  df = spark.createDataFrame(data, columns)
-  df.createOrReplaceTempView("people")
+**Key Characteristics of Client Mode:**
+1. **Driver Location:** The driver runs on the client machine (the machine where the job is submitted).
+2. **Network Communication:** The driver must communicate with the executors, requiring network connectivity between the client machine and the worker nodes.
+3. **Use Case:** Suitable for interactive and development purposes where the user needs quick feedback and is typically running the application from their local machine.
+4. **Resource Management:** The client machine must have enough resources (CPU, memory) to run the driver process, as the driver is responsible for maintaining information about the application’s structure and scheduling tasks.
 
-  # Run SQL queries
-  sqlDF = spark.sql("SELECT * FROM people WHERE age > 30")
-  sqlDF.show()
-  spark.stop()
-****************************************************************
-Step 2 Run the script:
-****************************************************************
-  spark-submit spark_sql_example.py
+**Example:**
+```shell
+spark-submit --master yarn --deploy-mode client my_spark_app.py
+```
+
+### Cluster Mode
+
+In cluster mode, the Spark Driver runs inside the cluster. When the application is submitted, the cluster manager (e.g., YARN, Kubernetes, Mesos) launches the driver inside the cluster.
+
+**Key Characteristics of Cluster Mode:**
+1. **Driver Location:** The driver runs on a worker node inside the cluster, not on the client machine.
+2. **Network Communication:** Since the driver runs in the cluster, it has a better network proximity to the executors, which can reduce communication latency.
+3. **Use Case:** Suitable for production jobs and batch processing where the application needs to run reliably without user interaction and the client machine does not need to remain connected.
+4. **Resource Management:** The cluster handles the resources for both the driver and the executors, ensuring better resource utilization and management.
+
+**Example:**
+```shell
+spark-submit --master yarn --deploy-mode cluster my_spark_app.py
+```
+
+### Key Differences
+
+1. **Driver Location:**
+   - **Client Mode:** Runs on the machine from which the job is submitted.
+   - **Cluster Mode:** Runs on a worker node within the cluster.
+
+2. **Network Requirements:**
+   - **Client Mode:** Requires network connectivity between the client machine and the cluster.
+   - **Cluster Mode:** Network communication is internal to the cluster.
+
+3. **Use Cases:**
+   - **Client Mode:** Ideal for interactive and development purposes.
+   - **Cluster Mode:** Ideal for production and long-running batch jobs.
+
+4. **Resource Management:**
+   - **Client Mode:** Client machine must be resourceful enough to handle the driver process.
+   - **Cluster Mode:** Cluster resources are used to run both driver and executors.
+
+### Conclusion
+
+Choosing between client mode and cluster mode depends on the specific requirements of your Spark application. For development and interactive use cases, client mode offers a convenient way to run and test applications. For production environments, where stability and resource management are crucial, cluster mode is typically preferred.
+
 ****************************************************************
 Apache Spark Tools and Commands:
 ****************************************************************
@@ -194,52 +177,10 @@ df.show()
 # Print the schema of the DataFrame
 df.printSchema()
 ****************************************************************
-Running SQL Queries:
-****************************************************************
-You can run SQL queries directly on DataFrames by registering them as temporary views. use this code:
-****************************************************************
-
-# Register the DataFrame as a SQL temporary view
-df.createOrReplaceTempView("table")
-
-# Running a SQL query
-result = spark.sql("SELECT * FROM table WHERE age > 21")
-result.show()
 
 
-****************************************************************
-3. Spark SQL (spark-sql for SQL queries)
-****************************************************************
-   Purpose Executes SQL queries against Spark data sources.
-   Usage `spark-sql`
-   Example
-****************************************************************
-     SELECT * FROM table WHERE column = 'value';
-****************************************************************
-4. Spark Streaming (spark-submit for streaming jobs)
-****************************************************************
-   Purpose Real-time processing of streaming data.
-   Usage `spark-submit` with streaming-specific configurations.
-   Example
-****************************************************************
-     spark-submit \
-       --class com.example.StreamingApp \
-       --master yarn \
-       --deploy-mode cluster \
-       --executor-memory 2g \
-       --total-executor-cores 4 \
-       my-streaming-app.jar arg1 arg2
 
-****************************************************************
-5. Spark MLlib (machine learning library)
-****************************************************************
-   Purpose Provides machine learning algorithms and utilities.
-   Usage Import MLlib classes in Spark applications for machine learning tasks.
-   Example (Scala)
-     ```scala
-     import org.apache.spark.ml.classification.LogisticRegression
-     val lr = new LogisticRegression()
-     ```
+    
 ****************************************************************
 6. Spark Web UI
 ****************************************************************
