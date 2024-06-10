@@ -1,0 +1,100 @@
+To set up and run Apache PySpark on multiple virtual machines, you need to configure a Spark cluster. Here’s a detailed guide to help you through the process:
+
+### Prerequisites
+1. **Virtual Machines**: Ensure you have four virtual machines (VMs) ready. Assign one VM as the master node and the remaining three as worker nodes.
+2. **Java Development Kit (JDK)**: Spark requires JDK 8 or later. Make sure Java is installed on all VMs.
+3. **SSH Access**: Set up passwordless SSH access from the master node to all worker nodes.
+
+### Step-by-Step Guide
+
+#### Step 1: Install Java on All VMs
+Install Java on all your virtual machines:
+```bash
+sudo apt update
+sudo apt install openjdk-11-jdk -y
+```
+
+Verify the installation:
+```bash
+java -version
+```
+
+#### Step 2: Download and Install Apache Spark
+Download Spark on each VM. Choose the version suitable for your setup (e.g., Spark 3.2.1 with Hadoop 3.2):
+
+```bash
+wget https://downloads.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz
+tar xvf spark-3.2.1-bin-hadoop3.2.tgz
+sudo mv spark-3.2.1-bin-hadoop3.2 /opt/spark
+```
+
+#### Step 3: Set Up Environment Variables
+Add Spark and Java environment variables to the `.bashrc` file on each VM:
+```bash
+echo 'export SPARK_HOME=/opt/spark' >> ~/.bashrc
+echo 'export PATH=$PATH:$SPARK_HOME/bin:$JAVA_HOME/bin' >> ~/.bashrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64' >> ~/.bashrc
+source ~/.bashrc
+```
+
+#### Step 4: Configure SSH Access
+On the master node, generate an SSH key and copy it to each worker node:
+```bash
+ssh-keygen -t rsa -P ""
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@worker-node-1
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@worker-node-2
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@worker-node-3
+```
+
+#### Step 5: Configure Spark
+Edit the `conf/spark-env.sh` file on the master node. If it doesn’t exist, create it from the template:
+```bash
+cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
+```
+
+Add the following configuration:
+```bash
+export SPARK_MASTER_HOST='master-node-ip'
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+```
+
+Create a `slaves` file in the `conf` directory on the master node and add the IP addresses of your worker nodes:
+```bash
+echo 'worker-node-1-ip' >> /opt/spark/conf/slaves
+echo 'worker-node-2-ip' >> /opt/spark/conf/slaves
+echo 'worker-node-3-ip' >> /opt/spark/conf/slaves
+```
+
+#### Step 6: Start the Cluster
+On the master node, start the Spark master:
+```bash
+/opt/spark/sbin/start-master.sh
+```
+
+On each worker node, start the worker pointing to the master:
+```bash
+/opt/spark/sbin/start-slave.sh spark://master-node-ip:7077
+```
+
+#### Step 7: Verify the Setup
+Open a web browser and navigate to `http://master-node-ip:8080`. You should see the Spark master web UI showing the connected worker nodes.
+
+#### Step 8: Submit a Spark Job
+Create a simple Python script, `example.py`, to test your setup:
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("ExampleApp").getOrCreate()
+data = [('Alice', 1), ('Bob', 2), ('Cathy', 3)]
+df = spark.createDataFrame(data, ['Name', 'Age'])
+df.show()
+spark.stop()
+```
+
+Submit the job using the following command on the master node:
+```bash
+/opt/spark/bin/spark-submit --master spark://master-node-ip:7077 example.py
+```
+
+### Conclusion
+By following these steps, you’ll have a functional Spark cluster set up across multiple virtual machines, allowing you to practice and run Apache PySpark applications. For more advanced configurations, refer to the official Spark documentation.
