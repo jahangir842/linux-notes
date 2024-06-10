@@ -1,0 +1,130 @@
+*******************************************************
+	S Offline PyPI server with pypiserver 
+*******************************************************
+Creating a local PyPI server can be done using various tools, such as 
+	
+	pypiserver
+	devpi
+	bandersnatch
+	
+*******************************************************
+Install pypiserver
+*******************************************************
+First, you need to install `pypiserver`. You can do this on a machine with internet access and then transfer the installed package to your private network if needed.
+
+	pip install pypiserver
+
+Create a Directory for Packages
+
+Create a directory where your packages will be stored. For example:
+
+
+mkdir -p packages
+
+*******************************************************
+3. Run pypiserver
+*******************************************************
+Start the `pypiserver` pointing to your package directory:
+
+
+pypi-server -p 8080 /path/to/pypi/packages
+
+
+This will start a local PyPI server on port 8080. You can change the port if needed.
+*******************************************************
+4. Upload Packages to the Local Server
+*******************************************************
+#Method 1: Manual Upload
+
+You can manually place packages (whl, tar.gz, etc.) into the `/path/to/pypi/packages` directory.
+
+#Method 2: Using Twine
+
+Install `twine` for uploading packages:
+
+
+pip install twine
+
+
+Then, upload a package to your local PyPI server:
+
+
+twine upload --repository-url http://localhost:8080 /path/to/package/*
+
+*******************************************************
+5. Configure pip to Use the Local PyPI Server
+*******************************************************
+On each client machine in your private network, configure pip to use your local PyPI server. You can do this by creating or modifying the `pip.conf` file or using command line options.
+
+#Method 1: Using pip.conf
+
+Create or edit `~/.pip/pip.conf` (or `/etc/pip.conf` for system-wide settings):
+
+ini
+[global]
+index-url = http://<local_pypi_server>:8080/simple
+
+
+Replace `<local_pypi_server>` with the IP address or hostname of the server running `pypiserver`.
+
+#Method 2: Using Command Line Options
+
+Use the `--index-url` option when installing packages:
+
+
+pip install <package_name> --index-url http://<local_pypi_server>:8080/simple
+
+*******************************************************
+6. Example Workflow
+*******************************************************
+#Step 1: Set Up the Server
+
+1. Install `pypiserver`:
+    
+    pip install pypiserver
+    
+
+2. Create a directory for your packages:
+    
+    mkdir -p /path/to/pypi/packages
+    
+
+3. Run `pypiserver`:
+    
+    pypi-server -p 8080 /path/to/pypi/packages
+    
+
+#Step 2: Upload Packages
+
+1. Download the package on a machine with internet access:
+    
+    pip download requests
+    
+
+2. Upload the package to your local PyPI server using `twine`:
+    
+    twine upload --repository-url http://localhost:8080 /path/to/downloaded/requests*
+    
+
+#Step 3: Configure Client Machines
+
+1. Edit `pip.conf` on each client machine:
+    ini
+    [global]
+    index-url = http://<local_pypi_server>:8080/simple
+    
+
+2. Install packages using the local PyPI server:
+    
+    pip install requests
+    
+
+Additional Tips
+
+- **Security:** If your local PyPI server is accessible over a network, consider securing it using SSL/TLS and authentication.
+- **Automation:** Use scripts to automate the process of downloading, transferring, and uploading packages.
+- **Updates:** Regularly update the packages on your local PyPI server to keep up with new releases and security patches.
+
+By following these steps, you can create a robust local PyPI server to manage Python packages within a private network, ensuring your systems remain up-to-date and consistent with your internal policies.
+
+

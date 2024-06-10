@@ -1,0 +1,58 @@
+*******************************************************
+***************  Install PIP Packages *****************
+*******************************************************
+Summary
+
+    Offline Installation: 	Download packages on a connected machine and transfer them.
+    Local PyPI Server: 		Set up a private PyPI server.
+    Shared Network Directory: 	Share the downloaded packages over the network.
+    Environment Repository: 	Package and deploy a pre-configured environment.
+
+Each method has its use cases and can be chosen based on the network setup and administrative preferences.
+
+*******************************************************
+Download the Packages:
+
+On a machine with internet access, download the desired packages and their dependencies using the following command:
+
+	pip download <package_name>
+
+This will download the package and all its dependencies as .whl files or source archives.
+*******************************************************
+Using a Shared Network Directory
+*******************************************************
+Share the directory containing the downloaded packages over the network.
+
+*******************************************************
+python packages installation On Client 
+*******************************************************
+
+On the target machine, use the following command to install the packages from the transferred files:
+you can make a requirements.txt file and write the required packages.
+
+pip install --no-index --find-links=/mnt/repo/ -r requirements.txt
+
+pip install --no-index --find-links=user@192.168.1.70:/home/user/packages -r requirements.txt
+
+
+
+You can create a mount point of that share directory of pip packages
+
+sudo mkdir -p /mnt/abc
+sudo mount -t cifs //192.168.1.70/Repo /mnt/abc/ -o username=user
+
+# it will prompt for password...
+
+***********************create certificate ****************************************
+
+
+pip install --no-index --find-links=root@192.168.1.79:/new/ -r requirements.txt
+
+pandas==2.2.1
+
+pip install pandas --no-index --find-links=root@192.168.1.79:/new/
+
+
+
+
+
