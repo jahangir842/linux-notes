@@ -1,73 +1,43 @@
 ********************************************************
 	Set Data, Time and Zone
 ********************************************************
-Setting the time, date, and timezone in Ubuntu can be done using either the command line or the graphical user interface (GUI). Below are the steps for both methods.
+Summary of different methods:
 
-Using the Command Line
+    date: 		Quick way to manually set date and time.
+    timedatectl: 	Modern and recommended method with systemd.
+    hwclock: 		Manages hardware clock.
+    ntpd: 		Traditional NTP daemon for network time synchronization.
+    chrony: 		Modern and efficient NTP client for time synchronization.
+
 ********************************************************
-1. Check Current Time and Date**
+1. Using the date Command (old method)
+********************************************************
+	sudo date MMDDhhmm[[CC]YY][.ss]
+Example: June 9, 2023, and the time to 10:45:30 AM
+	sudo date 060910452023.30
 
-   To check the current time and date:
+This sets the date to June 9, 2023, and the time to 10:45:30 AM.
 
+********************************************************
+2. Using the timedatectl Command
+********************************************************
+Check Current Time and Date
    timedatectl
-
+   timedatectl status
+   timedatectl show
 ********************************************************
-2. Set the Time**
-
-   To set the time, use the following format `HH:MM:SS` (24-hour format):
-
+Set the Time and Date:
    sudo timedatectl set-time 14:30:00
-
-********************************************************
-3. Set the Date**
-
-   To set the date, use the following format `YYYY-MM-DD`:
-
    sudo timedatectl set-time 2024-06-07
-
+   sudo timedatectl set-time '2023-06-09 10:45:30'
 ********************************************************
-4. Set the Timezone**
-
-   To list all available timezones:
-
+List all the Timezone
    timedatectl list-timezones
-
 ********************************************************
-   To set the timezone, use one of the listed timezones (e.g., `America/New_York`):
-
-   sudo timedatectl set-timezone America/New_York
-
+To set the timezone
+   sudo timedatectl set-timezone Asia/Karachi
 ********************************************************
-5. Synchronize Time with NTP**
-
-   Ensure that Network Time Protocol (NTP) synchronization is enabled:
-
+Synchronize Time with NTP:
+Ensure that Network Time Protocol (NTP) synchronization is enabled:
    sudo timedatectl set-ntp true
-
 ********************************************************
-Example:
-********************************************************
-2. Set the Date**
-
-   sudo timedatectl set-time 2024-06-08
-
-
-3. Set the Time**
-
-   sudo timedatectl set-time 15:45:00
-
-
-4. Set the Timezone**
-
-   sudo timedatectl set-timezone Europe/London
-
-
-5. Verify Changes**
-
-   timedatectl
-    Output should reflect the new date, time, and timezone settings.
-********************************************************
-
-By following these steps, you can configure the time, date, and timezone on your Ubuntu system either through the command line or the GUI, ensuring your system's clock is correctly set.
-
-	
