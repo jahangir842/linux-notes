@@ -1,0 +1,73 @@
+********************************************************
+	Set Data, Time and Zone
+********************************************************
+Setting the time, date, and timezone in Ubuntu can be done using either the command line or the graphical user interface (GUI). Below are the steps for both methods.
+
+Using the Command Line
+********************************************************
+1. Check Current Time and Date**
+
+   To check the current time and date:
+
+   timedatectl
+
+********************************************************
+2. Set the Time**
+
+   To set the time, use the following format `HH:MM:SS` (24-hour format):
+
+   sudo timedatectl set-time 14:30:00
+
+********************************************************
+3. Set the Date**
+
+   To set the date, use the following format `YYYY-MM-DD`:
+
+   sudo timedatectl set-time 2024-06-07
+
+********************************************************
+4. Set the Timezone**
+
+   To list all available timezones:
+
+   timedatectl list-timezones
+
+********************************************************
+   To set the timezone, use one of the listed timezones (e.g., `America/New_York`):
+
+   sudo timedatectl set-timezone America/New_York
+
+********************************************************
+5. Synchronize Time with NTP**
+
+   Ensure that Network Time Protocol (NTP) synchronization is enabled:
+
+   sudo timedatectl set-ntp true
+
+********************************************************
+Example:
+********************************************************
+2. Set the Date**
+
+   sudo timedatectl set-time 2024-06-08
+
+
+3. Set the Time**
+
+   sudo timedatectl set-time 15:45:00
+
+
+4. Set the Timezone**
+
+   sudo timedatectl set-timezone Europe/London
+
+
+5. Verify Changes**
+
+   timedatectl
+    Output should reflect the new date, time, and timezone settings.
+********************************************************
+
+By following these steps, you can configure the time, date, and timezone on your Ubuntu system either through the command line or the GUI, ensuring your system's clock is correctly set.
+
+	
