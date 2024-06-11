@@ -52,9 +52,7 @@ The page shows your Spark URL, status information for workers, hardware resource
 Start Standalone Spark Master Server
 ****************************************************************
 In the terminal, type:
-
-start-master.sh
-start-worker.sh
+     start-master.sh
 http://<IP ADDRESS>:8080
 ****************************************************************
 Additionaly Install Python:
@@ -75,4 +73,28 @@ By following above steps: We did 2 type of installations:
     Python Integration: Installing PySpark with pip3 sets up the Python bindings and dependencies, making it possible to use Spark with Python and ensuring compatibility with other Python packages.
 
 This dual approach ensures that your Spark installation is complete and that you can effectively use Spark within your Python environment.
+****************************************************************
+Generate SSH Key Pair on Master Node and send to all workers
+****************************************************************
+Passwordless SSH access is needed to the master node to allow seamless communication and task distribution between the master and worker nodes in a Spark cluster. It enables the master node to remotely execute commands and manage the worker nodes without manual password entry, facilitating automated cluster operations and job execution.
+****************************************************************
+	ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Ensure the SSH agent is running (optional but recommended for managing keys):
+
+	eval "$(ssh-agent -s)"
+****************************************************************
+Add your private key to the SSH agent:
+
+    ssh-add ~/.ssh/id_rsa
+****************************************************************
+Copy the Public Key to Worker Nodes
+
+    ssh-copy-id user@worker-node-1-ip
+    ssh-copy-id user@worker-node-2-ip
+    ssh-copy-id user@worker-node-3-ip
+
+Replace user with your actual username on the worker nodes.
+****************************************************************
+You should be able to log in to each worker node without being prompted for a password.
 ****************************************************************

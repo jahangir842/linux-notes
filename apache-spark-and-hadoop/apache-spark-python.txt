@@ -84,28 +84,31 @@ sc.stop()
 Understanding these key terminologies is essential for effectively working with Apache Spark and building efficient data processing pipelines.
 
 ****************************************************************
-Practical Example: Writing and Running Spark Applications (e.g Word Count):
+Writing and Running Spark Applications on cluster
 ****************************************************************
-Create a text file with following command:
-	touch textfile.txt
-	echo 'this is a test file for apache spark' > textfile.txt
+Step 1 Write the PySpark script (example.py):
 ****************************************************************
-Step 1 Write the PySpark script (word_count.py):
-****************************************************************
-  from pyspark import SparkContext
+from pyspark.sql import SparkSession
 
-  if __name__ == "__main__":
-      sc = SparkContext("local", "Word Count")
-      text_file = sc.textFile("./textfile.txt")
-      counts = text_file.flatMap(lambda line: line.split(" ")) \
-                        .map(lambda word: (word, 1)) \
-                        .reduceByKey(lambda a, b: a + b)
-      counts.saveAsTextFile("output")
+# Create a SparkSession
+spark = SparkSession.builder \
+    .appName("ExampleApp") \
+    .config("spark.master", "spark://master-node-ip:7077") \
+    .getOrCreate()
+
+# Define your task or job
+data = [('Alice', 1), ('Bob', 2), ('Cathy', 3)]
+df = spark.createDataFrame(data, ['Name', 'Age'])
+df.show()
+
+# Stop the SparkSession
+spark.stop()
+
 
 ****************************************************************
 Step 2 Run the script:
 ****************************************************************
-  spark-submit word_count.py
+  spark-submit --master spark://master-node-ip:7077 --num-executors 2 --executor-cores 1 example.py
 ****************************************************************
 
 

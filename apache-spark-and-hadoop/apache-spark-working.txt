@@ -39,23 +39,19 @@ Start a Worker Process in Standalone setup:
 ****************************************************************
 In the terminal, type:
 
-	start-worker.sh spark://<master-ip>:port
+	start-worker.sh spark://<master-ip>:7077
 
 The master in the command can be an IP or hostname.
 
-For example:
-
-	start-worker.sh spark://<master-ip>:port
-
 Now that a worker is up and running, if you reload Spark Master’s Web UI, you should see it on the list:
 ****************************************************************
-Specify Resource Allocation for Workers
+Specify Resource Allocation (Cores) for Workers
 ****************************************************************
 The default setting when starting a worker on a machine is to use all available CPU cores. You can specify the number of cores by passing the -c flag to the start-slave command.
 
 For example, to start a worker and assign only one CPU core to it, enter this command:
 
-	start-slave.sh -c 1 spark://<master-ip>:port
+	start-worker.sh -c 1 spark://<master-ip>:port
 
 Reload Spark Master’s Web UI to confirm the worker’s configuration.
 
@@ -67,7 +63,8 @@ To start a worker and assign it a specific amount of memory, add the -m option a
 
 For example, to start a worker with 512MB of memory, enter this command:
 
-	start-slave.sh -m 512M spark://<master-ip>:port
+	start-worker.sh -m 512M spark://<master-ip>:port
+	start-worker.sh -c 2 -m 1G spark://<master-ip>:7077
 
 Reload the Spark Master Web UI to view the worker’s status and confirm the configuration
 
@@ -79,7 +76,7 @@ stop-master.sh
 
 To stop a running worker process, enter this command:
 
-stop-slave.sh
+stop-worker.sh
 
 ****************************************************************
 You can start both master and server instances by using the start-all command:
@@ -97,16 +94,19 @@ Apache Spark can run in two primary deployment modes: client mode and cluster mo
 ****************************************************************
 In client mode, the Spark Driver runs on the machine from which the Spark application is submitted (often a user's local machine or an edge node in a cluster). The Spark Executors run on the worker nodes in the cluster.
 
-**Key Characteristics of Client Mode:**
-1. **Driver Location:** The driver runs on the client machine (the machine where the job is submitted).
-2. **Network Communication:** The driver must communicate with the executors, requiring network connectivity between the client machine and the worker nodes.
-3. **Use Case:** Suitable for interactive and development purposes where the user needs quick feedback and is typically running the application from their local machine.
-4. **Resource Management:** The client machine must have enough resources (CPU, memory) to run the driver process, as the driver is responsible for maintaining information about the application’s structure and scheduling tasks.
+Key Characteristics of Client Mode:
+1. Driver Location: The driver runs on the client machine (the machine where the job is submitted).
 
-**Example:**
-```shell
-spark-submit --master yarn --deploy-mode client my_spark_app.py
-```
+2. Network Communication: The driver must communicate with the executors, requiring network connectivity between the client machine and the worker nodes.
+
+3. Use Case: Suitable for interactive and development purposes where the user needs quick feedback and is typically running the application from their local machine.
+
+4. Resource Management: The client machine must have enough resources (CPU, memory) to run the driver process, as the driver is responsible for maintaining information about the application’s structure and scheduling tasks.
+
+Example:
+
+      spark-submit --master yarn --deploy-mode client my_spark_app.py
+
 ****************************************************************
 ### Cluster Mode
 ****************************************************************
@@ -118,10 +118,10 @@ In cluster mode, the Spark Driver runs inside the cluster. When the application 
 3. **Use Case:** Suitable for production jobs and batch processing where the application needs to run reliably without user interaction and the client machine does not need to remain connected.
 4. **Resource Management:** The cluster handles the resources for both the driver and the executors, ensuring better resource utilization and management.
 ****************************************************************
-**Example:**
-```shell
+Example:
+
 spark-submit --master yarn --deploy-mode cluster my_spark_app.py
-```
+
 ****************************************************************
 ### Key Differences
 
@@ -152,17 +152,7 @@ Apache Spark Tools and Commands:
 ****************************************************************
    Purpose Used to submit Spark applications to a cluster for execution.
 ****************************************************************   
-   Syntax
-****************************************************************
-     spark-submit \
-       --class <main-class> \
-       --master <master-url> \
-       --deploy-mode <deploy-mode> \
-       --executor-memory <memory-per-executor> \
-       --total-executor-cores <num-cores> \
-       <application-jar> [application-arguments]
-****************************************************************
-   Example
+   Syntax Example
 ****************************************************************
      spark-submit \
        --class com.example.MySparkApp \

@@ -1,0 +1,108 @@
+****************************************************************
+        	Spark installation with Ansible
+****************************************************************
+Install Ansible
+Install Ansible on your control machine (the machine from which you will run the Ansible commands).
+
+****************************************************************
+sudo apt update
+sudo apt install ansible -y
+****************************************************************
+
+#### Step 2: Prepare Your Ansible Inventory
+Create an inventory file to list all your nodes. This file will define the master and worker nodes.
+
+Create a file named `inventory.ini` and write following script:
+****************************************************************
+[master]
+master-node-ip
+
+[workers]
+worker-node-1-ip
+worker-node-2-ip
+worker-node-3-ip
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
+****************************************************************
+#### Step 3: Write the Ansible Playbook
+Create a directory for your playbook and configuration files:
+****************************************************************
+mkdir -p ansible/playbooks
+cd ansible/playbooks
+****************************************************************
+
+Create a playbook file named `spark-setup.yml`:
+****************************************************************
+---
+- hosts: all
+  become: yes
+  tasks:
+    - name: Ensure Java is installed
+      apt:
+        name: openjdk-11-jdk
+        state: present
+
+    - name: Download Spark
+      get_url:
+        url: https://downloads.apache.org/spark/spark-3.2.1/spark-3.2.1-bin-hadoop3.2.tgz
+        dest: /tmp/spark-3.2.1-bin-hadoop3.2.tgz
+        mode: '0644'
+
+    - name: Extract Spark
+      unarchive:
+        src: /tmp/spark-3.2.1-bin-hadoop3.2.tgz
+        dest: /opt/
+        remote_src: yes
+
+    - name: Set environment variables
+      blockinfile:
+        path: /etc/profile.d/spark.sh
+        block: |
+          export SPARK_HOME=/opt/spark-3.2.1-bin-hadoop3.2
+          export PATH=$PATH:$SPARK_HOME/bin
+          export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+
+- hosts: master
+  become: yes
+  tasks:
+    - name: Start Spark Master
+      command: /opt/spark-3.2.1-bin-hadoop3.2/sbin/start-master.sh
+
+- hosts: workers
+  become: yes
+  tasks:
+    - name: Start Spark Worker
+      command: /opt/spark-3.2.1-bin-hadoop3.2/sbin/start-slave.sh spark://{{ hostvars['master']['ansible_default_ipv4']['address'] }}:7077
+****************************************************************
+Step 4: Configure SSH Access
+Ensure that you have passwordless SSH access set up from your control machine to all nodes (both master and workers).
+
+On your control machine, generate an SSH key pair if you don't already have one:
+****************************************************************
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+****************************************************************
+
+Copy the SSH public key to each node:
+****************************************************************
+ssh-copy-id user@master-node-ip
+ssh-copy-id user@worker-node-1-ip
+ssh-copy-id user@worker-node-2-ip
+ssh-copy-id user@worker-node-3-ip
+****************************************************************
+
+#### Step 5: Run the Ansible Playbook
+Navigate to the directory where your playbook and inventory file are located, and run the Ansible playbook:
+```bash
+ansible-playbook -i inventory.ini spark-setup.yml
+```
+
+### Summary
+This guide provides a simple Ansible setup to automate the deployment of Apache Spark across multiple nodes. The playbook handles Java installation, Spark download and extraction, environment variable setup, and starting the Spark master and worker services.
+
+### Troubleshooting Tips
+- **SSH Connection Issues**: Ensure that SSH keys are correctly distributed and that the control machine can SSH into all nodes without a password.
+- **File Permissions**: Ensure that the files being copied and executed have the correct permissions.
+- **Ansible Version**: Make sure you are using a compatible version of Ansible. Newer versions may have different module names or syntax.
+
+Feel free to modify the playbook according to your specific requirements, such as adding error handling, custom configurations, or other software installations.
