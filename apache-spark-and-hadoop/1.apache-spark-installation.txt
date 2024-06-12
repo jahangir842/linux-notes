@@ -1,16 +1,6 @@
 ****************************************************************
         		Apache Spark (a processing engine)
 ****************************************************************
-Apache Spark is an open-source, distributed computing system designed for fast processing of large-scale data. It provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Here’s an overview of its key components and capabilities:
-****************************************************************
-Key Components of Apache Spark:
-****************************************************************
-1. Spark Core: The foundation of Spark, providing basic I/O functionalities, task scheduling, and memory management.
-2. Spark SQL: Module for structured data processing. It provides a programming interface for working with structured data using SQL.
-3. Spark Streaming: Enables processing of live data streams.
-4. MLlib: Spark’s machine learning library.
-5. GraphX: API for graphs and graph-parallel computation.
-****************************************************************
 How to Use Apache Spark:
 ****************************************************************
 #1. Setup and Installation:
