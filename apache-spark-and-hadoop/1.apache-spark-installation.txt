@@ -36,8 +36,32 @@ Download and Install Apache Spark:
 Update bashrc: 
 ****************************************************************
 echo "export SPARK_HOME=/opt/spark" >> ~/.bashrc
-echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" >> ~/.bashrc
+echo 'export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64' >> ~/.bashrc
+echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin:$JAVA_HOME/bin'" >> ~/.bashrc
 source ~/.bashrc
+
+****************************************************************
+Configure Spark
+****************************************************************
+Edit the `conf/spark-env.sh` file on the master node. If it doesn’t exist, create it from the template: run the following commands;
+****************************************************************
+	cp /opt/spark/conf/spark-env.sh.template /opt/spark/conf/spark-env.sh
+	nano /opt/spark/conf/spark-env.sh
+****************************************************************
+And add the following configuration:
+****************************************************************
+
+export SPARK_MASTER_HOST='master-node-ip'
+export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+****************************************************************
+
+Create a `workers` file in the `conf` directory on the master node and add the IP addresses of your worker nodes:  run the following commands;
+****************************************************************
+cp /opt/spark/conf/worker.template /opt/spark/conf/worker
+echo 'worker-node-1-ip' >> /opt/spark/conf/workers
+echo 'worker-node-2-ip' >> /opt/spark/conf/workers
+echo 'worker-node-3-ip' >> /opt/spark/conf/workers
+
 ****************************************************************
 Start the Spark in Terminal:
 ****************************************************************
