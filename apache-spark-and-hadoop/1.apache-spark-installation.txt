@@ -69,6 +69,12 @@ In the terminal, type:
      start-master.sh
 http://<IP ADDRESS>:8080
 ****************************************************************
+
+
+
+
+
+****************************************************************
 Additionaly Install Python:
 ****************************************************************
 Install Python 3 Pip: If pip (Python package installer) is not already installed, you can install it using 
