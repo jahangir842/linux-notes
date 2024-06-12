@@ -1,0 +1,100 @@
+****************************************************************    
+Start the Spark Master Server:
+****************************************************************
+In the terminal, type:
+	start-master.sh
+	or 
+	start-master.sh --host <IP ADDRESS> --port 7077
+
+open a web browser and enter the localhost IP address on port 8080.
+	http://<IP ADDRESS>:8080
+
+The page will show your Spark URL, status information for workers, hardware resource utilization, etc.
+****************************************************************
+Start a Worker Process:
+****************************************************************
+In the terminal, type:
+	start-worker.sh spark://<master-ip>:7077
+****************************************************************
+Start a Worker Process and Specify Resource Allocation (Cores) for Workers
+****************************************************************
+The default setting when starting a worker on a machine is to use all available CPU cores. You can specify the number of cores by passing the -c flag to the start-slave command.
+
+For example, to start a worker and assign only one CPU core to it, enter this command:
+
+	start-worker.sh -c 1 spark://<master-ip>:port
+
+Reload Spark Master’s Web UI to confirm the worker’s configuration.
+
+****************************************************************
+
+Similarly, you can assign a specific amount of memory when starting a worker. The default setting is to use whatever amount of RAM your machine has, minus 1GB.
+
+To start a worker and assign it a specific amount of memory, add the -m option and a number. For gigabytes, use G and for megabytes, use M.
+
+For example, to start a worker with 512MB of memory, enter this command:
+
+	start-worker.sh -m 512M spark://<master-ip>:port
+	start-worker.sh -c 2 -m 1G spark://<master-ip>:port
+
+Reload the Spark Master Web UI to view the worker’s status and confirm the configuration
+
+****************************************************************
+Writing and Running Spark Applications on cluster
+****************************************************************
+Step 1 Write the PySpark script (example.py):
+****************************************************************
+from pyspark.sql import SparkSession
+
+# Create a SparkSession
+spark = SparkSession.builder \
+    .appName("ExampleApp") \
+    .config("spark.master", "spark://master-node-ip:7077") \
+    .getOrCreate()
+
+# Define your task or job
+data = [('Alice', 1), ('Bob', 2), ('Cathy', 3)]
+df = spark.createDataFrame(data, ['Name', 'Age'])
+df.show()
+
+# Stop the SparkSession
+spark.stop()
+
+
+****************************************************************
+Step 2 Run the script:
+****************************************************************
+  spark-submit --master spark://master-node-ip:7077 --num-executors 2 --executor-cores 1 example.py
+****************************************************************
+To stop the master instance started by executing the script above, run:
+
+stop-master.sh
+
+To stop a running worker process, enter this command:
+
+stop-worker.sh
+
+****************************************************************
+You can start both master and server instances by using the start-all command:
+
+start-all.sh
+
+Similarly, you can stop all instances by using the following command:
+
+stop-all.sh
+
+
+****************************************************************
+Start the Spark in Terminal:
+****************************************************************
+     - Scala: `spark-shell`
+     - Python: `pyspark`
+     
+To view the Spark Web user interface:
+
+http://<IP ADDRESS>:4040
+
+The page shows your Spark URL, status information for workers, hardware resource utilization, etc. 
+
+
+
