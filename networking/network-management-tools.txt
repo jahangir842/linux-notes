@@ -29,6 +29,12 @@ For Red Hat-based systems (e.g., CentOS, Fedora), edit /etc/sysconfig/network-sc
 Create or modify a network configuration file for the interface, e.g., /etc/systemd/network/10-static-en.network:
 Edit the netplan configuration file, e.g., /etc/netplan/01-netcfg.yaml:
 
+******************** Manually edit the interfaces file *******************************
+
+change the following file
+	/etc/network/interfaces
+
+
 ******************************** Detail *****************************************
 
 Networkd vs network manager  vs netplan 
