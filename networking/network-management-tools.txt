@@ -31,8 +31,18 @@ Edit the netplan configuration file, e.g., /etc/netplan/01-netcfg.yaml:
 
 ******************** Manually edit the interfaces file *******************************
 
-change the following file
-	/etc/network/interfaces
+change the ip following file
+	sudo nano /etc/network/interfaces
+	sudo systemctl restart networking
+
+
+formate:
+
+auto eth0
+iface eth0 inet static
+    address 192.168.1.20
+    netmask 255.255.255.0
+    gateway 192.168.1.1
 
 
 ******************************** Detail *****************************************
