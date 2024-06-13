@@ -1,0 +1,62 @@
+how to install redmine on ubuntu
+
+Update System Packages:
+
+	sudo apt update
+	sudo apt upgrade
+
+Install Dependencies:
+
+	sudo apt install -y build-essential libmariadb-dev libmagick++-dev libxml2-dev libxslt1-dev zlib1g-dev libssl-dev 
+	libffi-dev libyaml-dev libgmp-dev libreadline-dev libncurses5-dev libffi-dev libgdbm6 libgdbm-dev libsqlite3-dev
+	libpq-dev libcurl4-openssl-dev
+
+Install Ruby:
+Redmine requires Ruby. You can use rbenv {or rvm(ruby virtual manager)} manage Ruby versions:
+
+	git clone https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
+	rbenv install 2.6.8
+	sudo apt install -y rbenv
+	rbenv install 2.6.8
+	rbenv global 2.6.8
+	
+Install Bundler:
+	gem install bundler
+
+Download and Extract Redmine:
+
+	wget https://www.redmine.org/releases/redmine-x.x.x.tar.gz
+	tar -zxvf redmine-x.x.x.tar.gz
+	sudo mv redmine-x.x.x /opt/redmine
+
+Configure Redmine:
+
+	cd /opt/redmine
+	cp config/configuration.yml.example config/configuration.yml
+	cp config/database.yml.example config/database.yml
+
+Edit config/database.yml to configure your database settings.
+
+Install Redmine Dependencies:
+
+	bundle install --without development test
+	Generate Secret Token:
+
+	bundle exec rake generate_secret_token
+
+Run Database Migrations:
+
+	RAILS_ENV=production bundle exec rake db:migrate
+
+Load Default Data:
+
+	RAILS_ENV=production REDMINE_LANG=en bundle exec rake redmine:load_default_data
+
+Start the Application:
+ 
+	sudo service apache2 restart
+
+
+Now, you should be able to access Redmine by navigating to http://your_server_ip in your web browser.
+
+

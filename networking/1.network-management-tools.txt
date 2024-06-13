@@ -1,0 +1,75 @@
+********************************************************************************
+			Network Management Tools 
+********************************************************************************
+Traditional naming:
+eth: 	Traditional naming (e.g., `eth0`, `eth1`), inconsistent across reboots.
+predictable naming:
+ens: 	(Ethernet slot) Modern predictable naming (e.g., `ens33`), consistent and based on hardware location.
+eno1: 	(Ethernet Onboard 1) Onboard Ethernet interface, built into the motherboard.
+enp0s3: (PCI 2 slot 1) PCI Ethernet interface, connected via a specific PCI slot on the motherboard.
+********************************************************************************
+for checking which tool is being used in a system:
+********************************************************************************
+	systemctl status systemd-networkd
+	systemctl status NetworkManager
+	systemctl status NetworkManager or systemd-networkd  (for netplan)
+	systemctl status networking (old method)
+
+
+ps aux | grep -E 'systemd-networkd|NetworkManager|netplan'
+
+Inspect Network Configuration Files:
+        /etc/systemd/network/: 			 Configuration files for systemd-networkd.
+        /etc/netplan/: 				 YAML configuration files for Netplan.
+        /etc/NetworkManager/system-connections/: Configuration files for NetworkManager.
+
+
+Network Configuration Utilities:
+
+    Run utility commands specific to each network tool to see their status or configurations:
+        For systemd-networkd: networkctl status
+        For NetworkManager: nmcli general status
+        For Netplan: netplan --debug generate
+
+For Debian-based systems (e.g., Ubuntu), edit /etc/network/interfaces:
+For Red Hat-based systems (e.g., CentOS, Fedora), edit /etc/sysconfig/network-scripts/ifcfg-eth0:
+Create or modify a network configuration file for the interface, e.g., /etc/systemd/network/10-static-en.network:
+Edit the netplan configuration file, e.g., /etc/netplan/01-netcfg.yaml:
+
+*************************************************************************
+Networkd vs network manager  vs netplan 
+*************************************************************************
+systemd-networkd (Networkd):
+	Used to manage network configurations at a low level.Ideal for servers and headless systems.
+
+NetworkManager:
+    NetworkManager is a more advanced and feature-rich network management tool suitable for desktops and laptops.
+
+Netplan:
+
+    Netplan is a YAML-based network configuration tool introduced in Ubuntu 17.10 and later versions.
+    view the contents of the Netplan configuration file and look for the renderer key to determine
+    which backend tool is being used by Netplan. netplan points to /usr/sbin/netplan, it's clear that Netplan itself 
+    is installed and functioning as expected. The absence of a netplan.service in systemctl is because Netplan is not 
+    a standalone service but rather a configuration tool that generates files for the network management services 
+    (like systemd-networkd or NetworkManager) to apply.
+********************************************************************************
+networkctl Commands:
+********************************************************************************
+- `networkctl status`: 			Displays the status of all network links managed by `systemd-networkd`.
+- `networkctl list`: 			Lists all network interfaces and their statuses.
+- `networkctl up [interface]`: 		Activates the specified network interface.
+- `networkctl down [interface]`: 	Deactivates the specified network interface.
+- `networkctl status [interface]`: 	Displays detailed information about the specified network interface.
+- `networkctl reconfigure [interface]`: Reconfigures the specified network interface.
+- `networkctl flush [interface]`: 	Flushes all addresses and routes for the specified network interface.
+********************************************************************************
+These directories are located in the `/etc/network/` directory on Linux systems. Here's their location:
+
+- `/etc/network/if-down.d`: Scripts run when a network interface is brought down.
+- `/etc/network/if-post-down.d`: Scripts run after a network interface is brought down.
+- `/etc/network/if-pre-up.d`: Scripts run before bringing a network interface up.
+- `/etc/network/if-up.d`: Scripts run after bringing a network interface up.
+
+These directories are commonly used for custom scripting and automation during network interface management.
+********************************************************************************

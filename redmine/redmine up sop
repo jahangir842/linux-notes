@@ -1,0 +1,125 @@
+Redmine up
+
+Redmine installation on Ubuntu 20.04
+This manual will help you to install a fresh Redmine version from sources to the Ubuntu server.
+
+
+1. Installing dependencies
+$ sudo apt-get install curl mysql-server libmysqlclient-dev git-core subversion imagemagick libmagickwand-dev libcurl4-openssl-dev pgp
+$ sudo apt-get update
+
+Install RVM (Ruby Version Manager) as non-root
+$ gpg --keyserver hkp://keyserver.ubuntu.com --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+$ curl -sSL https://get.rvm.io | bash
+
+Now, you should load the RVM
+$ sudo su
+# source /etc/profile.d/rvm.sh
+# echo '[[ -s "/etc/profile.d/rvm.sh" ]] && source "/etc/profile.d/rvm.sh"' >> ~/.bashrc
+
+and install Ruby
+# rvm get head
+
+---------------it error of gpg ----------------------------------------
+run there commands
+command curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+command curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
+-----------------------------------------------------------------------
+
+# rvm install ruby-3.1.2
+
+2. Installing Phusion Passenger and Nginx
+# sudo apt-get install libcurl4-gnutls-dev
+# gem install passenger --no-document
+# passenger-install-nginx-module
+
+Configuring Nginx
+# systemctl stop nginx
+# curl https://raw.githubusercontent.com/makevoid/nginx-passenger-ubuntu/master/nginx/nginx.service > /lib/systemd/system/nginx.service
+# systemctl daemon-reload
+# systemctl enable nginx
+# nano /opt/nginx/conf/nginx.conf
+
+Replace server section for port 80
+
+server {
+  listen  80;
+  server_name [your_server_domain_name] # redmine.com;
+  root /var/data/redmine/public;
+  passenger_enabled on;
+  client_max_body_size      10m; # Max attachemnt size
+}
+
+Restart Nginx
+
+# systemctl stop nginx
+# systemctl start nginx
+
+3. Installing Redmine
+# mkdir /var/data
+# cd /var/data/
+# svn co http://svn.redmine.org/redmine/branches/5.0-stable redmine
+# cd /var/data/redmine
+
+Database configuration
+# nano config/database.yml
+
+Add following lines
+
+production:
+  adapter: mysql2
+  database: redmine
+  host: localhost
+  username: redmine
+  password: redmine
+  encoding: utf8
+
+development:
+  adapter: mysql2
+  database: redmine 
+  host: localhost
+  username: redmine
+  password: redmine
+  encoding: utf8
+4. Plugins installation
+Unarchive plugins to /plugins/ folder and execute
+
+# cd /var/data/redmine
+# gem install bundler --no-document
+# bundle install
+
+5. Configuring redmine
+Setup redmine folder permissions
+# cd /var/data/redmine
+# mkdir public/plugin_assets
+# chown -R www-data:www-data files log tmp public/plugin_assets config.ru
+# chmod -R 755 files log tmp public/plugin_assets
+
+Create database
+# mysql -u root -p
+
+Execute following lines to MySQL
+
+CREATE DATABASE redmine character SET utf8;
+CREATE user 'redmine'@'localhost' IDENTIFIED BY 'redmine';
+GRANT ALL privileges ON redmine.* TO 'redmine'@'localhost';
+exit
+
+Migrate database
+# cd /var/data/redmine
+# bundle exec rake db:migrate
+# bundle exec rake redmine:plugins
+
+Generate session store
+# bundle exec rake generate_secret_token 
+
+Default demo data
+If you want to, you can download some default data (statuses, workflows, trackers) to be able to start to work with your Redmine right after the first login. To do this, run the following command:
+
+# bundle exec rake redmine:load_default_data RAILS_ENV=production
+It will ask you about the preferable language and then download some default package of data to your Redmine.
+
+Start web server
+# service nginx start
+Restart Redmine
+# touch /var/data/redmine/tmp/restart.txt

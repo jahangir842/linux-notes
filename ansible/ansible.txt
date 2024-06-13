@@ -1,0 +1,123 @@
+**********************************************************
+		     Ansible
+**********************************************************
+Ansible is a powerful automation tool that can simplify many aspects of managing IT infrastructure. 
+   - Ansible is agentless, meaning it doesn't require software to be installed on the remote machines you manage.
+   - It uses YAML syntax for writing playbooks, which are files that define automation tasks.
+**********************************************************
+Installation:
+**********************************************************
+On Ubuntu, you can install Ansible using `apt`:
+     sudo apt update
+     sudo apt install ansible
+
+**********************************************************
+Inventory:
+**********************************************************
+Ansible uses an inventory file to define the hosts it manages. This can be a simple text file listing IP addresses or hostnames.
+   - Example of an inventory file (`hosts.yml`):
+**********************************************************
+     [web_servers]
+     server1 ansible_host=192.168.1.101
+     server2 ansible_host=192.168.1.102
+**********************************************************
+4. **Playbooks:**
+   - Playbooks are written in YAML and describe a set of tasks to be executed on hosts.
+   - Here's a simple playbook (`deploy_web_app.yml`) that installs Apache on the servers listed in the inventory:
+**********************************************************
+     - name: Install Apache
+       hosts: web_servers
+       become: yes  # Run tasks with root privileges
+       tasks:
+         - name: Install Apache
+           apt:
+             name: apache2
+             state: present
+**********************************************************
+You can run this playbook using the `ansible-playbook` command:
+
+     ansible-playbook -i hosts.yml deploy_web_app.yml
+**********************************************************
+5. **Modules:**
+   - Ansible provides modules for performing tasks. In the playbook example above, `apt` is a module used to install packages.
+   - There are modules for managing files, services, users, etc. Explore the Ansible documentation for a full list.
+**********************************************************
+6. **Roles:**
+   - Roles are a way to organize playbooks and reuse code. They encapsulate tasks, handlers, variables, etc., related to a specific role (e.g., web server, database server).
+**********************************************************
+7. **Dynamic Inventory:**
+   - Ansible can also use dynamic inventories, which can fetch information about hosts from external sources like AWS, Azure, etc.
+**********************************************************
+8. **Advanced Topics:**
+   - Ansible provides features like conditionals, loops, and error handling within playbooks.
+   - You can also integrate Ansible with version control systems like Git for better management of your automation code.
+**********************************************************
+example of a playbook with multiple tasks and different modules:
+**********************************************************
+- name: Configure web servers
+  hosts: web_servers
+  become: yes
+  tasks:
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+
+    - name: Create index.html
+      template:
+        src: templates/index.html.j2
+        dest: /var/www/html/index.html
+        owner: www-data
+        group: www-data
+        mode: '0644'
+
+    - name: Start Apache service
+      service:
+        name: apache2
+        state: started
+        enabled: yes
+**********************************************************
+In above playbook:
+
+    We have three tasks: installing Apache, creating an index.html file from a Jinja2 template, and starting the Apache service.
+    The apt module is used to manage packages, the template module to manage files, and the service module to manage services.
+**********************************************************
+Roles
+**********************************************************
+Roles in Ansible are a way to organize playbooks and reuse code. They contain tasks, handlers, variables, and more. Here's an example directory structure for an Ansible role:
+**********************************************************
+
+my_role/
+├── tasks/
+│   ├── main.yml
+│   ├── install_packages.yml
+│   └── configure_service.yml
+├── handlers/
+│   └── restart_service.yml
+├── templates/
+│   └── index.html.j2
+├── vars/
+│   └── main.yml
+└── README.md
+**********************************************************
+The main.yml file in the tasks directory is the entry point for the role and includes other task files like install_packages.yml and configure_service.yml. Handlers in the handlers directory are used to respond to events triggered by tasks, such as restarting a service. Templates in the templates directory are Jinja2 templates used by tasks. Variables can be defined in the vars directory.
+**********************************************************
+Dynamic Inventory
+**********************************************************
+Ansible supports dynamic inventories that can fetch information about hosts from external sources. For example, you can use an AWS dynamic inventory script to fetch EC2 instances and use them in your playbooks:
+**********************************************************
+ansible-playbook -i /path/to/aws_ec2_inventory_script playbook.yml
+**********************************************************
+Advanced Features
+**********************************************************
+Ansible provides advanced features like conditionals, loops, error handling, and more. Here's an example of using conditionals in a task:
+**********************************************************
+- name: Install Apache on Debian systems
+  apt:
+    name: apache2
+    state: present
+  when: ansible_distribution == 'Debian'
+**********************************************************
+This task will only be executed on hosts running Debian-based distributions.
+**********************************************************
+

@@ -1,0 +1,47 @@
+****************************************************************
+Netplan Installation:
+****************************************************************
+	sudo apt update
+	sudo apt install netplan.io
+Verify Installation:
+	netplan --version
+Configure Network
+	sudo nano /etc/netplan/01-netcfg.yaml
+****************************************************************
+Example Configuration of old method (with gateway)
+****************************************************************
+   network:
+     version: 2
+     ethernets:
+       ens33:
+         addresses:
+           - 192.168.1.10/24
+         gateway4: 192.168.1.1
+         nameservers:
+           addresses:
+             - 8.8.8.8
+             - 8.8.4.4
+****************************************************************
+Apply Changes
+   sudo netplan apply
+Verify IP Address Change:
+   ip addr show ens33
+****************************************************************
+Example Configuration of new method (with routes)
+****************************************************************
+network:
+  version: 2
+  ethernets:
+    ens33:
+      addresses:
+        - 192.168.1.20/24
+      routes:
+        - to: default
+          via: 192.168.1.1
+          metric: 100
+      nameservers:
+        addresses:
+          - 8.8.8.8
+          - 8.8.4.4
+****************************************************************
+

@@ -1,0 +1,34 @@
+*******************************************
+**************SQL Commands*****************
+*******************************************
+mariadb -u root -p
+SHOW DATABASES;
+use DATABASE_NAME
+SHOW TABLES;
+select user, host from user;
+CREATE USER 'jaga-podman'@'localhost' IDENTIFIED BY 'pakistan';
+GRANT ALL ON *.* TO 'jaga'@'localhost' WITH GRANT OPTION;
+CREATE TABLE test ( "name"TEXT );
+*******************************************
+*************REST ROOT PASSWORD************
+*******************************************
+sudo systemctl status mariadb
+sudo mysqld_safe --skip-grant-tables --skip-networking &
+mysql -u root
+use mysql;
+alter user 'root'@'localhost' identified by 'pakistan';
+exit
+restart the pc......and login with root password (pakistan)
+mariadb -u root -p
+*******************************************
+************* DUMP SQL WITH DATA **********
+*******************************************
+mysqldump -u user -p dbName > dumpFile.sql
+*******************************************
+********** DUMP SQL WITHOUT DATA **********
+*******************************************
+mysqldump -u user -p --no-data dbName > dumpFile.sql
+*******************************************
+************ RESTORE FROM DUMP ************
+*******************************************
+mysql -u user -p dbName < dumpFile.sql
