@@ -36,6 +36,7 @@ Edit the /etc/hosts file using a text editor like Nano or Vim.
 
 Add your FQDN after localhost. For example:
 
+	sudo nano /etc/hosts
 	127.0.0.1 localhost mailserver.com mailserver
 
 Replace "myhost.example.com" with your desired FQDN, and "myhost" with your hostname.
@@ -83,6 +84,9 @@ verify the details as below:
 				
 				# Set the mailbox format to Maildir
 				home_mailbox = Maildir/
+				
+
+				
 
 Optional: You can create virtual aliases to forward emails sent to specific addresses to local users or scripts. Edit the virtual alias file using:
 
@@ -92,7 +96,7 @@ Add your virtual alias mappings in the format alias@example.com destination:
 
 				# Example virtual aliases
 				user1@mailserver.com  user1
-				user1@mailserver.com  user1
+				user2@mailserver.com  user2
 				support@example.com  /path/to/script.sh
 
 After modifying configuration files, apply the changes and restart Postfix:
@@ -153,9 +157,14 @@ By default, Dovecot uses system users for authentication. Ensure that the follow
 
 Set the location where Dovecot should look for mail. For local testing, you can use a directory like /var/mail/%u where %u represents the username:
 
-	#mail_location = maildir:/var/mail/%u
-	mail_location = maildir:~/Maildir
 
+Use one of the following option as required
+
+	#mail_location = Maildir:/var/mail/%u   # this saves the incomming mail in /var/mail 
+	mail_location = Maildir:~/Maildir       # this saves the incomming mail in /home/<user>   
+	
+#in Maildir:~/Maildir .....>   first Maildir shows sent item and trash,,,, second Maildir shows inbox
+	
 
 Before starting Dovecot, it's crucial to test the configuration for syntax errors. Use the following command:
 
@@ -171,6 +180,30 @@ Start the Dovecot service and enable it to start on boot:
 				Configure Firewall
 ********************************************************************************
 1. for Debian ufw:
+	sudo ufw enable
+
+# Install and enable UFW
+	sudo apt update
+	sudo apt install ufw
+	sudo ufw enable
+
+# Allow HTTP Service
+	sudo ufw allow 80/tcp
+
+# Open Ports for Postfix
+	sudo ufw allow smtp
+	sudo ufw allow 587/tcp  # SMTP Submission
+	sudo ufw allow 465/tcp  # SMTPS (optional)
+
+# Open Ports for Dovecot
+	sudo ufw allow imap
+	sudo ufw allow imaps
+	sudo ufw allow pop3
+	sudo ufw allow pop3s
+
+# Reload UFW to apply changes
+	sudo ufw reload
+
 
 
 
