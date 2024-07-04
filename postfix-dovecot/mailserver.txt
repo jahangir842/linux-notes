@@ -86,6 +86,8 @@ verify the details as below:
 				home_mailbox = Maildir/
 				
 
+				
+
 Optional: You can create virtual aliases to forward emails sent to specific addresses to local users or scripts. Edit the virtual alias file using:
 
 	sudo nano /etc/postfix/virtual
@@ -158,8 +160,10 @@ Set the location where Dovecot should look for mail. For local testing, you can 
 
 Use one of the following option as required
 
-	#mail_location = maildir:/var/mail/%u   # this saves the incomming mail in /var/mail 
-	mail_location = maildir:~/Maildir       # this saves the incomming mail in /home/<user>
+	#mail_location = Maildir:/var/mail/%u   # this saves the incomming mail in /var/mail 
+	mail_location = Maildir:~/Maildir       # this saves the incomming mail in /home/<user>   
+	
+#in Maildir:~/Maildir .....>   first Maildir shows sent item and trash,,,, second Maildir shows inbox
 	
 
 Before starting Dovecot, it's crucial to test the configuration for syntax errors. Use the following command:
