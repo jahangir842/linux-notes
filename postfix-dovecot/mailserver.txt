@@ -84,6 +84,7 @@ verify the details as below:
 				
 				# Set the mailbox format to Maildir
 				home_mailbox = Maildir/
+				
 
 Optional: You can create virtual aliases to forward emails sent to specific addresses to local users or scripts. Edit the virtual alias file using:
 
@@ -154,8 +155,11 @@ By default, Dovecot uses system users for authentication. Ensure that the follow
 
 Set the location where Dovecot should look for mail. For local testing, you can use a directory like /var/mail/%u where %u represents the username:
 
-	#mail_location = maildir:/var/mail/%u
-	mail_location = maildir:~/Maildir
+
+Use one of the following option as required
+
+	#mail_location = maildir:/var/mail/%u   # this saves the incomming mail in /var/mail 
+	mail_location = maildir:~/Maildir       # this saves the incomming mail in /home/<user>
 	
 
 Before starting Dovecot, it's crucial to test the configuration for syntax errors. Use the following command:
