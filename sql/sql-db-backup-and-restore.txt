@@ -13,7 +13,6 @@ Mariadb mysql -u root -p redmine < redmine_db_backup
 
 
 
-
 ********************** Mariadb ************************
 
 
