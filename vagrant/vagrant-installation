@@ -27,3 +27,15 @@ sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 sudo yum -y install vagrant
 *******************************************************
+Deploy Vagrant On Ubuntu 22.04
+*******************************************************
+The next part is to deploy Vagrant. Follow these steps:
+
+1. Create a project directory using the following syntax:
+
+	mkdir ~/project_name
+
+For example, create a vagrant-ubuntu project
+
+	mkdir ~/vagrant-ubuntu
+	cd ~/vagrant-ubuntu
