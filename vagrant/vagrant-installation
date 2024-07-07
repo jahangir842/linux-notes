@@ -1,37 +1,37 @@
-*******************************************************
+#######################################################
 Introduction
-*******************************************************
+#######################################################
 Vagrant is a command-line tool for building and managing virtual machines.
 
 By default, Vagrant can provision machines on top of VirtualBox, Hyper-V, and Docker. Other providers such as Libvirt (KVM), VMware and AWS can be installed via the Vagrant plugin system.
-*******************************************************
+#######################################################
 Install hypervisor
-*******************************************************
-To install Vagrant, first get a cloud (virtualization) hypervisor. Any virtual machine, such as KVM, Docker, VMware, or VirtualBox, is able to fulfill this purpose. 
+#######################################################
+Install a virtualization product such as; VirtualBox, VMware, Hyper-V. KVM or Docker. 
 
-To install VirtualBox, run:
+e.g to install VirtualBox, run:
 
 	sudo apt install virtualbox -y
-*******************************************************	
+#######################################################	
 Install Vagrant on Ubuntu With the Binary Package
-*******************************************************
+#######################################################
 wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
 
 echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
 
 sudo apt update && sudo apt install vagrant
-*******************************************************
+#######################################################
 Install Vagrant on RHEL bases With the Binary Package
-*******************************************************
+#######################################################
 sudo yum install -y yum-utils
 sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
 sudo yum -y install vagrant
-*******************************************************
+#######################################################
 Deploy Vagrant On Ubuntu 22.04
-*******************************************************
+#######################################################
 The next part is to deploy Vagrant. Follow these steps:
 
-1. Create a project directory using the following syntax:
+Create a project directory using the following syntax:
 
 	mkdir ~/project_name
 
@@ -39,3 +39,62 @@ For example, create a vagrant-ubuntu project
 
 	mkdir ~/vagrant-ubuntu
 	cd ~/vagrant-ubuntu
+
+Visit the Vagrant official website and choose a VagrantBox. For example, select and copy the ubuntu/trusty64 box name.
+
+Initialize the process with the init command:
+
+	vagrant init ubuntu/trusty64
+
+The init command initializes a Vagrant project. 
+It also creates a Vagrant configuration file, Vagrantfile, which contains the ubuntu/trusty64 box configuration.
+
+Before you can continue to the next step, ensure that Vagrant has created a Vagrantfile.
+
+Next, create and configure the virtual machine according to the Vagrantfile with:
+
+	vagrant up
+
+The command downloads the box, if not already downloaded, and creates a virtual machine 
+based on it. It appends the selected box to the VirtualBox environment. 
+The output shows the new virtual machine's default SSH address, username,
+and authentication method.
+
+To SSH into a running Vagrant virtual machine, run:
+
+	vagrant ssh
+
+The command establishes an SSH session into the running virtual machine, giving users access to the shell.
+
+#######################################################
+Other Commands:
+#######################################################
+For instance, to stop the virtual machine, run:
+	vagrant halt
+
+To delete the virtual machine, execute:
+	vagrant destroy
+
+To check the status:
+	vagrant status
+
+if you have aaccess ssd, terminate the SSH session with CTRL+D, or by logging out.
+
+	logout
+
+List your box files.
+
+	vagrant box list
+
+Remove the box file with the remove subcommand, providing the name of your box.
+
+	vagrant box remove hashicorp/bionic64
+
+Vagrant automatically syncs files to and from the guest machine.
+This way you can edit files locally and run them in your virtual development environment.
+
+By default, Vagrant shares your project directory (the one containing the Vagrantfile)
+to the /vagrant directory in your guest machine.
+
+On the virtual machine, list the files in the vagrant directory.
+	ls /vagrant
