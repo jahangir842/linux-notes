@@ -8,7 +8,6 @@ Summary of different methods:
     hwclock: 		Manages hardware clock.
     ntpd: 		Traditional NTP daemon for network time synchronization.
     chrony: 		Modern and efficient NTP client for time synchronization.
-
 ********************************************************
 1. Using the date Command (old method)
 ********************************************************
