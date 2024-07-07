@@ -1,10 +1,10 @@
-Step 1: Install the AWS CLI in Ubuntu.
+# Step 1: Install the AWS CLI in Ubuntu.
 
 curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
 unzip awscliv2.zip
 sudo ./aws/install
 
-Step 2: Configure the AWS CLI
+# Step 2: Configure the AWS CLI
 
     aws configure
 
@@ -16,7 +16,7 @@ You will be prompted to enter the following information:
     Default region name: The default region you want to use (e.g., us-west-2).
     Default output format: The output format (e.g., json, text, yaml, or table).
 
-Example:
+# Example:
 
 bash
 
@@ -25,7 +25,7 @@ bash
     Default region name [None]: us-west-2
     Default output format [None]: json
 
-Step 3: Verify the Setup
+# Step 3: Verify the Setup
 
 Check the AWS CLI version:
 
