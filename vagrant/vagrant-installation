@@ -1,0 +1,30 @@
+*******************************************************
+Introduction
+*******************************************************
+Vagrant is a command-line tool for building and managing virtual machines.
+
+By default, Vagrant can provision machines on top of VirtualBox, Hyper-V, and Docker. Other providers such as Libvirt (KVM), VMware and AWS can be installed via the Vagrant plugin system.
+*******************************************************
+Install hypervisor
+*******************************************************
+To install Vagrant, first get a cloud (virtualization) hypervisor. Any virtual machine, such as KVM, Docker, VMware, or VirtualBox, is able to fulfill this purpose. 
+
+To install VirtualBox, run:
+
+	sudo apt install virtualbox -y
+*******************************************************	
+Install Vagrant on Ubuntu With the Binary Package
+*******************************************************
+wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+
+echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+
+sudo apt update && sudo apt install vagrant
+*******************************************************
+Install Vagrant on RHEL bases With the Binary Package
+*******************************************************
+
+sudo yum install -y yum-utils
+sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/RHEL/hashicorp.repo
+sudo yum -y install vagrant
+*******************************************************
