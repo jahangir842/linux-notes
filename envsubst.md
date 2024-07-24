@@ -1,3 +1,5 @@
+### envsubst
+
 `envsubst` is a utility in Unix-like systems that is used to substitute the value of environment variables into a template file. It’s commonly used in GitLab CI/CD pipelines to dynamically generate configuration files or scripts based on environment variables.
 
 Here’s how it works:
