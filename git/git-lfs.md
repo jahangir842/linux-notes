@@ -1,6 +1,6 @@
 ### Git Large File Storage (LFS)
 
-Download the Git LFS installer from the [official website] (https://git-lfs.com/).
+Download the Git LFS installer from the [official website](https://git-lfs.com/).
 
 Download the Git LFS installer from the [official website](https://git-lfs.github.com/).
 
