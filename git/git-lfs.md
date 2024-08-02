@@ -1,5 +1,9 @@
 ### Git Large File Storage (LFS)
 
+Download the Git LFS installer from the [official website] (https://git-lfs.com/).
+
+Download the Git LFS installer from the [official website](https://git-lfs.github.com/).
+
 #### Introduction to Git LFS
 Git Large File Storage (LFS) is an extension to Git that improves the handling of large files, such as multimedia files, large datasets, and other binary files that are not well-suited for Git’s versioning and storage mechanisms. Git LFS replaces large files in your repository with text pointers inside Git while storing the large file contents on a remote server.
 
