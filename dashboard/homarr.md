@@ -27,7 +27,7 @@ To install Homarr using Docker Compose, follow these steps:
           - ./homarr/icons:/app/public/icons
           - ./homarr/data:/data
         ports:
-          - '7575:7575'
+          - '80:7575'
     ```
 
 2. In the same directory, run the following command to start the Homarr container in the background:
