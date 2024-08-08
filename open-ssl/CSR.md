@@ -2,6 +2,14 @@
 #### Overview
 A Certificate Signing Request (CSR) is a block of encoded text that is given to a Certificate Authority (CA) when applying for an SSL/TLS certificate. It contains information about the organization and the public key that will be included in the certificate. The CA uses the CSR to create and sign the certificate.
 
+### Useful links:
+
+**CSR Installation on IIS Server** https://www.youtube.com/watch?v=30JnI06Pj74
+
+**Article** https://www.globalsign.com/en/blog/what-is-a-certificate-signing-request-csr
+
+
+
 #### Key Components of a CSR
 
 1. **Distinguished Name (DN):**
