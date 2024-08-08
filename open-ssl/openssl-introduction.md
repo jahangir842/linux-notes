@@ -1,4 +1,4 @@
-### OpenSSL: Detailed Notes
+### OpenSSL
 
 #### Overview
 OpenSSL is a robust, full-featured open-source toolkit implementing the Secure Sockets Layer (SSL) and Transport Layer Security (TLS) protocols. It provides a comprehensive suite of cryptographic functions and is widely used in various applications, including web servers, to secure communications over networks.
