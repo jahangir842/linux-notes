@@ -46,9 +46,9 @@ Sure, here is a complete guide to resizing an LVM partition to utilize additiona
    sudo partprobe /dev/sda
    ```
 
-#### Step 3: Resize the Physical Volume (skip it for now)
+#### Step 3: Resize the Physical Volume 
 
-1. **Check Filesystem Integrity**:
+1. **Check Filesystem Integrity (skip it for now)**:
    ```bash
    sudo umount /dev/sda3  # Unmount if mounted
    sudo fsck /dev/sda3
