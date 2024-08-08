@@ -41,12 +41,12 @@ Sure, here is a complete guide to resizing an LVM partition to utilize additiona
      - Use the default value for the end sector to utilize the full available space.
    - Write the changes: Press `w`.
 
-3. **Rescan the Partition Table**:
+3. **Rescan the Partition Table (skip it for now)**:    
    ```bash
    sudo partprobe /dev/sda
    ```
 
-#### Step 3: Resize the Physical Volume
+#### Step 3: Resize the Physical Volume (skip it for now)
 
 1. **Check Filesystem Integrity**:
    ```bash
