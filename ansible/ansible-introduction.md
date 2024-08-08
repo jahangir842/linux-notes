@@ -1,3 +1,6 @@
+**Getting Started with Ansible**
+https://docs.ansible.com/ansible/latest/getting_started/index.html
+
 ### Ansible Overview
 
 Ansible is an open-source automation tool used for configuration management, application deployment, task automation, and IT orchestration. It allows administrators and DevOps engineers to define infrastructure as code (IaC) in a simple and human-readable YAML syntax. Ansible is agentless, meaning it doesn't require any software to be installed on the managed nodes, making it lightweight and easy to implement.
