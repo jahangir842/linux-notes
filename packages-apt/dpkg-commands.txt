@@ -15,3 +15,5 @@ configuration files of a package
 	or
 	dpkg-query -L package-name
 
+dpkg --get-selections  ??
+
