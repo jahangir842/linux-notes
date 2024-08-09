@@ -1,8 +1,8 @@
-### Detailed Notes About Let's Encrypt
+## Let's Encrypt
 
 **Official Site** https://letsencrypt.org/
 
-**christianlempa Tutorial**   https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
+**Christian Lempa Tutorial**   https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
 
 ---
 
