@@ -1,4 +1,4 @@
-# Detailed Notes on Creating and Installing a Self-Signed SSL Certificate
+# Self-Signed SSL Certificate
 
 **Christian Lempa Tutorial**   https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
 
