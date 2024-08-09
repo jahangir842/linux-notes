@@ -2,7 +2,7 @@
 
 **Official Site** https://letsencrypt.org/
 
-**Christian Lempa Tutorial**   https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s
+
 
 ---
 
