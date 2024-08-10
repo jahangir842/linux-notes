@@ -1,8 +1,6 @@
 
 ## The `mirrorlist.centos.org` no longer resolves. 
 
-Certainly! Here's an explanation of the process and the changes made:
-
 ### **Issue**
 The repository URL `mirrorlist.centos.org` is no longer resolving, meaning the system can't find or access the CentOS mirrors for updating and installing packages.
 
