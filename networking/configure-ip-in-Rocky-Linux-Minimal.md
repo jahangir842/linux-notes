@@ -1,4 +1,8 @@
-To configure the IP address and other network settings on Rocky Linux Minimal, you can follow these steps:
+To configure the IP address and other network settings on Rocky Linux Minimal, you can follow these two methods:
+
+## Configure with DHCP:
+
+To configure your Rocky Linux Minimal system to use DHCP for automatic IP address assignment, follow these steps:
 
 ### 1. **Identify Network Interface**
    First, identify the name of your network interface:
@@ -6,6 +10,62 @@ To configure the IP address and other network settings on Rocky Linux Minimal, y
    ip addr
    ```
    Look for the interface name, which is usually something like `eth0`, `enp0s3`, or similar.
+
+### 2. **Configure DHCP**
+   Edit the network interface configuration file located in `/etc/sysconfig/network-scripts/`.
+
+   Example for `ifcfg-enp0s3`:
+   ```bash
+   sudo nano /etc/sysconfig/network-scripts/ifcfg-enp0s3
+   ```
+
+   Modify or add the following lines to enable DHCP:
+   ```bash
+   DEVICE=enp0s3
+   BOOTPROTO=dhcp
+   ONBOOT=yes
+   ```
+
+   - `BOOTPROTO=dhcp`: This tells the system to use DHCP for IP assignment.
+   - `ONBOOT=yes`: This ensures the network interface is brought up automatically on boot.
+
+### 3. **Restart Network Service**
+   After configuring the interface for DHCP, restart the network service to apply the changes:
+   ```bash
+   sudo systemctl restart NetworkManager
+   ```
+
+### 4. **Verify Configuration**
+   Check if the IP address has been assigned by DHCP:
+   ```bash
+   ip addr
+   ```
+
+   You should see an IP address assigned to your interface by the DHCP server.
+
+### 5. **Enable Networking on Boot**
+   Ensure that networking is enabled to start at boot:
+   ```bash
+   sudo systemctl enable NetworkManager
+   ```
+
+With these steps, your Rocky Linux Minimal system will obtain an IP address automatically via DHCP.
+
+---
+
+## Configure with Static IP:
+
+### 1. **Identify Network Interface**
+   First, identify the name of your network interface:
+   ```bash
+   ip addr
+   ```
+   Look for the interface name, which is usually something like `eth0`, `enp0s3`, or similar.
+
+
+
+
+
 
 ### 2. **Configure Static IP**
    If you want to set a static IP address, you can create or edit a configuration file for your network interface in the `/etc/sysconfig/network-scripts/` directory.
