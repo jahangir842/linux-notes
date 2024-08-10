@@ -1,6 +1,6 @@
 To configure the IP address and other network settings on Rocky Linux Minimal, you can follow these two methods:
 
-## Configure with DHCP:
+## Option 1 - Configure with DHCP:
 
 To configure your Rocky Linux Minimal system to use DHCP for automatic IP address assignment, follow these steps:
 
@@ -53,7 +53,7 @@ With these steps, your Rocky Linux Minimal system will obtain an IP address auto
 
 ---
 
-## Configure with Static IP:
+## Option 1 - Configure with Static IP:
 
 ### 1. **Identify Network Interface**
    First, identify the name of your network interface:
