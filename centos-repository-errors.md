@@ -1,8 +1,5 @@
-Certainly! Here’s a rewritten version of the text:
 
----
-
-The `mirrorlist.centos.org` no longer resolves. 
+## The `mirrorlist.centos.org` no longer resolves. 
 
 To address this, I followed @mlazarov's advice to update the repository files, but instead of using HTTP, I switched to HTTPS:
 
