@@ -1,7 +1,3 @@
-Here’s a more detailed and refined version of the installation guide, including the download link, verification steps, and additional tips:
-
----
-
 ### **How to Install VMware Workstation 17.5.2 on Linux**
 
 #### **Step 1: Download the VMware Workstation Installer**
