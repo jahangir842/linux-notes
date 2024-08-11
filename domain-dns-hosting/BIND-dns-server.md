@@ -1,8 +1,4 @@
-Certainly! Here's a refined version of the document:
-
----
-
-## **DNS Server Setup Guide**
+## BIND DNS Server Setup Guide
 
 ### **Introduction to BIND**
 
