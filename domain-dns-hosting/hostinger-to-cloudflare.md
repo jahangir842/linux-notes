@@ -1,3 +1,5 @@
+Add a website or application to Cloudflare to make it faster, more secure, and more reliable.
+
 Shifting your domain from Hostinger to Cloudflare can offer several advantages, depending on your needs. Here are some key reasons you might consider making the switch:
 
 ### 1. **Enhanced Security**
