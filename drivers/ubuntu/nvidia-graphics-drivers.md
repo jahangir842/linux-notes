@@ -108,3 +108,19 @@ sudo apt install nvidia-utils-535-server
 ## Manual driver installation (using APT) 
 
 see https://ubuntu.com/server/docs/nvidia-drivers-installation#nvidia-drivers-releases
+
+---
+
+## Troubleshooting
+
+**Tip 1:** This is finally resolved!
+
+It is related to boot option.
+Disabled CSM support for UEFI.
+Disabled Secure Boot.
+Reinstall with 
+```
+sudo apt install nvidia-driver-520
+sudo prime-select nvidia
+```
+
