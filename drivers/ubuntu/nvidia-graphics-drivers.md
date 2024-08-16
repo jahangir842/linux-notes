@@ -4,15 +4,8 @@ https://ubuntu.com/server/docs/nvidia-drivers-installation#nvidia-drivers-releas
 
 https://www.nvidia.com/en-us/geforce/drivers/
 
-**check the drivers**
-
-```
-ubuntu-drivers list
-
-ubuntu-drivers devices
-```
-
 ### NVIDIA drivers releases 
+
 NVIDIA package two types of NVIDIA drivers:
 
 **Unified Driver Architecture (UDA) drivers** - which are recommended for the generic desktop use, and which you can also find on the NVIDIA website.
@@ -44,7 +37,12 @@ alias lbm-nouveau off
 
 **For desktop:**
 
+```
 sudo ubuntu-drivers list
+
+
+ubuntu-drivers devices
+```
 
 **for servers:**
 
@@ -72,6 +70,7 @@ nvidia-driver-550-server-open
 You can either rely on automatic detection, which will install the driver that is considered the best match for your hardware:
 
 ```
+sudo apt update
 sudo ubuntu-drivers install
 ```
 
@@ -80,6 +79,7 @@ Or you can tell the ubuntu-drivers tool which driver you would like installed. I
 Let’s assume we want to install the 535 driver:
 
 ```
+sudo apt update
 sudo ubuntu-drivers install nvidia:535
 ```
 
