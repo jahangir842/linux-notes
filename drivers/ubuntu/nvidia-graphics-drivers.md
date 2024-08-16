@@ -8,6 +8,8 @@ https://www.nvidia.com/en-us/geforce/drivers/
 
 ```
 ubuntu-drivers list
+
+ubuntu-drivers devices
 ```
 
 ### NVIDIA drivers releases 
