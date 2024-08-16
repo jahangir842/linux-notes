@@ -130,4 +130,6 @@ sudo prime-select nvidia
 ## MISC
 
 **NVIDIA drivers** have the full set of packages, and is supported for up to 1 year.
+
 **NVIDIA server** drivers have the full set of packages as well, and is supported up to 2 years.
+
