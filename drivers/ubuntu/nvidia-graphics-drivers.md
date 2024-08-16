@@ -9,9 +9,9 @@ ubuntu-drivers list
 ### NVIDIA drivers releases 
 NVIDIA package two types of NVIDIA drivers:
 
-    **Unified Driver Architecture (UDA) drivers** - which are recommended for the generic desktop use, and which you can also find on the NVIDIA website.
+**Unified Driver Architecture (UDA) drivers** - which are recommended for the generic desktop use, and which you can also find on the NVIDIA website.
 
-    **Enterprise Ready Drivers (ERD)** - which are recommended on servers and for computing tasks. Their packages can be recognised by the -server suffix. You can read more about these drivers in the NVIDIA documentation.
+**Enterprise Ready Drivers (ERD)** - which are recommended on servers and for computing tasks. Their packages can be recognised by the -server suffix. You can read more about these drivers in the NVIDIA documentation.
 
 
 ### Check driver versions
