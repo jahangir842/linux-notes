@@ -67,7 +67,7 @@ nvidia-driver-550-server-open
 
 ### Installing the drivers for generic use (e.g. desktop and gaming)
 
-You can either rely on automatic detection, which will install the driver that is considered the best match for your hardware:
+You can either rely on automatic detection, which will install the driver that is considered the ``best match`` for your hardware:
 
 ```
 sudo apt update
