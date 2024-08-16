@@ -2,6 +2,8 @@
 
 https://ubuntu.com/server/docs/nvidia-drivers-installation#nvidia-drivers-releases
 
+https://www.nvidia.com/en-us/geforce/drivers/
+
 **check the drivers**
 
 ```
