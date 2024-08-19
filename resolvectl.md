@@ -1,4 +1,4 @@
-### Detailed Notes on the `resolvectl` Command
+### `resolvectl` Command
 
 The `resolvectl` command is part of the `systemd-resolved` service in systemd-based Linux distributions, such as Ubuntu. It replaces the older `systemd-resolve` command and provides a comprehensive interface for resolving DNS queries, managing the DNS cache, and configuring DNS settings on the system.
 
