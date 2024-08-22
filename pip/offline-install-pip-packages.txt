@@ -1,7 +1,3 @@
-Here's a revised version:
-
----
-
 # **Install PIP Packages Offline**
 
 ## Summary
