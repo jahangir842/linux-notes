@@ -1,10 +1,5 @@
 ### Editing Text Files from the Shell Prompt with Vim
 
-**Objectives:**  
-By the end of this section, you should be able to create and edit text files from the command line using the `vim` editor.
-
----
-
 ### Why Learn Vim?
 
 - **Text-Based Configurations:** In Linux, configurations and settings are often stored in text-based files (INI, XML, YAML, etc.), making it essential to know how to edit them.
