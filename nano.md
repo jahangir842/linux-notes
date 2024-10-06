@@ -86,11 +86,13 @@ If you encounter issues such as "cutbuffer is empty," make sure to:
 | `Ctrl + X`          | Exit Nano                                 |
 | `Ctrl + O`          | Save changes                              |
 | `Ctrl + W`          | Search for text                           |
-| `Ctrl + K`          | Cut current line or selected text        |
+| `Ctrl + \`          | Search and Replace for text               |
+| `Ctrl + K`          | Cut current line or selected text         |
 | `Ctrl + U`          | Paste text                                |
 | `Alt + A`           | Start selecting text                      |
-| `Alt + Shift + 6`   | Copy selected text to the buffer         |
+| `Alt + Shift + 6`   | Copy selected text to the buffer          |
 | `Ctrl + Y`          | Scroll up one page                        |
 | `Ctrl + V`          | Scroll down one page                      |
 | `Alt + U`           | Undo last action                          |
 | `Alt + E`           | Redo last undone action                   |
+|---------------------|-------------------------------------------|
