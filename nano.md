@@ -95,4 +95,3 @@ If you encounter issues such as "cutbuffer is empty," make sure to:
 | `Ctrl + V`          | Scroll down one page                      |
 | `Alt + U`           | Undo last action                          |
 | `Alt + E`           | Redo last undone action                   |
-|---------------------|-------------------------------------------|
