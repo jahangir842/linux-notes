@@ -46,7 +46,7 @@ A user account in Linux is a means to define security boundaries between various
 
 #### Viewing Process Information:
 To view running processes along with the associated users:
-- **Show processes from the current terminal**:
+- **Show processes from the current shell**:
     ```bash
     $ ps
     ```
