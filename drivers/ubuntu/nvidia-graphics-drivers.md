@@ -107,29 +107,14 @@ sudo apt install nvidia-utils-535-server
 ```
  ---
 
-## Manual driver installation (using APT) 
+## BIOS settings
 
-see https://ubuntu.com/server/docs/nvidia-drivers-installation#nvidia-drivers-releases
+Graphics driver problems can sometimes be related to BIOS settings. Key factors include:
 
----
+1. **Integrated vs. Dedicated Graphics**: Incorrect BIOS settings may prevent the system from using the correct GPU, causing driver issues.
+2. **Secure Boot**: If enabled, Secure Boot may block unsigned drivers, leading to installation problems, especially with proprietary drivers like NVIDIA's.
+3. **PCIe Slot Settings**: Incorrect PCIe slot configuration in the BIOS can cause the GPU to not be detected or function improperly.
+4. **Legacy vs. UEFI Mode**: The wrong boot mode (Legacy vs. UEFI) may cause incompatibilities with modern or older graphics drivers.
+5. **Fast Boot**: Enabling Fast Boot might skip hardware initialization, potentially causing driver or GPU recognition issues.
 
-## Troubleshooting
-
-**Tip 1:** This is finally resolved!
-
-It is related to boot option.
-Disabled CSM support for UEFI.
-Disabled Secure Boot.
-Reinstall with 
-```
-sudo apt install nvidia-driver-520
-sudo prime-select nvidia
-```
-
----
-## MISC
-
-**NVIDIA drivers** have the full set of packages, and is supported for up to 1 year.
-
-**NVIDIA server** drivers have the full set of packages as well, and is supported up to 2 years.
-
+Checking and adjusting BIOS settings can help resolve graphics driver problems in these cases.
