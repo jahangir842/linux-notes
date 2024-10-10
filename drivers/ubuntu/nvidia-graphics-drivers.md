@@ -1,5 +1,24 @@
 ## NVIDIA drivers installation
 
+Here’s a rewritten version of the instructions:
+
+1. **Install Recommended Drivers**: 
+   - Open "Additional Drivers" in Ubuntu and install the recommended drivers for your NVIDIA GPU.
+
+2. **Install NVIDIA Toolkit**: 
+   - Download and install the NVIDIA CUDA Toolkit from [here](https://developer.nvidia.com/cuda-downloads).
+
+3. **Set Environment Variables**: 
+   - Follow this guide to configure the necessary environment variables: [Setting up NVIDIA Drivers and CUDA](https://medium.com/@mertguvencli/how-to-setup-nvidia-driver-cuda-toolkit-and-cudnn-in-ubuntu-20-4-ac5efedb4427).
+
+4. **Download cuDNN**: 
+   - Download cuDNN from the [NVIDIA cuDNN Archive](https://developer.nvidia.com/rdp/cudnn-archive).
+
+5. **Install zlib and cuDNN**: 
+   - Install zlib and then install cuDNN by following the steps in the [NVIDIA cuDNN Installation Guide](https://docs.nvidia.com/deeplearning/cudnn/archives/cudnn-895/install-guide/index.html).
+
+## Mannually Installation:
+
 https://ubuntu.com/server/docs/nvidia-drivers-installation#nvidia-drivers-releases
 
 https://www.nvidia.com/en-us/geforce/drivers/
