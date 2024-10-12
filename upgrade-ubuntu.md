@@ -125,3 +125,29 @@ After upgrading, if the system fails to boot or experiences kernel-related issue
 ### Conclusion
 
 Upgrading from **Ubuntu 22.04 LTS** to **24.04 LTS** should be a smooth process if you follow the above steps. Always back up your data and ensure the upgrade completes without interruptions. Testing after the upgrade ensures that your critical services and applications continue to work as expected.
+
+---
+
+# Alternative Way:
+
+To upgrade Ubuntu you’ll basically need to run 3 commands.
+```
+    sudo apt update
+    sudo apt upgrade
+    sudo apt dist-upgrade
+```
+If you want to be a bit more though you can do something like:
+```
+sudo apt update 
+sudo apt upgrade 
+sudo apt full-upgrade 
+sudo apt dist-upgrade 
+sudo apt-get check 
+sudo apt -f install 
+sudo apt -y clean 
+sudo apt -y autoclean 
+sudo apt autoremove 
+sudo dpkg --configure -a 
+sudo apt --fix-broken install
+```
+but usually, the first 3 commands would do the trick.
