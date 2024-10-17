@@ -6,6 +6,10 @@
 
 https://documentation.ubuntu.com/server/how-to/software/upgrade-your-release/
 
+### Release Notes of Ubuntu 24.04 Noble Numbat
+
+https://wiki.ubuntu.com/NobleNumbat/ReleaseNotes
+
 ---
 
 ### Detailed Procedure:
