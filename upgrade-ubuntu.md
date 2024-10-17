@@ -1,8 +1,14 @@
 ### **Detailed Notes: How to Upgrade Ubuntu 18.04 (Bionic) to 22.04 (Jammy Jellyfish)**
 
+---
+
 ## Official Guide:
 
 https://documentation.ubuntu.com/server/how-to/software/upgrade-your-release/
+
+---
+
+# Detailed Procedure:
 
 Upgrading your Ubuntu system from 18.04 LTS (Bionic Beaver) to 22.04 LTS (Jammy Jellyfish) is essential for security, new features, and performance improvements. The process ensures you’re using a supported version with access to updates and bug fixes. Below are the detailed steps, along with explanations about the tools involved (like `do-release-upgrade` and `dist-upgrade`) and the role of **PPAs** in the process.
 
