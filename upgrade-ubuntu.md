@@ -30,6 +30,7 @@ Run the following commands to update and upgrade your packages:
 ```bash
 sudo apt update
 sudo apt upgrade
+sudo apt full-upgrade
 sudo apt dist-upgrade
 ```
 - `apt update`: Updates the package lists.
