@@ -196,5 +196,29 @@ sudo apt update
 
 ---
 
+## While Upgrading with SSH Access:
+
+This session appears to be running under ssh. It is not recommended 
+to perform a upgrade over ssh currently because in case of failure it 
+is harder to recover. 
+
+If you continue, an additional ssh daemon will be started at port 
+'1022'. 
+Do you want to continue? 
+
+Continue [yN] y
+
+Starting additional sshd 
+
+To make recovery in case of failure easier, an additional sshd will 
+be started on port '1022'. If anything goes wrong with the running 
+ssh you can still connect to the additional one. 
+If you run a firewall, you may need to temporarily open this port. As 
+this is potentially dangerous it's not done automatically. You can 
+open the port with e.g.: 
+'iptables -I INPUT -p tcp --dport 1022 -j ACCEPT' 
+
+---
+
 ### **Conclusion**
 Upgrading Ubuntu from 18.04 to 22.04 is an important step to keep your system secure and up to date. The process involves using the `do-release-upgrade` command, while `dist-upgrade` is used to manage more complex package upgrades within the same release. PPAs can enhance your software options, but they need to be managed carefully during the upgrade process to avoid compatibility issues. Always backup your system before starting a major upgrade.
