@@ -1,4 +1,4 @@
-### **Detailed Notes: How to Upgrade Ubuntu 18.04 (Bionic) to 22.04 (Jammy Jellyfish)**
+### Upgrade Ubuntu 18.04 (Bionic) to 22.04 (Jammy Jellyfish)
 
 ---
 
