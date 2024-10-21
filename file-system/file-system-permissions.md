@@ -127,3 +127,150 @@ drwxr-xr-x. 10 root root 4096 Apr 1 17:34 ..
 | database2 can modify `lfile2`         | "Others" permissions give write access, as database2 is not in the owning group. |
 | database1 can delete `lfile1` and `lfile2` | Has write permission on the directory, which allows deleting files.             |
 
+
+---
+
+### Managing File System Permissions from the Command Line
+
+#### Objectives:
+After completing this section, you will be able to change permissions and ownership of files using command-line tools.
+
+---
+
+### Changing File and Directory Permissions
+
+The command to modify file and directory permissions from the command line is `chmod`, short for **"change mode"**. Permissions (also known as mode) can be adjusted using two methods: the symbolic method and the numeric method.
+
+#### **1. Changing Permissions with the Symbolic Method**
+**Command Structure:**
+```bash
+chmod WhoWhatWhich file|directory
+```
+- **Who**:  
+  - `u`: User (owner)  
+  - `g`: Group  
+  - `o`: Other (everyone else)  
+  - `a`: All (user, group, and others)
+- **What**:  
+  - `+`: Add permission  
+  - `-`: Remove permission  
+  - `=`: Set exact permissions
+- **Which**:  
+  - `r`: Read  
+  - `w`: Write  
+  - `x`: Execute
+
+**Examples:**
+- To remove read and write permissions for the group and others on `file1`:
+  ```bash
+  chmod go-rw file1
+  ```
+- To add execute permission for all users on `file2`:
+  ```bash
+  chmod a+x file2
+  ```
+
+The `chmod` command also supports the `-R` option, which recursively applies permissions to all files and directories within a specified directory. Using a capital `X` allows execute permission to be applied only to directories and files that already have execute permissions set.
+
+**Example:**
+To recursively set read and write permissions for the group on `demodir`, and apply execute permissions only where execute is already set:
+```bash
+chmod -R g+rwX demodir
+```
+
+---
+
+#### **2. Changing Permissions with the Numeric Method**
+
+**Command Structure:**
+```bash
+chmod ### file|directory
+```
+Each digit represents permissions for user, group, and others. The digit is calculated by adding:
+- `4` for read (`r`)
+- `2` for write (`w`)
+- `1` for execute (`x`)
+
+**Example Calculations:**
+- Permissions `-rwxr-x---`:
+  - User (`rwx`): `4 + 2 + 1 = 7`
+  - Group (`r-x`): `4 + 0 + 1 = 5`
+  - Others (`---`): `0`
+  - Numeric value: `750`
+  
+- Permissions `640`:
+  - User (`rw-`): `4 + 2 = 6`
+  - Group (`r--`): `4`
+  - Others (`---`): `0`
+  - Symbolic: `-rw-r-----`
+
+**Examples:**
+- To set read and write permissions for the user, and read permissions for the group and others on `samplefile`:
+  ```bash
+  chmod 644 samplefile
+  ```
+- To set read, write, and execute permissions for the user, read and execute permissions for the group, and no permissions for others on `sampledir`:
+  ```bash
+  chmod 750 sampledir
+  ```
+
+---
+
+### Changing File and Directory User or Group Ownership
+
+When a file is created, it is automatically owned by the user and the user’s primary group. However, ownership can be changed using the `chown` command.
+
+#### **1. Changing Ownership with `chown`**
+- **Change User Ownership:**
+  ```bash
+  chown user file
+  ```
+  Example:  
+  ```bash
+  chown student test_file
+  ```
+
+- **Change Group Ownership:**
+  ```bash
+  chown :group file
+  ```
+  Example:  
+  ```bash
+  chown :admins test_dir
+  ```
+
+- **Change Both User and Group Ownership:**
+  ```bash
+  chown user:group file
+  ```
+  Example:  
+  ```bash
+  chown visitor:guests test_dir
+  ```
+
+- **Recursively Change Ownership in a Directory:**
+  Use the `-R` option to apply changes to all files and directories within a specified directory.
+  ```bash
+  chown -R user:group directory
+  ```
+
+#### **2. Changing Group Ownership with `chgrp`**
+Alternatively, the `chgrp` command can be used to change only the group ownership of a file or directory:
+```bash
+chgrp group file
+```
+
+---
+
+#### **Important Notes on `chown` Syntax:**
+- **Use colon (`:`) syntax**: Always separate the user and group with a colon (`:`), not a period (`.`), as a period can be a valid character in a username, which might cause confusion.  
+  For example, use:
+  ```bash
+  chown user:group file
+  ```
+  instead of:
+  ```bash
+  chown user.group file
+  ```
+
+
