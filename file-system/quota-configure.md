@@ -1,5 +1,3 @@
----
-
 ## **Managing Disk Quotas in Linux with External and ext4 Quota Files**
 
 Disk quotas limit the amount of disk space users or groups can use on a Linux filesystem. Below are two ways to enable quotas in Linux: **using external quota files** and **with ext4-specific quotas**. 
