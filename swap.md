@@ -33,7 +33,9 @@ sudo swapon --show
 free -h
 ```
 
-#### Creating a Swap File
+---
+
+#### Creating a Temporary Swap File
 
 1. **Create the swap file**:
    ```bash
@@ -61,6 +63,8 @@ free -h
    sudo swapon --show
    ```
 
+---
+
 #### Making Swap Permanent
 
 To make the swap file permanent across reboots, add it to `/etc/fstab`:
@@ -77,6 +81,8 @@ To make the swap file permanent across reboots, add it to `/etc/fstab`:
 
 3. Save and exit.
 
+---
+
 #### Creating a Swap Partition
 
 1. **Use a partitioning tool** (like `fdisk` or `gparted`) to create a new partition.
@@ -91,12 +97,16 @@ To make the swap file permanent across reboots, add it to `/etc/fstab`:
 
 4. **Make it permanent** by adding it to `/etc/fstab` similar to the swap file method.
 
+---
+
 ### Adjusting Swappiness
 
 **Swappiness** is a kernel parameter that controls the balance between RAM and swap usage. It ranges from 0 to 100:
 
 - **0**: Avoid using swap; prefer to keep data in RAM.
 - **100**: Use swap aggressively; move data to swap even when there is available RAM.
+
+---
 
 #### Check Current Swappiness
 
@@ -126,6 +136,8 @@ sudo sysctl vm.swappiness=10
    ```bash
    sudo sysctl -p
    ```
+
+---
 
 ### Monitoring Swap Usage
 
