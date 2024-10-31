@@ -31,12 +31,22 @@ Disk quotas limit the amount of disk space users or groups can use on a Linux fi
      sudo apt install linux-image-extra-virtual
      ```
 
-#### **Step 2: Install Quota Management Packages**
+#### Install Quota Management Packages
 
    ```bash
    sudo apt update
    sudo apt install quota
    ```
+
+#### **Find UUID of Root Partition**
+
+The **UUID** (Universally Unique Identifier) is commonly used in `/etc/fstab` to ensure the right partitions mount in the correct location, even if the device names (like `/dev/sda1`) change between boots.
+
+To find the UUID:
+
+```bash
+sudo blkid
+```
 
 #### **Step 3: Configure `/etc/fstab` for Quotas**
 
@@ -45,6 +55,12 @@ Edit `/etc/fstab` to add `usrquota` and `grpquota` options on the desired filesy
 ```bash
 sudo nano /etc/fstab
 UUID=<filesystem-uuid> / ext4 defaults,usrquota,grpquota 0 1
+```
+
+#### Example:
+
+```plaintext
+UUID=a1b2c3d4-e5f6-7890-1234-56789abcdef0 / ext4 defaults,usrquota,grpquota 0 1
 ```
 
 - **Remount Filesystem**:
