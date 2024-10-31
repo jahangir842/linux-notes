@@ -38,27 +38,29 @@ free -h
 #### Creating a Temporary Swap File
 
 1. **Create the swap file**:
-   ```bash
-   sudo fallocate -l 1G /swapfile
+    To create a swapfile of 4 GB.
+   
+    ```bash
+   sudo fallocate -l 4G /swapfile
    ```
    (Alternatively, use `dd` if `fallocate` is not available.)
 
-2. **Set permissions**:
+3. **Set permissions**:
    ```bash
    sudo chmod 600 /swapfile
    ```
 
-3. **Make it a swap file**:
+4. **Make it a swap file**:
    ```bash
    sudo mkswap /swapfile
    ```
 
-4. **Enable the swap file**:
+5. **Enable the swap file**:
    ```bash
    sudo swapon /swapfile
    ```
 
-5. **Verify it**:
+6. **Verify it**:
    ```bash
    sudo swapon --show
    ```
