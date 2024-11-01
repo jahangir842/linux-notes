@@ -1,3 +1,5 @@
+- https://phoenixnap.com/kb/fallocate
+
 The `fallocate` command in Linux is used to allocate or deallocate space for files. It's particularly useful for managing file storage efficiently, as it can preallocate disk space without actually writing to the file, which can help improve performance, especially for large files.
 
 ### Key Features of `fallocate`
