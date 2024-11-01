@@ -46,4 +46,52 @@ Or, if you want to focus on kernel-specific logs:
 cat /var/log/kern.log | grep -i panic
 ```
 
-In short, kernel panics indicate severe, low-level system issues. Careful troubleshooting and monitoring can help both resolve and prevent them.
+---
+
+## Panic in Recovery Mode:
+
+If you're experiencing a kernel panic even in **recovery mode**, this indicates a more severe issue, often pointing to either a critical hardware failure or a fundamental problem with the kernel or system configuration. Here are steps you can try to diagnose and resolve this issue:
+
+### 1. Check for Hardware Issues
+   - **RAM**: Faulty memory is a common cause of kernel panics. Run a memory test by using the **Memtest86+** tool, which is often included in the GRUB boot menu. 
+   - **Hard Drive**: Check for disk errors or corruption. If you have access to a live USB with Linux, boot into it and run `fsck` on your disk partitions:
+     ```bash
+     sudo fsck /dev/sda1
+     ```
+     Replace `/dev/sda1` with the relevant partition.
+
+### 2. Boot with a Different Kernel
+   If you have multiple kernel versions installed, you can try booting with an older kernel. To do this:
+   - In the GRUB menu, choose “Advanced Options for [your OS name]” and select a previous kernel version from the list.
+   - If the system boots successfully, this confirms that the issue is kernel-specific. You can remove or reinstall the problematic kernel version.
+
+### 3. Use a Live USB for Further Diagnostics
+   If recovery mode isn’t accessible, use a live Linux USB (e.g., Ubuntu Live USB) to boot into a fully functional environment where you can:
+   - **Back Up Important Data**: Access your storage to back up critical files in case a full reinstall becomes necessary.
+   - **Examine System Logs**: Mount your primary drive (usually `/dev/sda1` or `/dev/nvme0n1p1`) and check for log files:
+     ```bash
+     sudo mount /dev/sda1 /mnt
+     cat /mnt/var/log/kern.log | grep -i panic
+     ```
+   - **Check Disk Health**: Use `smartctl` to see if there are errors with your drive. For example:
+     ```bash
+     sudo apt-get install smartmontools
+     sudo smartctl -a /dev/sda
+     ```
+
+### 4. Rebuild the Initramfs
+   Sometimes, a corrupted initramfs file (used for initial boot loading) can cause kernel panics. You can attempt to rebuild it from a live environment:
+   ```bash
+   sudo mount /dev/sda1 /mnt       # Mount your root partition
+   sudo chroot /mnt                # Change root to the mounted partition
+   update-initramfs -u             # Update the initramfs
+   exit
+   sudo umount /mnt
+   ```
+
+### 5. Restore from a Backup or Reinstall the OS
+   If the above steps don’t resolve the issue, you may be facing deep system corruption or incompatible updates. In this case:
+   - **Restore from a Backup** if you have one.
+   - **Reinstall the OS** as a last resort. Use the live USB to reinstall the operating system while keeping personal files (if possible).
+
+If these steps don’t lead to a resolution, there could be a hardware compatibility issue, or more advanced troubleshooting might be necessary. Let me know if any particular step here is unclear, and I can provide more detail.
