@@ -95,3 +95,172 @@ If you're experiencing a kernel panic even in **recovery mode**, this indicates 
    - **Reinstall the OS** as a last resort. Use the live USB to reinstall the operating system while keeping personal files (if possible).
 
 If these steps don’t lead to a resolution, there could be a hardware compatibility issue, or more advanced troubleshooting might be necessary. Let me know if any particular step here is unclear, and I can provide more detail.
+
+
+---
+
+The error message `Kernel panic - not syncing: Attempted to kill init! exitcode=0x0000000100` indicates that the kernel encountered a fatal error while trying to start the **init process**, the first process that runs when the system boots. This issue can arise from various causes, such as corrupted system files, issues with the boot partition, or hardware problems.
+
+Here are some steps you can try to diagnose and potentially resolve this issue:
+
+### 1. Boot into a Previous Kernel Version (if Available)
+   If you have multiple kernel versions installed:
+   - Restart the machine and, in the GRUB menu, choose **Advanced Options**.
+   - Select an older kernel from the list and see if it boots successfully.
+   
+   If this works, it’s likely the problem is with the new kernel, and you may want to remove or reinstall it.
+
+### 2. Run File System Checks
+   Boot into a **Live USB** (e.g., Ubuntu Live) and run a file system check on the root partition. Corrupted file systems are a common cause of init issues:
+   ```bash
+   sudo fsck /dev/sda1
+   ```
+   Replace `/dev/sda1` with the correct partition for your root filesystem. Run `lsblk` to list devices and identify your root partition if necessary. Repeat `fsck` for other important partitions if you have them, such as `/boot`.
+
+### 3. Reinstall GRUB Bootloader
+   GRUB corruption could also lead to boot issues. From a Live USB, reinstall GRUB by following these steps:
+   - Mount your root partition and, if applicable, your boot partition:
+     ```bash
+     sudo mount /dev/sda1 /mnt
+     sudo mount /dev/sda2 /mnt/boot   # if separate /boot
+     ```
+   - Then reinstall GRUB:
+     ```bash
+     sudo grub-install --boot-directory=/mnt/boot /dev/sda
+     sudo update-grub
+     ```
+   Replace `/dev/sda` with the appropriate disk where GRUB is installed. 
+
+### 4. Rebuild Initramfs
+   Sometimes, a corrupted initramfs file can lead to kernel panic issues. You can regenerate the initramfs using a Live USB:
+   - First, mount your root partition:
+     ```bash
+     sudo mount /dev/sda1 /mnt
+     ```
+   - Chroot into your system:
+     ```bash
+     sudo chroot /mnt
+     ```
+   - Rebuild the initramfs file:
+     ```bash
+     update-initramfs -u -k all
+     ```
+   - Exit the chroot and unmount the partitions:
+     ```bash
+     exit
+     sudo umount /mnt
+     ```
+
+### 5. Check Hardware
+   If the above steps do not resolve the issue, it could be a hardware-related problem. Check the following components:
+   - **RAM**: Run `memtest86+` from the GRUB menu (if available) to check for memory errors.
+   - **Storage**: Use `smartctl` to check the health of your hard drive or SSD:
+     ```bash
+     sudo apt-get install smartmontools
+     sudo smartctl -a /dev/sda
+     ```
+
+### 6. Try a Kernel Reinstallation
+   If an older kernel works but you want to keep your system up-to-date, consider reinstalling or updating the kernel from within the Live USB environment:
+   - First, chroot into your system (as described above).
+   - Then reinstall the latest kernel:
+     ```bash
+     sudo apt-get install --reinstall linux-image-$(uname -r)
+     ```
+
+### 7. Perform a Fresh Installation
+   As a last resort, if none of the above steps work and the kernel panic persists, you might need to consider reinstalling the operating system.
+
+If any of these steps need further clarification or if you encounter any errors during the process, please let me know.
+
+---
+
+If multiple kernels are experiencing the same kernel panic, the issue likely lies in a corrupted system file, a misconfiguration, or even a hardware problem. Here’s a set of steps to troubleshoot and potentially fix the issue, taking into account that booting into any kernel is currently impossible.
+
+### Steps to Resolve the Issue
+
+#### 1. Boot from a Live USB and Check System Files
+
+Using a Live USB, you can mount your root filesystem and check for errors in system files.
+
+1. **Boot from a Live USB**.
+2. **Identify your root partition** using `lsblk` or `fdisk -l`. Let’s assume it’s `/dev/sda1`.
+3. **Run a filesystem check**:
+   ```bash
+   sudo fsck /dev/sda1
+   ```
+   Repeat this for any other important partitions you have, like `/boot`.
+
+4. **Check the system log files** for potential causes:
+   ```bash
+   sudo mount /dev/sda1 /mnt
+   sudo cat /mnt/var/log/kern.log | grep -i panic
+   sudo cat /mnt/var/log/syslog | grep -i error
+   ```
+
+   Look for any specific errors that could indicate problems with drivers or hardware.
+
+#### 2. Check the Boot Partition and Reinstall GRUB
+
+Corrupted GRUB files can sometimes lead to a kernel panic. Reinstalling GRUB could help.
+
+1. **Mount the root partition and the boot partition (if separate)**:
+   ```bash
+   sudo mount /dev/sda1 /mnt
+   sudo mount /dev/sda2 /mnt/boot  # Only if you have a separate /boot partition
+   ```
+2. **Reinstall GRUB**:
+   ```bash
+   sudo grub-install --boot-directory=/mnt/boot /dev/sda
+   sudo update-grub
+   ```
+
+#### 3. Rebuild Initramfs in a Chroot Environment
+
+Corrupted initramfs files are another common cause of kernel panics. Rebuilding initramfs could help.
+
+1. **Chroot into your system**:
+   ```bash
+   sudo chroot /mnt
+   ```
+2. **Rebuild initramfs for all installed kernels**:
+   ```bash
+   update-initramfs -u -k all
+   ```
+3. **Exit the chroot environment and unmount**:
+   ```bash
+   exit
+   sudo umount /mnt
+   ```
+
+#### 4. Reinstall or Update the Kernel
+
+If possible, try reinstalling the kernel or upgrading to a newer one.
+
+1. **Chroot into your system** (as shown above).
+2. **Update the kernel** or reinstall it:
+   ```bash
+   sudo apt update
+   sudo apt install --reinstall linux-image-$(uname -r)
+   ```
+
+#### 5. Test for Hardware Issues
+
+If software fixes don’t help, the issue may be hardware-related.
+
+- **RAM**: Use `memtest86+` from the GRUB menu or boot it from a USB to check for RAM issues.
+- **Disk Health**: Check for disk errors using `smartctl`:
+   ```bash
+   sudo apt-get install smartmontools
+   sudo smartctl -a /dev/sda
+   ```
+  Look for any “pre-fail” or “bad” status indicators.
+
+#### 6. Consider a Full System Reinstall
+
+If the kernel panic persists and you cannot pinpoint the problem, it may be necessary to back up your data and reinstall the operating system. Boot into the Live USB environment to transfer any important files before proceeding with the reinstall.
+
+---
+
+Please let me know if you’d like more guidance on any of these steps or encounter specific errors.
+
