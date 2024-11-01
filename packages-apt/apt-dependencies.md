@@ -60,6 +60,13 @@ To download a package along with all its dependencies (without installing them):
 ```bash
 apt download $(apt-rdepends <package> | grep -v "^ ")
 ```
+
+Or modify the Command to Skip Virtual Packages You can use apt-rdepends with grep to filter out entries without specific candidates.
+
+```
+apt download $(apt-rdepends quota | grep -v "^ " | grep -v "debconf-2.0")
+```
+
 Example:
 ```bash
 apt download $(apt-rdepends sssd | grep -v "^ ")
