@@ -1,5 +1,3 @@
----
-
 ### Troubleshooting APT Packages
 
 **1. Checking for Package Issues**  
