@@ -1,4 +1,4 @@
-# **Notes on the `watch` Command in Linux**
+# **`watch` Command in Linux**
 
 The `watch` command in Linux is a utility used to execute a command repeatedly at regular intervals and display the output in real-time. It is especially useful for monitoring changes in the output of a command over time, such as system resource usage, file changes, or log updates.
 
