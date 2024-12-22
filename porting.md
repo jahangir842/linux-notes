@@ -1,4 +1,4 @@
-# Notes on Porting in Linux
+# Porting in Linux
 
 Porting refers to the process of adapting software that was originally designed for one platform (operating system, architecture, or environment) to work on another platform. In the context of Linux, porting involves modifying code or dependencies to ensure compatibility with the Linux operating system and its ecosystem.
 
