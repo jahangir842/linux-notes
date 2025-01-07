@@ -1,4 +1,4 @@
-#### What is History Expansion in Linux?**
+#### What is History Expansion in Linux?
 **History Expansion** allows you to reuse previous commands efficiently in the terminal using special shortcuts. The shell tracks the history of commands you’ve run and allows you to recall, repeat, or modify those commands without retyping them fully.
 
 ##### **Common History Expansion Features:**
