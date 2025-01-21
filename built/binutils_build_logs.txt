@@ -1,0 +1,2348 @@
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether ln works... yes
+checking whether ln -s works... yes
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for gawk... gawk
+checking for gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking for gcc option to accept ISO C99... none needed
+checking for g++... g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether g++ accepts -g... yes
+checking whether g++ accepts -static-libstdc++ -static-libgcc... yes
+checking for gnatbind... no
+checking for gnatmake... no
+checking whether compiler driver understands Ada and is recent enough... no
+checking for gdc... no
+checking whether the D compiler works... no
+checking how to compare bootstrapped objects... cmp --ignore-initial=16 $$f1 $$f2
+checking for objdir... .libs
+checking for isl 0.15 or later... no
+required isl version is 0.15 or later
+checking for default BUILD_CONFIG... 
+checking for --enable-vtable-verify... no
+*** removing libiberty/Makefile to force reconfigure
+*** removing zlib/Makefile to force reconfigure
+*** removing libsframe/Makefile to force reconfigure
+*** removing binutils/Makefile to force reconfigure
+*** removing gas/Makefile to force reconfigure
+*** removing ld/Makefile to force reconfigure
+*** removing gprof/Makefile to force reconfigure
+*** removing etc/Makefile to force reconfigure
+checking for bison... bison -y
+checking for bison... bison
+checking for gm4... no
+checking for gnum4... no
+checking for m4... m4
+checking for flex... flex
+checking for flex... flex
+checking for makeinfo... makeinfo
+checking for expect... no
+checking for runtest... no
+checking for ar... ar
+checking for as... as
+checking for dlltool... no
+checking for dsymutil... no
+checking for ld... (cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking for lipo... no
+checking for nm... nm
+checking for ranlib... ranlib
+checking for strip... strip
+checking for windres... no
+checking for windmc... no
+checking for objcopy... objcopy
+checking for objdump... objdump
+checking for otool... no
+checking for readelf... readelf
+checking for -plugin option... --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-lfs-linux-gnu-cc... no
+checking for x86_64-lfs-linux-gnu-gcc... no
+checking for x86_64-lfs-linux-gnu-c++... no
+checking for x86_64-lfs-linux-gnu-g++... no
+checking for x86_64-lfs-linux-gnu-cxx... no
+checking for x86_64-lfs-linux-gnu-gxx... no
+checking for x86_64-lfs-linux-gnu-gcc... no
+checking for x86_64-lfs-linux-gnu-gfortran... no
+checking for x86_64-lfs-linux-gnu-gccgo... no
+checking for x86_64-lfs-linux-gnu-gdc... no
+checking for x86_64-lfs-linux-gnu-gm2... no
+checking for x86_64-lfs-linux-gnu-ar... no
+checking for x86_64-lfs-linux-gnu-as... no
+checking for x86_64-lfs-linux-gnu-dlltool... no
+checking for x86_64-lfs-linux-gnu-dsymutil... no
+checking for x86_64-lfs-linux-gnu-ld... no
+checking for x86_64-lfs-linux-gnu-lipo... no
+checking for x86_64-lfs-linux-gnu-nm... no
+checking for x86_64-lfs-linux-gnu-objcopy... no
+checking for x86_64-lfs-linux-gnu-objdump... no
+checking for x86_64-lfs-linux-gnu-otool... no
+checking for x86_64-lfs-linux-gnu-ranlib... no
+checking for x86_64-lfs-linux-gnu-readelf... no
+checking for x86_64-lfs-linux-gnu-strip... no
+checking for x86_64-lfs-linux-gnu-windres... no
+checking for x86_64-lfs-linux-gnu-windmc... no
+checking where to find the target ar... just compiled
+checking where to find the target as... just compiled
+checking where to find the target cc... pre-installed
+checking where to find the target c++... pre-installed
+checking where to find the target c++ for libstdc++... pre-installed
+checking where to find the target dlltool... just compiled
+checking where to find the target dsymutil... pre-installed
+checking where to find the target gcc... pre-installed
+checking where to find the target gfortran... pre-installed
+checking where to find the target gccgo... pre-installed
+checking where to find the target gdc... pre-installed
+checking where to find the target gm2... pre-installed
+checking where to find the target ld... just compiled
+checking where to find the target lipo... pre-installed
+checking where to find the target nm... just compiled
+checking where to find the target objcopy... just compiled
+checking where to find the target objdump... just compiled
+checking where to find the target otool... pre-installed
+checking where to find the target ranlib... just compiled
+checking where to find the target readelf... just compiled
+checking where to find the target strip... just compiled
+checking where to find the target windres... just compiled
+checking where to find the target windmc... just compiled
+checking whether to enable maintainer-specific portions of Makefiles... no
+configure: creating ./config.status
+config.status: creating Makefile
+make[1]: Entering directory '/mnt/lfs/sources/binutils-2.42/build'
+make[1]: Nothing to be done for 'all-target'.
+Configuring in ./libiberty
+Configuring in ./binutils
+Configuring in ./zlib
+Configuring in ./ld
+Configuring in ./libsframe
+Configuring in ./etc
+Configuring in ./gprof
+Configuring in ./gas
+configure: loading cache ./config.cache
+configure: loading cache ./config.cache
+configure: loading cache ./config.cache
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+configure: loading cache ./config.cache
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+configure: loading cache ./config.cache
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+configure: loading cache ./config.cache
+checking whether build environment is sane... checking whether to enable maintainer-specific portions of Makefiles... no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... configure: loading cache ./config.cache
+yes
+configure: loading cache ./config.cache
+yes
+yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for makeinfo... yes
+(cached) makeinfo --split-size=5000000
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+yes
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+yes
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... (cached) yes
+(cached) yes
+checking whether make supports nested variables... (cached) yes
+(cached) yes
+checking whether make supports nested variables... checking whether make supports nested variables... (cached) (cached) yes
+yes
+checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... checking whether the C compiler works... checking whether make supports nested variables... (cached) yes
+(cached) yes
+checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... checking whether make supports nested variables... (cached) yes
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+(cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+checking whether make supports nested variables... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... checking whether make supports nested variables... no
+(cached) yes
+checking for x86_64-pc-linux-gnu-gcc... checking for x86_64-pc-linux-gnu-gcc... (cached) (cached) gcc
+gcc
+checking whether make supports nested variables... (cached) yes
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+checking that generated files are newer than configure... checking whether the C compiler works... checking whether the C compiler works... checking for perl... (cached) perl
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+checking for suffix of executables... checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for -plugin option... checking whether the C compiler works... checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+--plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking whether to install libiberty headers and static library... no
+configure: target_header_dir = 
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+yes
+checking for C compiler default output file name... a.out
+yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... checking for suffix of executables... 
+yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... checking whether the C compiler works... checking whether we are cross compiling... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+
+checking whether we are cross compiling... checking whether we are cross compiling... 
+yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... checking whether the C compiler works... checking whether we are cross compiling... no
+
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking how to run the C preprocessor... (cached) gcc -E
+checking whether we are cross compiling... 
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/grep -E
+checking for ANSI C header files... (cached) yes
+yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... checking whether we are cross compiling... no
+checking for sys/types.h... (cached) yes
+no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for style of include used by make... checking for style of include used by make... GNU
+checking for sys/stat.h... (cached) yes
+GNU
+checking dependency style of gcc... (cached) checking dependency style of gcc... gcc3
+(cached) gcc3
+checking how to run the C preprocessor... (cached) gcc -E
+no
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+no
+checking for suffix of object files... checking for style of include used by make... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for stdlib.h... checking for gcc option to accept ISO C89... (cached) (cached) yes
+none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... GNU
+(cached) gcc3
+checking how to run the C preprocessor... (cached) gcc -E
+checking dependency style of gcc... (cached) gcc3
+checking how to run the C preprocessor... (cached) gcc -E
+checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+checking whether we are using the GNU C++ compiler... (cached) yes
+checking whether g++ accepts -g... (cached) yes
+checking dependency style of g++... (cached) gcc3
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking how to run the C preprocessor... (cached) gcc -E
+checking for strings.h... (cached) yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/grep -E
+checking for ANSI C header files... (cached) yes
+
+checking for inttypes.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking whether we are cross compiling... no
+checking for stdint.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for suffix of object files... (cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking for grep that handles long lines and -e... checking whether gcc understands -c and -o together... (cached) yes
+(cached) /usr/bin/grep
+checking for grep that handles long lines and -e... checking for egrep... (cached) /usr/bin/grep -E
+(cached) checking for ANSI C header files... /usr/bin/grep
+checking for egrep... (cached) yes
+(cached) /usr/bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for style of include used by make... checking for sys/types.h... (cached) yes
+GNU
+checking for unistd.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking dependency style of gcc... (cached) gcc3
+checking how to print strings... checking for minix/config.h... (cached) no
+checking for sys/types.h... checking whether it is safe to define __EXTENSIONS__... (cached) (cached) yes
+yes
+checking for a BSD-compatible install... printf
+/usr/bin/install -c
+checking for a sed that does not truncate output... checking whether build environment is sane... (cached) /usr/bin/sed
+checking for sys/stat.h... (cached) yes
+checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/grep -E
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... checking for string.h... (cached) yes
+yes
+checking for egrep... (cached) /usr/bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for a thread-safe mkdir -p... (cached) /usr/bin/mkdir -p
+checking for gawk... (cached) gawk
+checking whether make sets $(MAKE)... checking for stdlib.h... (cached) yes
+(cached) yes
+checking for strings.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for string.h... (cached) yes
+checking for style of include used by make... checking for string.h... (cached) yes
+checking for memory.h... (cached) yes
+GNU
+checking for inttypes.h... (cached) checking for stdlib.h... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+yes
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 1572864
+checking whether the shell understands some XSI constructs... checking whether make supports nested variables... (cached) yes
+yes
+checking whether the shell understands "+="... yes
+checking for memory.h... (cached) checking dependency style of gcc... yes
+(cached) gcc3
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+checking for x86_64-pc-linux-gnu-objdump... (cached) objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for string.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking whether make supports nested variables... (cached) yes
+checking whether make sets $(MAKE)... checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+(cached) yes
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+no
+checking for suffix of object files... checking for inttypes.h... (cached) yes
+(cached) o
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking how to run the C preprocessor... (cached) gcc -E
+checking for strings.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for x86_64-pc-linux-gnu-strip... (cached) x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking command to parse /usr/bin/nm -B output from gcc object... (cached) ok
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking how to print strings... checking for inttypes.h... (cached) yes
+checking for stdint.h... (cached) yes
+printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... checking for strings.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking how to print strings... checking whether we are using the GNU C compiler... (cached) checking for unistd.h... yes
+(cached) yes
+printf
+checking whether gcc accepts -g... checking for a sed that does not truncate output... (cached) yes
+checking for gcc option to accept ISO C89... (cached) (cached) /usr/bin/sed
+none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking the archiver (ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so) interface... (cached) ar
+checking for stdint.h... (cached) yes
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking how to run the C preprocessor... (cached) gcc -E
+checking how to print strings... checking build system type... (cached) x86_64-pc-linux-gnu
+checking host system type... (cached) x86_64-pc-linux-gnu
+printf
+checking for a sed that does not truncate output... checking how to print strings... (cached) /usr/bin/sed
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 1572864
+checking whether the shell understands some XSI constructs... checking for unistd.h... (cached) yes
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... yes
+checking whether the shell understands "+="... printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+yes
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... checking for grep that handles long lines and -e... (cached) /usr/bin/grep
+checking for egrep... (cached) /usr/bin/grep -E
+checking for ANSI C header files... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking for x86_64-pc-linux-gnu-pkg-config... (cached) /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+checking for sys/types.h... checking for x86_64-pc-linux-gnu-objdump... (cached) (cached) objdump
+yes
+yes
+checking how to recognize dependent libraries... (cached) pass_all
+checking how to print strings... checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+printf
+checking for a sed that does not truncate output... (cached) /usr/bin/sed
+checking for fgrep... (cached) /usr/bin/grep -F
+checking for ld used by gcc... checking for sys/stat.h... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... (cached) 1572864
+checking for x86_64-pc-linux-gnu-strip... (cached) checking whether the shell understands some XSI constructs... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+yes
+checking whether the shell understands "+="... yes
+checking command to parse /usr/bin/nm -B output from gcc object... (cached) ok
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+checking for x86_64-pc-linux-gnu-objdump... (cached) objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for stdlib.h... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) (cached) /usr/bin/nm -B
+yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... (cached) BSD nm
+checking whether ln -s works... yes
+checking the name lister (/usr/bin/nm -B) interface... checking the maximum length of command line arguments... (cached) BSD nm
+checking whether ln -s works... (cached) yes
+1572864
+checking the maximum length of command line arguments... checking whether the shell understands some XSI constructs... (cached) 1572864
+checking for x86_64-pc-linux-gnu-ar... (cached) checking whether the shell understands some XSI constructs... ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+yes
+yes
+checking whether the shell understands "+="... checking whether the shell understands "+="... yes
+yes
+checking for string.h... (cached) yes
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+checking for x86_64-pc-linux-gnu-objdump... (cached) objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for ANSI C header files... (cached) yes
+checking for x86_64-pc-linux-gnu-strip... (cached) x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+checking for x86_64-pc-linux-gnu-objdump... (cached) objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for sys/types.h... (cached) yes
+checking command to parse /usr/bin/nm -B output from gcc object... (cached) ok
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... (cached) yes
+checking for BSD- or MS-compatible name lister (nm)... (cached) /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... (cached) BSD nm
+checking whether ln -s works... checking for memory.h... yes
+(cached) checking the maximum length of command line arguments... yes
+(cached) 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... checking for dlfcn.h... (cached) yes
+yes
+checking for objdir... (cached) .libs
+checking for x86_64-pc-linux-gnu-strip... (cached) x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-strip... (cached) x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for sys/stat.h... (cached) yes
+checking command to parse /usr/bin/nm -B output from gcc object... checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... (cached) -r
+(cached) ok
+checking for x86_64-pc-linux-gnu-objdump... (cached) objdump
+checking how to recognize dependent libraries... (cached) pass_all
+checking for strings.h... (cached) yes
+checking command to parse /usr/bin/nm -B output from gcc object... (cached) ok
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for stdlib.h... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for x86_64-pc-linux-gnu-strip... (cached) x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for dlfcn.h... (cached) yes
+checking command to parse /usr/bin/nm -B output from gcc object... checking for objdir... (cached) .libs
+(cached) ok
+checking for string.h... (cached) yes
+checking for stdint.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking for objdir... (cached) .libs
+checking for memory.h... (cached) yes
+checking for objdir... (cached) .libs
+checking for unistd.h... (cached) yes
+checking for strings.h... (cached) yes
+checking for minix/config.h... (cached) no
+checking whether it is safe to define __EXTENSIONS__... (cached) yes
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+checking for dlfcn.h... (cached) yes
+checking for objdir... (cached) .libs
+checking for inttypes.h... (cached) yes
+checking whether gcc supports -W... (cached) yes
+checking whether gcc supports -Wall... (cached) yes
+checking for stdint.h... (cached) yes
+checking whether gcc supports -Wwrite-strings... (cached) yes
+checking whether gcc supports -Wc++-compat... (cached) yes
+checking for unistd.h... (cached) yes
+checking for dlfcn.h... (cached) yes
+checking whether gcc supports -Wstrict-prototypes... (cached) yes
+checking for objdir... (cached) .libs
+checking whether gcc supports -Wshadow=local... (cached) yes
+checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking if gcc static flag -static works... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... checking whether gcc supports -pedantic ... (cached) yes
+checking whether gcc and cc understand -c and -o together... (cached) yes
+checking for an ANSI C-conforming const... (cached) yes
+checking for inline... (cached) inline
+checking whether byte ordering is bigendian... (cached) no
+checking for a BSD-compatible install... /usr/bin/install -c
+checking for CET support... checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking if gcc static flag -static works... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... (cached) no
+checking dynamic linker characteristics... checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking if gcc static flag -static works... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... (cached) no
+checking dynamic linker characteristics... (cached) checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking if gcc static flag -static works... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+(cached) checking for dlfcn.h... (cached) yes
+checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking if gcc static flag -static works... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... checking for windows.h... (cached) no
+checking for library containing dlsym... (cached) none required
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+checking how to compare bootstrapped objects... (cached) cmp --ignore-initial=16 $$f1 $$f2
+yes
+checking whether -lc should be explicitly linked in... (cached) no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking for dlfcn.h... (cached) yes
+(cached) checking for windows.h... (cached) no
+checking for library containing dlsym... (cached) none required
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+checking for sys/time.h... (cached) yes
+yes
+checking whether -lc should be explicitly linked in... (cached) no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for setitimer... checking whether stripping libraries is possible... (cached) yes
+checking whether NLS is requested... no
+yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+(cached) checking for aclocal... (cached) ${SHELL} /mnt/lfs/sources/binutils-2.42/missing aclocal-1.15
+checking for msgfmt... (cached) checking for autoconf... (cached) /usr/bin/msgfmt
+${SHELL} /mnt/lfs/sources/binutils-2.42/missing autoconf
+checking for gmsgfmt... checking for autoheader... (cached) (cached) /usr/bin/gmsgfmt
+${SHELL} /mnt/lfs/sources/binutils-2.42/missing autoheader
+checking whether gcc supports -Wall... (cached) yes
+checking for xgettext... (cached) /usr/bin/xgettext
+(cached) checking if gcc supports -fno-rtti -fno-exceptions... (cached) no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... (cached) yes
+checking whether gcc supports -Wextra... checking if gcc static flag -static works... (cached) (cached) yes
+yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... checking for msgmerge... (cached) /usr/bin/msgmerge
+yes
+checking whether gcc supports -Wwrite-strings... checking if libtool supports shared libraries... yes
+(cached) checking whether to build shared libraries... yes
+yes
+checking whether to build static libraries... yes
+checking for dlfcn.h... (cached) yes
+checking for windows.h... (cached) no
+checking for library containing dlsym... (cached) none required
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+checking whether gcc supports -Wmissing-format-attribute... (cached) yes
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... checking whether gcc supports -Wstrict-prototypes... (cached) yes
+yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+yes
+checking whether -lc should be explicitly linked in... (cached) no
+checking dynamic linker characteristics... checking for x86_64-pc-linux-gnu-pkg-config... (cached) /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... checking whether gcc supports -Wmissing-prototypes... (cached) yes
+yes
+checking whether to use debuginfod... auto
+checking for libdebuginfod >= 0.188... checking for incompatibility between DejaGnu and GCC... no
+checking how to run the C++ preprocessor... (cached) g++ -E
+checking for ld used by GCC... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... yes
+checking how to run the C preprocessor... gcc -E
+no
+checking for makeinfo... (cached) makeinfo --split-size=5000000
+checking if using Solaris linker... (cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... (cached) yes
+checking for shared library run path origin... (cached) done
+no
+yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether to install libbfd... no
+checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyPreferredLanguages... (cached) no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for stdlib.h... (cached) yes
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for unistd.h... (cached) yes
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for sys/param.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for byteswap.h... (cached) yes
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking whether byte ordering is bigendian... (cached) no
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking for sys/gmon_out.h... (cached) yes
+checking for unistd.h... (cached) checking for a known getopt prototype in unistd.h... yes
+(cached) yes
+checking for library containing fabs... (cached) -lm
+checking for endian.h... (cached) yes
+no
+checking for sys/param.h... (cached) yes
+checking whether bswap_16 is declared... (cached) yes
+checking whether bswap_32 is declared... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking whether bswap_64 is declared... (cached) yes
+checking for bison... (cached) bison -y
+checking for flex... (cached) flex
+checking for memcpy... (cached) yes
+yes
+checking target system type... (cached) x86_64-lfs-linux-gnu
+checking lex output file root... (cached) lex.yy
+checking lex library... (cached) -lfl
+checking whether yytext is a pointer... (cached) yes
+checking whether NLS is requested... no
+checking for strerror... (cached) yes
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for sys/file.h... (cached) yes
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for unistd.h... (cached) yes
+checking that generated files are newer than configure... checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for sys/param.h... (cached) yes
+configure: WARNING: libdebuginfod is missing or some features may be unavailable.
+checking for libdebuginfod >= 0.179... checking for limits.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for ld used by GCC... checking that generated files are newer than configure... checking for malloc.h... (cached) yes
+checking for string.h... (cached) yes
+checking for unistd.h... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... (cached) yes
+checking for shared library run path origin... (cached) done
+checking for ld used by g++... checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyPreferredLanguages... (cached) no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for strings.h... (cached) yes
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking for sys/time.h... (cached) yes
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for time.h... (cached) yes
+checking for msgmerge... (cached) /usr/bin/msgmerge
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... (cached) yes
+checking for sys/resource.h... (cached) yes
+checking whether the g++ linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+no
+checking for sys/stat.h... (cached) yes
+checking that generated files are newer than configure... checking whether to enable maintainer-specific portions of Makefiles... no
+checking for sys/mman.h... (cached) yes
+checking for memory.h... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for alloca.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for sys/pstat.h... (cached) no
+checking for unistd.h... (cached) yes
+checking for sys/sysmp.h... (cached) no
+configure: WARNING: libdebuginfod is missing or unusable; some features may be unavailable.
+checking for sys/sysinfo.h... (cached) yes
+checking whether compiling a cross-assembler... yes
+checking for strsignal... (cached) yes
+checking for LC_MESSAGES... (cached) yes
+checking for working assert macro... (cached) yes
+checking for a known getopt prototype in unistd.h... (cached) yes
+checking whether declaration is required for environ... (cached) no
+checking whether declaration is required for ffs... (cached) no
+checking for machine/hal_sysinfo.h... (cached) no
+checking whether asprintf is declared... (cached) yes
+checking for sys/table.h... (cached) no
+checking for sys/sysctl.h... (cached) no
+checking whether mempcpy is declared... (cached) yes
+checking for sys/systemcfg.h... (cached) no
+checking for stdint.h... (cached) yes
+checking whether stpcpy is declared... (cached) yes
+checking for x86_64-pc-linux-gnu-pkg-config... (cached) /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libzstd >= 1.4.0... checking for stdio_ext.h... (cached) yes
+checking for process.h... (cached) no
+checking for sys/prctl.h... (cached) yes
+checking for g++ option to produce PIC... -fPIC -DPIC
+checking if g++ PIC flag -fPIC -DPIC works... (cached) yes
+checking if g++ static flag -static works... (cached) yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking if g++ supports -c -o file.o... (cached) yes
+checking whether the g++ linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) checking for spawn.h... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking whether time.h and sys/time.h may both be included... (cached) yes
+checking whether errno must be declared... (cached) no
+checking size of int... (cached) 4
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking size of long... (cached) checking for dlfcn.h... 8
+(cached) yes
+checking size of size_t... (cached) 8
+checking for windows.h... (cached) checking for long long... (cached) no
+yes
+checking size of long long... (cached) 8
+checking for library containing dlsym... (cached) none required
+checking for special C compiler options needed for large files... (cached) no
+checking for _FILE_OFFSET_BITS value needed for large files... (cached) no
+checking for a 64-bit type... (cached) uint64_t
+checking size of void *... (cached) 8
+checking for intptr_t... (cached) yes
+checking for uintptr_t... (cached) yes
+checking for ssize_t... (cached) yes
+checking for pid_t... (cached) yes
+checking for library containing strerror... (cached) none required
+checking for asprintf... (cached) yes
+checking for atexit... (cached) yes
+checking for basename... (cached) yes
+yes
+checking for struct stat.st_mtim.tv_sec in sys/stat.h... (cached) yes
+checking for struct stat.st_mtim.tv_nsec in sys/stat.h... (cached) yes
+checking for bcmp... (cached) yes
+checking for bcopy... (cached) yes
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking for bison... (cached) bison -y
+checking for flex... (cached) flex
+checking for bsearch... (cached) yes
+checking lex output file root... (cached) lex.yy
+checking lex library... (cached) -lfl
+checking whether yytext is a pointer... (cached) yes
+checking whether NLS is requested... no
+checking for bzero... (cached) yes
+checking that generated files are newer than configure... checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for calloc... (cached) yes
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for clock... (cached) yes
+checking for ffs... (cached) yes
+checking for getcwd... (cached) yes
+checking for ld used by GCC... checking for getpagesize... (cached) yes
+checking for gettimeofday... (cached) yes
+checking for index... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... (cached) yes
+checking for shared library run path origin... (cached) done
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking for LC_MESSAGES... (cached) yes
+checking whether NLS is requested... checking for insque... no
+(cached) yes
+checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyPreferredLanguages... (cached) no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for memchr... (cached) yes
+checking for msgfmt... (cached) checking for xgettext... /usr/bin/msgfmt
+checking for gmsgfmt... (cached) (cached) /usr/bin/gmsgfmt
+/usr/bin/xgettext
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for memcmp... (cached) yes
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for memcpy... (cached) yes
+checking for memmem... (cached) yes
+checking for ld used by GCC... checking whether to enable maintainer-specific portions of Makefiles... no
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for memmove... (cached) yes
+checking for fcntl.h... (cached) yes
+checking for mempcpy... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for memset... (cached) yes
+checking for stdint.h... (cached) yes
+(cached) /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... (cached) yes
+checking for shared library run path origin... (cached) done
+checking for mkstemps... (cached) yes
+checking for CFPreferencesCopyAppValue... (cached) no
+checking for CFLocaleCopyPreferredLanguages... (cached) no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for sys/file.h... (cached) yes
+checking for putenv... (cached) yes
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for random... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking for rename... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for rindex... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for setenv... (cached) yes
+checking for bison... (cached) bison -y
+checking for flex... (cached) flex
+checking for unistd.h... (cached) yes
+checking for snprintf... (cached) yes
+checking for sys/wait.h that is POSIX.1 compatible... (cached) yes
+checking for sigsetmask... (cached) checking for stdlib.h... yes
+(cached) yes
+checking lex output file root... (cached) lex.yy
+checking lex library... (cached) -lfl
+checking whether yytext is a pointer... (cached) yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking how to compare bootstrapped objects... (cached) cmp --ignore-initial=16 $$f1 $$f2
+checking for fcntl.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for stpcpy... (cached) yes
+checking for elf-hints.h... (cached) no
+checking for sys/param.h... (cached) yes
+checking for stpncpy... (cached) yes
+checking for limits.h... (cached) yes
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for strcasecmp... (cached) yes
+checking for fseeko... (cached) yes
+checking for inttypes.h... (cached) yes
+checking for strchr... (cached) yes
+checking for fseeko64... (cached) yes
+checking for stdint.h... (cached) yes
+checking for strdup... (cached) yes
+checking for getc_unlocked... (cached) yes
+checking for sys/file.h... (cached) yes
+checking for strncasecmp... (cached) yes
+checking for mkdtemp... (cached) yes
+checking for sys/mman.h... (cached) yes
+checking for strndup... (cached) yes
+checking for mkstemp... (cached) yes
+checking for strnlen... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for utimensat... (cached) yes
+checking for sys/stat.h... (cached) yes
+checking for strrchr... (cached) yes
+checking for utimes... (cached) yes
+checking for sys/time.h... (cached) yes
+checking for strstr... (cached) yes
+checking for mbstate_t... checking for strtod... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for strtol... (cached) yes
+checking for unistd.h... (cached) yes
+checking for strtoul... (cached) yes
+checking for close... (cached) yes
+checking for strtoll... (cached) yes
+checking for glob... (cached) yes
+checking for strtoull... (cached) yes
+yes
+checking for struct stat.st_atim.tv_nsec... (cached) yes
+checking for lseek... (cached) yes
+checking whether struct stat.st_atim is of type struct timespec... (cached) yes
+checking for library containing frexp... (cached) none required
+checking for LC_MESSAGES... (cached) yes
+checking for a known getopt prototype in unistd.h... (cached) yes
+checking for utime.h... (cached) yes
+checking for strverscmp... (cached) yes
+checking whether asprintf is declared... (cached) yes
+checking for mkstemp... (cached) yes
+checking for tmpnam... (cached) yes
+checking whether environ is declared... (cached) yes
+checking for vasprintf... (cached) yes
+checking for open... (cached) yes
+checking whether getc_unlocked is declared... (cached) yes
+checking for vfprintf... (cached) yes
+checking for realpath... (cached) yes
+checking whether stpcpy is declared... (cached) yes
+checking for vprintf... (cached) yes
+checking for waitpid... (cached) yes
+checking whether strnlen is declared... (cached) yes
+checking for libzstd >= 1.4.0... checking for vsnprintf... (cached) yes
+checking whether asprintf is declared... (cached) yes
+checking for vsprintf... (cached) yes
+checking whether environ is declared... (cached) yes
+checking for waitpid... (cached) yes
+checking whether stpcpy is declared... (cached) yes
+checking for setproctitle... (cached) no
+checking whether alloca needs Cray hooks... (cached) no
+checking stack direction for C alloca... (cached) 1
+checking for stdlib.h... (cached) yes
+checking for vfork.h... (cached) no
+checking for fork... (cached) yes
+checking for unistd.h... (cached) yes
+checking for vfork... (cached) yes
+checking for working fork... (cached) yes
+checking for working vfork... (cached) yes
+checking for sys/param.h... (cached) yes
+checking for _doprnt... (cached) no
+checking for sys_errlist... (cached) no
+checking for sys_nerr... (cached) no
+checking for sys_siglist... (cached) no
+checking for external symbol _system_configuration... checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for library containing dlopen... (cached) none required
+checking for a known getopt prototype in unistd.h... (cached) yes
+checking for libzstd >= 1.4.0... yes
+checking for msgpack... no
+checking for __fsetlocking... (cached) yes
+checking for canonicalize_file_name... (cached) yes
+checking for dup3... (cached) yes
+checking for getrlimit... (cached) yes
+checking for getrusage... (cached) yes
+checking for getsysinfo... (cached) no
+yes
+checking for gettimeofday... (cached) yes
+checking for on_exit... (cached) yes
+checking for pipe2... (cached) yes
+checking for posix_spawn... (cached) yes
+checking for posix_spawnp... (cached) yes
+no
+checking for psignal... (cached) yes
+checking for pstat_getdynamic... (cached) no
+checking for pstat_getstatic... (cached) no
+checking for realpath... (cached) yes
+checking for setrlimit... (cached) yes
+checking for spawnve... (cached) no
+checking for spawnvpe... (cached) no
+checking for iconv.h... (cached) yes
+checking for iconv... (cached) checking for strerror... yes
+(cached) yes
+checking for working iconv... (cached) yes
+checking whether iconv is compatible with its POSIX signature... (cached) yes
+checking that generated files are newer than configure... checking for strsignal... (cached) yes
+checking for sysconf... (cached) yes
+checking for sysctl... (cached) no
+checking for sysmp... (cached) no
+checking for table... (cached) no
+checking for times... (cached) yes
+checking that generated files are newer than configure... checking for wait3... (cached) yes
+checking for wait4... (cached) yes
+checking for sbrk... (cached) yes
+checking whether basename is declared... (cached) yes
+checking whether ffs is declared... (cached) yes
+done
+configure: creating ./config.status
+done
+configure: creating ./config.status
+done
+configure: creating ./config.status
+done
+configure: creating ./config.status
+checking whether asprintf is declared... (cached) yes
+done
+configure: creating ./config.status
+done
+configure: creating ./config.status
+checking whether vasprintf is declared... (cached) yes
+checking whether snprintf is declared... (cached) yes
+checking whether vsnprintf is declared... (cached) yes
+checking whether calloc is declared... (cached) yes
+checking whether getenv is declared... (cached) yes
+checking whether getopt is declared... (cached) yes
+checking whether malloc is declared... (cached) yes
+checking whether realloc is declared... (cached) yes
+checking whether sbrk is declared... (cached) yes
+checking whether strtol is declared... (cached) yes
+checking whether strtoul is declared... (cached) yes
+checking whether strtoll is declared... (cached) yes
+checking whether strtoull is declared... (cached) yes
+checking whether strverscmp is declared... (cached) yes
+config.status: creating Makefile
+checking whether strnlen is declared... (cached) yes
+checking whether canonicalize_file_name must be declared... (cached) no
+checking for SHA1 HW acceleration support... make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating Makefile
+config.status: creating Makefile
+config.status: creating .gdbinit
+config.status: executing depfiles commands
+config.status: creating po/Makefile.in
+config.status: creating po/Makefile.in
+config.status: creating Makefile
+config.status: executing libtool commands
+config.status: creating config.h
+config.status: creating gconfig.h
+config.status: creating po/Makefile.in
+config.status: config.h is unchanged
+config.status: gconfig.h is unchanged
+config.status: executing depfiles commands
+config.status: executing depfiles commands
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing libtool commands
+x86 SHA1
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+config.status: executing default-1 commands
+config.status: executing default-1 commands
+config.status: executing libtool commands
+checking for sys/param.h... (cached) yes
+config.status: creating po/POTFILES
+config.status: creating po/POTFILES
+checking for getpagesize... (cached) yes
+checking for working mmap... (cached) yes
+checking for working strncmp... (cached) yes
+config.status: creating po/Makefile
+config.status: creating po/Makefile
+config.status: executing default-2 commands
+config.status: executing default-2 commands
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/zlib'
+true "AR_FLAGS=rc" "CC_FOR_BUILD=gcc" "CFLAGS=-g -O2    " "CXXFLAGS=-g -O2    " "CFLAGS_FOR_BUILD=-g -O2" "CFLAGS_FOR_TARGET=-g -O2" "INSTALL=/usr/bin/install -c" "INSTALL_DATA=/usr/bin/install -c -m 644" "INSTALL_PROGRAM=/usr/bin/install -c" "INSTALL_SCRIPT=/usr/bin/install -c" "LDFLAGS=" "LIBCFLAGS=-g -O2  " "LIBCFLAGS_FOR_TARGET=-g -O2" "MAKE=make" "MAKEINFO=makeinfo --split-size=5000000 --split-size=5000000 " "PICFLAG=" "PICFLAG_FOR_TARGET=" "SHELL=/bin/sh" "EXPECT=expect" "RUNTEST=runtest" "RUNTESTFLAGS=" "exec_prefix=/mnt/lfs/tools" "infodir=/mnt/lfs/tools/share/info" "libdir=/mnt/lfs/tools/lib" "prefix=/mnt/lfs/tools" "tooldir=/mnt/lfs/tools/x86_64-lfs-linux-gnu" "AR=ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so" "AS=as" "CC=gcc" "CXX=g++" "LD=/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld" "LIBCFLAGS=-g -O2  " "NM=nm" "PICFLAG=" "RANLIB=ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so" "DESTDIR=" DO=all multi-do # make
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/zlib'
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: creating po/Makefile
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+configure: creating ./config.status
+config.status: executing default-2 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default commands
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: creating Makefile
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: creating Makefile
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing depfiles commands
+config.status: creating testsuite/Makefile
+config.status: executing libtool commands
+config.status: executing libtool commands
+config.status: creating config.h
+config.status: config.h is unchanged
+config.status: executing default commands
+config.status: executing default-1 commands
+config.status: executing default-2 commands
+config.status: executing default commands
+Configuring in ./bfd
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libiberty'
+echo ./regex.o ./cplus-dem.o ./cp-demangle.o ./md5.o ./sha1.o ./alloca.o ./argv.o ./bsearch_r.o ./choose-temp.o ./concat.o ./cp-demint.o ./crc32.o ./d-demangle.o ./dwarfnames.o ./dyn-string.o ./fdmatch.o ./fibheap.o ./filedescriptor.o ./filename_cmp.o ./floatformat.o ./fnmatch.o ./fopen_unlocked.o ./getopt.o ./getopt1.o ./getpwd.o ./getruntime.o ./hashtab.o ./hex.o ./lbasename.o ./lrealpath.o ./make-relative-prefix.o ./make-temp-file.o ./objalloc.o ./obstack.o ./partition.o ./pexecute.o ./physmem.o ./pex-common.o ./pex-one.o ./pex-unix.o ./vprintf-support.o ./rust-demangle.o ./safe-ctype.o ./simple-object.o ./simple-object-coff.o ./simple-object-elf.o ./simple-object-mach-o.o ./simple-object-xcoff.o ./sort.o ./spaces.o ./splay-tree.o ./stack-limit.o ./strerror.o ./strsignal.o ./timeval-utils.o ./unlink-if-ordinary.o ./xasprintf.o ./xatexit.o ./xexit.o ./xmalloc.o ./xmemdup.o ./xstrdup.o ./xstrerror.o ./xstrndup.o ./xvasprintf.o > required-list
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libiberty'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make  all-am
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+configure: loading cache ./config.cache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether make supports nested variables... (cached) yes
+checking for x86_64-pc-linux-gnu-ar... ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ranlib... ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for dlfcn.h... (cached) yes
+checking for windows.h... no
+checking for library containing dlsym... none required
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking size of void *... 8
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether to install libbfd... no
+checking whether byte ordering is bigendian... no
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/gmsgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking size of long long... 8
+checking size of void *... (cached) 8
+checking size of long... 8
+checking size of int... 4
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking sys/file.h usability... yes
+checking sys/file.h presence... yes
+checking for sys/file.h... yes
+checking sys/resource.h usability... yes
+checking sys/resource.h presence... yes
+checking for sys/resource.h... yes
+checking for sys/stat.h... (cached) yes
+checking for sys/types.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for fcntl... yes
+checking for fdopen... yes
+checking for fileno... yes
+checking for fls... no
+checking for getgid... yes
+checking for getpagesize... yes
+checking for getrlimit... yes
+checking for getuid... yes
+checking for sysconf... yes
+checking whether basename is declared... yes
+checking whether ffs is declared... yes
+checking whether stpcpy is declared... yes
+checking whether asprintf is declared... yes
+checking whether vasprintf is declared... yes
+checking whether strnlen is declared... yes
+checking whether ___lc_codepage_func is declared... no
+checking for thread local storage (TLS) class... _Thread_local
+checking for x86_64-pc-linux-gnu-pkg-config... /usr/bin/x86_64-pc-linux-gnu-pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for libzstd >= 1.4.0... yes
+checking compiler support for hidden visibility... yes
+checking linker --as-needed support... yes
+checking for cos in -lm... yes
+checking for gcc version with buggy 64-bit support... no
+checking for ftello... yes
+checking for ftello64... yes
+checking for fseeko... yes
+checking for fseeko64... yes
+checking for fopen64... yes
+checking whether ftello is declared... yes
+checking whether ftello64 is declared... yes
+checking whether fseeko is declared... yes
+checking whether fseeko64 is declared... yes
+checking whether fopen64 is declared... yes
+checking size of off_t... 8
+checking file_ptr type... int64_t
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+checking for sys/param.h... yes
+checking for getpagesize... (cached) yes
+checking for working mmap... yes
+checking for madvise... yes
+checking for mprotect... yes
+configure: updating cache ./config.cache
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating bfd-in3.h
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: executing default-2 commands
+config.status: executing default commands
+mkdir -p -- ./opcodes
+Configuring in ./opcodes
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+  GEN      bfdver.h
+  GEN      elf32-target.h
+  GEN      elf64-target.h
+  GEN      targmatch.h
+Making info in po
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+( if test 'x../../../bfd/po' != 'x.'; then \
+    posrcprefix='../../../bfd/'; \
+  else \
+    posrcprefix="../"; \
+  fi; \
+  rm -f SRC-POTFILES-t SRC-POTFILES \
+    && (sed -e '/^#/d' \
+            -e '/^[ 	]*$/d' \
+	    -e "s@.*@	$posrcprefix& \\\\@" < ../../../bfd/po/SRC-POTFILES.in \
+	| sed -e '$s/\\$//') > SRC-POTFILES-t \
+    && chmod a-w SRC-POTFILES-t \
+    && mv SRC-POTFILES-t SRC-POTFILES )
+( rm -f BLD-POTFILES-t BLD-POTFILES \
+    && (sed -e '/^#/d' \
+            -e '/^[ 	]*$/d' \
+	    -e "s@.*@	../& \\\\@" < ../../../bfd/po/BLD-POTFILES.in \
+	| sed -e '$s/\\$//') > BLD-POTFILES-t \
+    && chmod a-w BLD-POTFILES-t \
+    && mv BLD-POTFILES-t BLD-POTFILES )
+cd .. \
+  && CONFIG_FILES=po/Makefile.in:po/Make-in \
+     CONFIG_HEADERS= /bin/sh ./config.status
+configure: creating cache ./config.cache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-lfs-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... config.status: creating po/Makefile.in
+yes
+checking whether make supports nested variables... yes
+config.status: executing depfiles commands
+checking whether make supports nested variables... (cached) yes
+checking for x86_64-pc-linux-gnu-gcc... gcc
+config.status: executing libtool commands
+config.status: executing default-1 commands
+checking whether the C compiler works... config.status: executing default-2 commands
+config.status: executing default commands
+make[3]: Nothing to be done for 'info'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+yes
+checking for C compiler default output file name... a.out
+  CCLD     doc/chew.stamp
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking for style of include used by make... GNU
+checking dependency style of gcc... gcc3
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h...   GEN      doc/aoutx.stamp
+  GEN      doc/archures.stamp
+  GEN      doc/bfdio.stamp
+  GEN      doc/archive.stamp
+  GEN      doc/bfdt.stamp
+  GEN      doc/bfdwin.stamp
+  GEN      doc/cache.stamp
+  GEN      doc/coffcode.stamp
+  GEN      doc/corefile.stamp
+  GEN      doc/elfcode.stamp
+  GEN      doc/elf.stamp
+  GEN      doc/format.stamp
+  GEN      doc/hash.stamp
+  GEN      doc/libbfd.stamp
+yes
+  GEN      doc/linker.stamp
+  GEN      doc/mmo.stamp
+  GEN      doc/opncls.stamp
+  GEN      doc/reloc.stamp
+  GEN      doc/section.stamp
+  GEN      doc/syms.stamp
+  GEN      doc/targets.stamp
+checking for string.h...   MAKEINFO doc/bfd.info
+yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for x86_64-pc-linux-gnu-ar... ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ranlib... ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+Setting warning flags = -W -Wall -Wstrict-prototypes -Wmissing-prototypes -Wshadow -Wstack-usage=262144
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether to install libbfd... no
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/gmsgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking for msgfmt... (cached) /usr/bin/msgfmt
+checking for gmsgfmt... (cached) /usr/bin/gmsgfmt
+checking for xgettext... (cached) /usr/bin/xgettext
+checking for msgmerge... (cached) /usr/bin/msgmerge
+checking size of void *... 8
+checking whether basename is declared... yes
+checking whether stpcpy is declared... yes
+checking for sigsetjmp... 
+checking linker --as-needed support... yes
+checking for cos in -lm... yes
+configure: updating cache ./config.cache
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating po/Makefile.in
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+config.status: executing default-2 commands
+config.status: creating po/POTFILES
+config.status: creating po/Makefile
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+rm -f bfd-tmp.h
+cp bfd-in3.h bfd-tmp.h
+/bin/sh ../../bfd/../move-if-change bfd-tmp.h bfd.h
+rm -f tofiles
+f=""; \
+for i in elf64-x86-64.lo elfxx-x86.lo elf-ifunc.lo elf-vxworks.lo elf64.lo elf.lo elflink.lo elf-attrs.lo elf-strtab.lo elf-eh-frame.lo elf-sframe.lo dwarf1.lo dwarf2.lo elf32-i386.lo elf32.lo pei-i386.lo peigen.lo cofflink.lo coffgen.lo pe-x86_64.lo pex64igen.lo pei-x86_64.lo elf64-gen.lo elf32-gen.lo plugin.lo cpu-i386.lo cpu-iamcu.lo  archive64.lo ; do \
+  case " $f " in \
+    *" $i "*) ;; \
+    *) f="$f $i" ;; \
+  esac ; \
+done ; \
+echo $f > tofiles
+  GEN      peigen.c
+  GEN      pex64igen.c
+rm -f bfd-tmp.h
+touch stmp-bfd-h
+/bin/sh ../../bfd/../move-if-change tofiles ofiles
+touch stamp-ofiles
+  CC       archive.lo
+  CC       archures.lo
+  CC       bfd.lo
+  CC       bfdio.lo
+  CC       bfdwin.lo
+  CC       cache.lo
+  CC       coff-bfd.lo
+  CC       compress.lo
+  CC       corefile.lo
+  CC       elf-properties.lo
+  CC       format.lo
+  CC       hash.lo
+  CC       libbfd.lo
+  CC       linker.lo
+  CC       merge.lo
+  CC       opncls.lo
+  CC       reloc.lo
+  CC       section.lo
+  CC       simple.lo
+  CC       stab-syms.lo
+  CC       stabs.lo
+  CC       syms.lo
+  CC       targets.lo
+  CC       binary.lo
+  CC       ihex.lo
+  CC       srec.lo
+  CC       tekhex.lo
+  CC       verilog.lo
+  CC       elf64-x86-64.lo
+  CC       elfxx-x86.lo
+  CC       elf-ifunc.lo
+  CC       elf-vxworks.lo
+  CC       elf64.lo
+  CC       elf.lo
+  CC       elflink.lo
+  CC       elf-attrs.lo
+  CC       elf-strtab.lo
+  CC       elf-eh-frame.lo
+  CC       elf-sframe.lo
+  CC       dwarf1.lo
+  CC       dwarf2.lo
+  CC       elf32-i386.lo
+  CC       elf32.lo
+  CC       pei-i386.lo
+  CC       peigen.lo
+  CC       cofflink.lo
+  CC       coffgen.lo
+  CC       pe-x86_64.lo
+  CC       pex64igen.lo
+  CC       pei-x86_64.lo
+  CC       elf64-gen.lo
+  CC       elf32-gen.lo
+  CC       plugin.lo
+  CC       cpu-i386.lo
+  CC       cpu-iamcu.lo
+  CC       archive64.lo
+  CCLD     libbfd.la
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+mkdir -p -- ./libctf
+Configuring in ./libctf
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+Making all in .
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+  CC       dis-buf.lo
+  CC       dis-init.lo
+  CC       i386-dis.lo
+  CC       disassemble.lo
+configure: creating cache ./config.cache
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-lfs-linux-gnu
+checking for x86_64-pc-linux-gnu-gcc... gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether gcc accepts -g... yes
+checking for gcc option to accept ISO C89... none needed
+checking whether gcc understands -c and -o together... yes
+checking how to run the C preprocessor... gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
+checking whether make sets $(MAKE)... yes
+checking for style of include used by make... GNU
+checking whether make supports nested variables... yes
+checking dependency style of gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for x86_64-pc-linux-gnu-gcc... (cached) gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether gcc accepts -g... (cached) yes
+checking for gcc option to accept ISO C89... (cached) none needed
+checking whether gcc understands -c and -o together... (cached) yes
+checking for x86_64-pc-linux-gnu-ranlib... ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-ar... ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking the archiver (ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so) interface... ar
+checking whether NLS is requested... no
+checking for msgfmt... /usr/bin/msgfmt
+checking for gmsgfmt... /usr/bin/gmsgfmt
+checking for xgettext... /usr/bin/xgettext
+checking for msgmerge... /usr/bin/msgmerge
+checking for ld used by GCC... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for shared library run path origin... done
+checking for CFPreferencesCopyAppValue... no
+checking for CFLocaleCopyPreferredLanguages... no
+checking whether to use NLS... no
+checking whether NLS is requested... no
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by gcc... /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld
+checking if the linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking whether the shell understands some XSI constructs... yes
+checking whether the shell understands "+="... yes
+checking for /usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld option to reload object files... -r
+checking for x86_64-pc-linux-gnu-objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-pc-linux-gnu-ar... (cached) ar --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking for x86_64-pc-linux-gnu-strip... x86_64-pc-linux-gnu-strip
+checking for x86_64-pc-linux-gnu-ranlib... (cached) ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so
+checking command to parse /usr/bin/nm -B output from gcc object... ok
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if gcc supports -fno-rtti -fno-exceptions... no
+checking for gcc option to produce PIC... -fPIC -DPIC
+checking if gcc PIC flag -fPIC -DPIC works... yes
+checking if gcc static flag -static works... yes
+checking if gcc supports -c -o file.o... yes
+checking if gcc supports -c -o file.o... (cached) yes
+checking whether the gcc linker (/usr/lib/gcc/x86_64-pc-linux-gnu/14/../../../../x86_64-pc-linux-gnu/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics...   CCLD     libopcodes.la
+GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... libtooldir=`/bin/sh ./libtool --config | sed -n -e 's/^objdir=//p'`; \
+if [ -f $libtooldir/libopcodes.a ]; then \
+  cp $libtooldir/libopcodes.a libopcodes.tmp; \
+  ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so libopcodes.tmp; \
+  /bin/sh ../../opcodes/../move-if-change libopcodes.tmp libopcodes.a; \
+else true; fi
+no
+configure: creating ./config.lt
+touch stamp-lib
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes/po'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas/po'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+  CC       app.o
+  CC       as.o
+  CC       atof-generic.o
+  CC       codeview.o
+  CC       compress-debug.o
+  CC       cond.o
+  CC       depend.o
+  CC       dwarf2dbg.o
+  CC       dw2gencfi.o
+  CC       ecoff.o
+  CC       ehopt.o
+  CC       expr.o
+  CC       flonum-copy.o
+  CC       flonum-konst.o
+  CC       flonum-mult.o
+  CC       frags.o
+  CC       gen-sframe.o
+  CC       ginsn.o
+  CC       hash.o
+config.lt: creating libtool
+checking for aclocal... ${SHELL} /mnt/lfs/sources/binutils-2.42/missing aclocal-1.15
+checking for autoconf... ${SHELL} /mnt/lfs/sources/binutils-2.42/missing autoconf
+checking for autoheader... ${SHELL} /mnt/lfs/sources/binutils-2.42/missing autoheader
+checking whether gcc supports -W...   CC       input-file.o
+yes
+checking whether gcc supports -Wall... yes
+checking whether gcc supports -Wnarrowing... yes
+checking whether gcc supports -Wwrite-strings...   CC       input-scrub.o
+  CC       listing.o
+yes
+checking whether gcc supports -Wmissing-format-attribute...   CC       literal.o
+  CC       macro.o
+yes
+checking whether gcc supports -Wstrict-prototypes... yes
+checking whether gcc supports -Wmissing-prototypes... yes
+checking whether gcc supports -Wold-style-definition...   CC       messages.o
+yes
+checking whether gcc supports -pedantic -Wlong-long...   CC       output-file.o
+yes
+checking whether to enable maintainer-specific portions of Makefiles... no
+checking whether to install libbfd... no
+checking whether gcc supports -Wall... (cached) yes
+  CC       read.o
+checking for stdlib.h... (cached) yes
+checking for unistd.h... (cached) yes
+  CC       remap.o
+checking for sys/param.h... yes
+checking for getpagesize...   CC       sb.o
+  CC       scfidw2gen.o
+  CC       scfi.o
+  CC       sframe-opt.o
+yes
+checking for working mmap... yes
+checking for library containing dlsym...   CC       stabs.o
+  CC       subsegs.o
+  CC       symbols.o
+none required
+checking for ELF support in BFD...   CC       write.o
+  GEN      doc/asconfig.texi
+  CC       config/tc-i386.o
+  CC       config/obj-elf.o
+  CC       config/atof-ieee.o
+  GEN      doc/as.1
+yes
+checking whether byte ordering is bigendian... no
+checking byteswap.h usability... yes
+checking byteswap.h presence... yes
+checking for byteswap.h... yes
+checking endian.h usability... yes
+checking endian.h presence... yes
+checking for endian.h... yes
+checking for pread... yes
+checking whether bswap_16 is declared... yes
+checking whether bswap_32 is declared... yes
+checking whether bswap_64 is declared... yes
+checking whether asprintf is declared... yes
+checking whether vasprintf is declared... yes
+checking whether stpcpy is declared... yes
+checking for qsort_r... yes
+checking for qsort_r signature... GNU
+checking for O_CLOEXEC... yes
+checking for makeinfo... makeinfo --split-size=5000000
+checking for expect... no
+checking for Tcl supporting try/catch... no
+checking for linker versioning flags... -Wl,--version-script='../../libctf/libctf.ver'
+configure: updating cache ./config.cache
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating config.h
+config.status: executing depfiles commands
+config.status: executing default-1 commands
+config.status: executing libtool commands
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+  CC       libctf_la-ctf-archive.lo
+  CC       libctf_la-ctf-dump.lo
+  CC       libctf_la-ctf-create.lo
+  CC       libctf_la-ctf-decl.lo
+  CC       libctf_la-ctf-error.lo
+  CC       libctf_la-ctf-hash.lo
+  CC       libctf_la-ctf-labels.lo
+../../libctf/ctf-hash.c: In function 'ctf_dynhash_create':
+../../libctf/ctf-hash.c:169:13: warning: allocation of insufficient size '8' for type 'ctf_dynhash_t' {aka 'struct ctf_dynhash'} with size '24' [-Walloc-size]
+  169 |     dynhash = malloc (offsetof (ctf_dynhash_t, key_free));
+      |             ^
+../../libctf/ctf-hash.c: In function 'ctf_hashtab_insert':
+../../libctf/ctf-hash.c:222:15: warning: allocation of insufficient size '16' for type 'ctf_helem_t' {aka 'struct ctf_helem'} with size '24' [-Walloc-size]
+  222 |         *slot = malloc (offsetof (ctf_helem_t, owner));
+      |               ^
+  CC       libctf_la-ctf-dedup.lo
+  CC       libctf_la-ctf-link.lo
+  CC       libctf_la-ctf-lookup.lo
+  CC       libctf_la-ctf-open.lo
+  CC       libctf_la-ctf-serialize.lo
+  CC       libctf_la-ctf-sha1.lo
+  CC       libctf_la-ctf-string.lo
+  CC       libctf_la-ctf-subr.lo
+  CC       libctf_la-ctf-types.lo
+  CC       libctf_la-ctf-util.lo
+  CC       libctf_la-ctf-open-bfd.lo
+  CC       libctf_nobfd_la-ctf-archive.lo
+  CC       libctf_nobfd_la-ctf-dump.lo
+  CC       libctf_nobfd_la-ctf-create.lo
+  CC       libctf_nobfd_la-ctf-decl.lo
+  CC       libctf_nobfd_la-ctf-error.lo
+  CC       libctf_nobfd_la-ctf-hash.lo
+../../libctf/ctf-hash.c: In function 'ctf_dynhash_create':
+../../libctf/ctf-hash.c:169:13: warning: allocation of insufficient size '8' for type 'ctf_dynhash_t' {aka 'struct ctf_dynhash'} with size '24' [-Walloc-size]
+  169 |     dynhash = malloc (offsetof (ctf_dynhash_t, key_free));
+      |             ^
+../../libctf/ctf-hash.c: In function 'ctf_hashtab_insert':
+../../libctf/ctf-hash.c:222:15: warning: allocation of insufficient size '16' for type 'ctf_helem_t' {aka 'struct ctf_helem'} with size '24' [-Walloc-size]
+  222 |         *slot = malloc (offsetof (ctf_helem_t, owner));
+      |               ^
+  CC       libctf_nobfd_la-ctf-labels.lo
+  CC       libctf_nobfd_la-ctf-dedup.lo
+  CC       libctf_nobfd_la-ctf-link.lo
+  CC       libctf_nobfd_la-ctf-lookup.lo
+  CC       libctf_nobfd_la-ctf-open.lo
+  CC       libctf_nobfd_la-ctf-serialize.lo
+  CC       libctf_nobfd_la-ctf-sha1.lo
+  CC       libctf_nobfd_la-ctf-string.lo
+  CC       libctf_nobfd_la-ctf-subr.lo
+  CC       libctf_nobfd_la-ctf-types.lo
+  CC       libctf_nobfd_la-ctf-util.lo
+  CCLD     libctf.la
+libtool: link: warning: `-version-info/-version-number' is ignored for convenience libraries
+  CCLD     libctf-nobfd.la
+libtool: link: warning: `-version-info/-version-number' is ignored for convenience libraries
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+  CCLD     as-new
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+  CC       sysinfo.o
+make  all-recursive
+  CC       syslex_wrap.o
+Making info in po
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+make[3]: Nothing to be done for 'info'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof/po'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+  GEN      doc/addr2line.1
+  GEN      doc/ar.1
+  CC       basic_blocks.o
+  GEN      doc/dlltool.1
+  GEN      doc/nm.1
+  GEN      doc/objcopy.1
+  CC       call_graph.o
+  GEN      doc/objdump.1
+  CC       cg_arcs.o
+  GEN      doc/ranlib.1
+  GEN      doc/readelf.1
+  CC       cg_dfn.o
+  GEN      doc/size.1
+  CC       cg_print.o
+  GEN      doc/strings.1
+  GEN      doc/strip.1
+  CC       corefile.o
+  CC       gmon_io.o
+  GEN      doc/elfedit.1
+  CC       gprof.o
+  CCLD     sysinfo
+  GEN      doc/windres.1
+  CC       hertz.o
+  CC       hist.o
+  GEN      doc/windmc.1
+  CC       source.o
+  GEN      sysroff.h
+  GEN      doc/cxxfilt.man
+  CC       search_list.o
+  CC       symtab.o
+  GEN      doc/c++filt.1
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+  CC       sym_ids.o
+  CC       utils.o
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+  CC       size.o
+  CC       i386.o
+  CC       alpha.o
+  CC       vax.o
+  CC       sparc.o
+  CC       mips.o
+  CC       aarch64.o
+  CC       flat_bl.o
+  CC       bsd_callg_bl.o
+  CC       fsf_callg_bl.o
+  CC       bucomm.o
+  CC       version.o
+  CC       filemode.o
+  CC       objdump.o
+  CC       dwarf.o
+  CC       prdbg.o
+  CCLD     gprof
+  CC       demanguse.o
+  CC       rddbg.o
+  CC       debug.o
+  CC       stabs.o
+  CC       rdcoff.o
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+  CC       elfcomm.o
+  CC       arparse.o
+  CC       arlex.o
+  CC       ar.o
+  CC       not-ranlib.o
+  CC       arsup.o
+  CC       rename.o
+  CC       binemul.o
+  CC       emul_vanilla.o
+  CC       strings.o
+  CC       is-ranlib.o
+  CC       objcopy.o
+  CC       not-strip.o
+  CC       wrstabs.o
+  CC       addr2line.o
+  CC       readelf.o
+  CC       unwind-ia64.o
+  CC       elfedit.o
+  CC       nm.o
+  CC       is-strip.o
+  CC       cxxfilt.o
+  CC       bfdtest1.o
+  CC       bfdtest2.o
+  CCLD     size
+  CCLD     ar
+  CCLD     strings
+  CCLD     ranlib
+  CCLD     addr2line
+  CCLD     elfedit
+  CCLD     cxxfilt
+  CCLD     bfdtest1
+  CCLD     bfdtest2
+  CC       testsuite/gentestdlls.o
+  CCLD     nm-new
+  CCLD     testsuite/gentestdlls
+  CCLD     objcopy
+  CCLD     strip-new
+  CCLD     objdump
+  CCLD     readelf
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+(echo "/* This file is automatically generated.  DO NOT EDIT! */";\
+for f in `echo " " eelf_x86_64.o eelf32_x86_64.o eelf_i386.o eelf_iamcu.o "" \
+ | sed -e 's/ e/ ld/g' -e 's/ ld/ /g' -e 's/[.]o//g'`; do \
+    echo "extern ld_emulation_xfer_type ld_${f}_emulation;"; \
+done;\
+echo "";\
+echo "#define EMULATION_LIST \\";\
+for f in `echo " " eelf_x86_64.o eelf32_x86_64.o eelf_i386.o eelf_iamcu.o "" \
+ | sed -e 's/ e/ ld/g' -e 's/ ld/ /g' -e 's/[.]o//g'`; do \
+    echo "  &ld_${f}_emulation, \\"; \
+done;\
+echo "  0") >ldemul-tmp.h
+mv ldemul-tmp.h ldemul-list.h
+make  all-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+Making all in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld/po'
+( if test 'x../../../ld/po' != 'x.'; then \
+    posrcprefix='../../../ld/'; \
+  else \
+    posrcprefix="../"; \
+  fi; \
+  rm -f SRC-POTFILES-t SRC-POTFILES \
+    && (sed -e '/^#/d' -e '/^[	 ]*$/d' \
+	    -e "s@.*@	$posrcprefix& \\\\@" < ../../../ld/po/SRC-POTFILES.in \
+	| sed -e '$s/\\$//') > SRC-POTFILES-t \
+    && chmod a-w SRC-POTFILES-t \
+    && mv SRC-POTFILES-t SRC-POTFILES )
+rm -f BLD-POTFILES-t BLD-POTFILES \
+  && sed -e '/^#/d' -e '/^[	 ]*$/d' \
+	 -e "s@.*@	../& \\\\@" < ../../../ld/po/BLD-POTFILES.in \
+     | sed -e '$s/\\$//' > BLD-POTFILES-t \
+  && chmod a-w BLD-POTFILES-t \
+  && mv BLD-POTFILES-t BLD-POTFILES
+cd .. \
+  && CONFIG_FILES=po/Makefile.in:po/Make-in \
+     CONFIG_HEADERS= /bin/sh ./config.status
+config.status: creating po/Makefile.in
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing default-1 commands
+config.status: executing default-2 commands
+config.status: executing default commands
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld/po'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+  CC       libdep_plugin.lo
+  CC       libldtestplug_la-testplug.lo
+  CC       libldtestplug2_la-testplug2.lo
+  CC       libldtestplug4_la-testplug4.lo
+  CC       libldtestplug3_la-testplug3.lo
+  CC       ldgram.o
+  CC       ldlex-wrapper.o
+  CC       lexsup.o
+  CC       ldlang.o
+  CC       mri.o
+  CC       ldctor.o
+  CC       ldmain.o
+  CC       ldwrite.o
+  CC       ldexp.o
+  CC       ldemul.o
+  CC       ldver.o
+  CC       ldmisc.o
+  CC       ldfile.o
+  CC       ldcref.o
+  CC       plugin.o
+  CC       ldbuildid.o
+  GEN      ldscripts/stamp
+  CC       ldelf.o
+  CC       ldelfgen.o
+  GEN      libdep.la
+  CCLD     libldtestplug.la
+libtool: link: warning: ignoring multiple `-rpath's for a libtool library
+  CCLD     libldtestplug2.la
+  CCLD     libldtestplug3.la
+  CCLD     libldtestplug4.la
+  GEN      eelf_x86_64.c
+  GEN      eelf32_x86_64.c
+  GEN      eelf_i386.c
+  GEN      eelf_iamcu.c
+  CC       eelf_iamcu.o
+  CC       eelf_x86_64.o
+  CC       eelf32_x86_64.o
+  CC       eelf_i386.o
+  CCLD     ld-new
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[1]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build'
+make[1]: Entering directory '/mnt/lfs/sources/binutils-2.42/build'
+/bin/sh ../mkinstalldirs /mnt/lfs/tools /mnt/lfs/tools
+make[1]: Nothing to be done for 'install-target'.
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/etc'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libiberty'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make  install-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libiberty/testsuite'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+if test -n ""; then \
+	/bin/sh ../../libiberty/../mkinstalldirs /mnt/lfs/tools/lib/`gcc -g -O2     -print-multi-os-directory`; \
+	/usr/bin/install -c -m 644 ./libiberty.a /mnt/lfs/tools/lib/`gcc -g -O2     -print-multi-os-directory`/./libiberty.an; \
+	( cd /mnt/lfs/tools/lib/`gcc -g -O2     -print-multi-os-directory` ; chmod 644 ./libiberty.an ;ranlib --plugin /usr/libexec/gcc/x86_64-pc-linux-gnu/14/liblto_plugin.so ./libiberty.an ); \
+	mv -f /mnt/lfs/tools/lib/`gcc -g -O2     -print-multi-os-directory`/./libiberty.an /mnt/lfs/tools/lib/`gcc -g -O2     -print-multi-os-directory`/./libiberty.a; \
+	case "" in \
+	  /*)    thd=;; \
+	  *)     thd=/mnt/lfs/tools/include/;; \
+	esac; \
+	/bin/sh ../../libiberty/../mkinstalldirs ${thd}; \
+	for h in ../../libiberty/../include/ansidecl.h ../../libiberty/../include/demangle.h ../../libiberty/../include/dyn-string.h ../../libiberty/../include/fibheap.h ../../libiberty/../include/floatformat.h ../../libiberty/../include/hashtab.h ../../libiberty/../include/libiberty.h ../../libiberty/../include/objalloc.h ../../libiberty/../include/partition.h ../../libiberty/../include/safe-ctype.h ../../libiberty/../include/sort.h ../../libiberty/../include/splay-tree.h ../../libiberty/../include/timeval-utils.h; do \
+	  /usr/bin/install -c -m 644 $h ${thd}; \
+	done; \
+fi
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libiberty'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+Making install in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof/po'
+make[4]: Nothing to be done for 'install'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof/po'
+Making install in po
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas/po'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas/po'
+ /usr/bin/install -c -m 644 ../../libsframe/doc/sframe-spec.info '/mnt/lfs/tools/share/info'
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/sframe-spec.info'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libsframe'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+  GEN      doc/asconfig.texi
+make[5]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/man/man1'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/bin'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make  install-recursive
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c gprof '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-gprof'
+ /usr/bin/install -c -m 644 '../../gprof/gprof.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-gprof.1'
+ /usr/bin/install -c -m 644 ../../gprof/gprof.info '/mnt/lfs/tools/share/info'
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/gprof.info'
+libtool: install: /usr/bin/install -c gprof /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-gprof
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[5]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gprof'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+Making install in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+make[4]: Nothing to be done for 'install'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd/po'
+/bin/sh ../../gas/../mkinstalldirs /mnt/lfs/tools/bin
+  GEN      doc/asconfig.texi
+  /bin/sh ./libtool  --mode=install /usr/bin/install -c as-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-as
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/man/man1'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+ /usr/bin/install -c -m 644 'doc/as.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-as.1'
+ /usr/bin/install -c -m 644 ../../gas/doc/as.info '/mnt/lfs/tools/share/info'
+libtool: install: /usr/bin/install -c as-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-as
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/as.info'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+/bin/sh ../../gas/../mkinstalldirs /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin
+mkdir -p -- /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin
+n=`echo as | sed 's&^&x86_64-lfs-linux-gnu-&'`; \
+if [ "/mnt/lfs/tools/bin/$n" != "/mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/as" ]; then \
+  rm -f /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/as; \
+  ln /mnt/lfs/tools/bin/$n /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/as >/dev/null 2>/dev/null \
+    ||  /bin/sh ./libtool --mode=install /usr/bin/install -c as-new /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/as; \
+else \
+  true ; \
+fi
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/gas'
+make[5]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[5]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+ /usr/bin/install -c -m 644 ./doc/bfd.info '/mnt/lfs/tools/share/info'
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/bfd.info'
+make[5]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/bfd'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+Making install in .
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make[4]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+Making install in po
+ /usr/bin/install -c -m 644 ../../libctf/doc/ctf-spec.info '/mnt/lfs/tools/share/info'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/opcodes/po'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes/po'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/opcodes'
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/ctf-spec.info'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/libctf'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make  install-recursive
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[2]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make  install-recursive
+Making install in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+make[4]: Nothing to be done for 'install'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils/po'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[3]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+Making install in po
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld/po'
+make[4]: Nothing to be done for 'install'.
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld/po'
+make[5]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[4]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/bin'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/man/man1'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c size '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-size'
+ /usr/bin/install -c -m 644 'doc/addr2line.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-addr2line.1'
+ /usr/bin/install -c -m 644 ../../binutils/doc/binutils.info '/mnt/lfs/tools/share/info'
+ /usr/bin/install -c -m 644 'doc/ar.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-ar.1'
+ /usr/bin/install -c -m 644 'doc/dlltool.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-dlltool.1'
+ /usr/bin/install -c -m 644 'doc/nm.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-nm.1'
+ /usr/bin/install -c -m 644 'doc/objcopy.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-objcopy.1'
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/binutils.info'
+ /usr/bin/install -c -m 644 'doc/objdump.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-objdump.1'
+libtool: install: /usr/bin/install -c size /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-size
+ /usr/bin/install -c -m 644 'doc/ranlib.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-ranlib.1'
+ /usr/bin/install -c -m 644 'doc/readelf.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-readelf.1'
+ /usr/bin/install -c -m 644 'doc/size.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-size.1'
+ /usr/bin/install -c -m 644 'doc/strings.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-strings.1'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c objdump '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-objdump'
+ /usr/bin/install -c -m 644 'doc/strip.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-strip.1'
+ /usr/bin/install -c -m 644 'doc/elfedit.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-elfedit.1'
+make[5]: Entering directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+ /usr/bin/install -c -m 644 'doc/windres.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-windres.1'
+ /usr/bin/install -c -m 644 'doc/windmc.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-windmc.1'
+ /usr/bin/install -c -m 644 'doc/c++filt.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-c++filt.1'
+libtool: install: /usr/bin/install -c objdump /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-objdump
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c ar '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ar'
+libtool: install: /usr/bin/install -c ar /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ar
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/man/man1'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/bin'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/share/info'
+ /usr/bin/mkdir -p '/mnt/lfs/tools/lib/bfd-plugins'
+ /bin/sh ./libtool   --mode=install /usr/bin/install -c   libdep.la '/mnt/lfs/tools/lib/bfd-plugins'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c strings '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-strings'
+ /usr/bin/install -c -m 644 '../../ld/ld.1' '/mnt/lfs/tools/share/man/man1/x86_64-lfs-linux-gnu-ld.1'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c ld-new '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ld.bfd'
+ /usr/bin/install -c -m 644 ../../ld/ld.info ../../ld/ldint.info '/mnt/lfs/tools/share/info'
+libtool: install: /usr/bin/install -c .libs/libdep.so /mnt/lfs/tools/lib/bfd-plugins/libdep.so
+libtool: install: /usr/bin/install -c .libs/libdep.lai /mnt/lfs/tools/lib/bfd-plugins/libdep.la
+libtool: install: warning: remember to run `libtool --finish /nowhere'
+libtool: install: /usr/bin/install -c strings /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-strings
+/bin/sh ../../ld/../mkinstalldirs /mnt/lfs/tools/x86_64-lfs-linux-gnu/lib/ldscripts
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/ld.info'
+libtool: install: /usr/bin/install -c ld-new /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ld.bfd
+mkdir -p -- /mnt/lfs/tools/x86_64-lfs-linux-gnu/lib/ldscripts
+for f in ldscripts/* ; do \
+  case $f in \
+    stamp) ;; \
+    *) /usr/bin/install -c -m 644 $f /mnt/lfs/tools/x86_64-lfs-linux-gnu/lib/$f ; \
+  esac \
+done
+ install-info --info-dir='/mnt/lfs/tools/share/info' '/mnt/lfs/tools/share/info/ldint.info'
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c ranlib '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ranlib'
+/bin/sh ../../ld/../mkinstalldirs /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin
+n=`echo ld.bfd | sed 's/^ld-new$/ld.bfd/;s&^&x86_64-lfs-linux-gnu-&'`; \
+if test "/mnt/lfs/tools/bin" != "/mnt/lfs/tools/x86_64-lfs-linux-gnu/bin"; then \
+  rm -f /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld.bfd; \
+  ln /mnt/lfs/tools/bin/$n /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld.bfd >/dev/null 2>/dev/null \
+  ||  /bin/sh ./libtool --mode=install /usr/bin/install -c ld-new /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld.bfd; \
+fi; \
+if test "xyes" = "xyes"; then \
+  ld=`echo ld | sed 's/^ld-new$/ld.bfd/;s&^&x86_64-lfs-linux-gnu-&'`; \
+  rm -f /mnt/lfs/tools/bin/$ld; \
+  ln /mnt/lfs/tools/bin/$n /mnt/lfs/tools/bin/$ld >/dev/null 2>/dev/null \
+  ||  /bin/sh ./libtool --mode=install /usr/bin/install -c ld-new /mnt/lfs/tools/bin/$ld; \
+  if test "/mnt/lfs/tools/bin" != "/mnt/lfs/tools/x86_64-lfs-linux-gnu/bin"; then \
+    rm -f /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld; \
+    ln /mnt/lfs/tools/bin/$n /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld >/dev/null 2>/dev/null \
+    ||  /bin/sh ./libtool --mode=install /usr/bin/install -c ld-new /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld; \
+  fi; \
+fi
+libtool: install: /usr/bin/install -c ranlib /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-ranlib
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c objcopy '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-objcopy'
+libtool: install: /usr/bin/install -c objcopy /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-objcopy
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c addr2line '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-addr2line'
+libtool: install: /usr/bin/install -c addr2line /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-addr2line
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c readelf '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-readelf'
+libtool: install: /usr/bin/install -c readelf /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-readelf
+  /bin/sh ./libtool   --mode=install /usr/bin/install -c elfedit '/mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-elfedit'
+libtool: install: /usr/bin/install -c elfedit /mnt/lfs/tools/bin/./x86_64-lfs-linux-gnu-elfedit
+  /bin/sh ./libtool  --mode=install /usr/bin/install -c nm-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-nm
+libtool: install: /usr/bin/install -c nm-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-nm
+  /bin/sh ./libtool  --mode=install /usr/bin/install -c strip-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-strip
+libtool: install: /usr/bin/install -c strip-new /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-strip
+  /bin/sh ./libtool  --mode=install /usr/bin/install -c cxxfilt /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-c++filt
+rm -f /mnt/lfs/tools/lib/bfd-plugins/libdep.la
+rm -f /mnt/lfs/tools/lib/bfd-plugins/libdep.dll.a
+make[5]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/ld'
+libtool: install: /usr/bin/install -c cxxfilt /mnt/lfs/tools/bin/x86_64-lfs-linux-gnu-c++filt
+/bin/sh ../../binutils/../mkinstalldirs /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin
+for i in nm-new strip-new ar ranlib dlltool objdump objcopy readelf; do \
+  if [ -f $i ]; then \
+    j=`echo $i | sed -e 's/-new//'`; \
+    k=`echo $j | sed 's&^&x86_64-lfs-linux-gnu-&'`; \
+    if [ "/mnt/lfs/tools/bin/$k" != "/mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/$j" ]; then \
+      rm -f /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/$j; \
+      ln /mnt/lfs/tools/bin/$k /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/$j >/dev/null 2>/dev/null \
+	||  /bin/sh ./libtool --mode=install /usr/bin/install -c $i /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/$j; \
+    fi; \
+  else true; \
+  fi; \
+done
+make[5]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[4]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[3]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[2]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build/binutils'
+make[1]: Leaving directory '/mnt/lfs/sources/binutils-2.42/build'
