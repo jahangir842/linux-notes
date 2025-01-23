@@ -1,5 +1,9 @@
 ## Installation guide for installing ROS 2 on on Ubuntu 22:
 
+**Official Guide:** https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debs.html#id2
+
+**Single Script:**
+
 ```sh
 sudo apt update && sudo apt install -y locales software-properties-common curl && \
 sudo locale-gen en_US en_US.UTF-8 && \
