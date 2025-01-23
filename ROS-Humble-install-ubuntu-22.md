@@ -1,4 +1,4 @@
-Installation guide for installing ROS 2 on on Ubuntu 22:
+## Installation guide for installing ROS 2 on on Ubuntu 22:
 
 ```sh
 sudo apt update && sudo apt install -y locales software-properties-common curl && \
