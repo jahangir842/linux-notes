@@ -79,17 +79,40 @@ Sure, here is a complete guide to resizing an LVM partition to utilize additiona
 
 #### Step 5: Resize the Filesystem
 
-1. **Resize the Filesystem**:
 
-   For ext4:
-   ```bash
-   sudo resize2fs /dev/ubuntu-vg/ubuntu-lv
-   ```
 
-   For XFS:
-   ```bash
-   sudo xfs_growfs /dev/ubuntu-vg/ubuntu-lv
-   ```
+
+
+### Step 1: Unmount the File System  
+Before resizing, you need to unmount the file system to prevent data corruption.  
+
+```bash
+sudo umount /dev/mapper/vgname-lvname
+```  
+Replace `vgname` with your volume group name and `lvname` with your logical volume name.
+
+---
+
+### Step 2: Check and Repair the File System  
+Run a file system check to ensure that the file system is in a consistent state before resizing.  
+
+```bash
+sudo e2fsck -f /dev/mapper/vgname-lvname
+```  
+The `-f` flag forces a check even if the system believes the file system is clean.
+
+---
+
+### Step 3: Resize the File System  
+Shrink or grow the file system to the desired size.  
+
+```bash
+sudo resize2fs /dev/mapper/vgname-lvname 10G
+```  
+Replace `10G` with the size you want to resize to. Make sure the size is sufficient to hold the existing data.  
+or leave it blank
+
+---
 
 #### Step 6: Verify the Resized Filesystem
 
