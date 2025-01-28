@@ -25,7 +25,7 @@ In summary, POSIX is important for maintaining a consistent environment and maki
 
 ## Portability
 
-**POSIX** ensures portability, meaning software written to POSIX standards can run on any POSIX-compliant system, like macOS and Ubuntu, with minimal modifications. However, there are some important considerations:
+**POSIX** ensures portability, meaning software written to POSIX standards can run on any POSIX-compliant system, like `macOS and Ubuntu`, with `minimal modifications`. However, there are some important considerations:
 
 1. **Core Compatibility**: Both macOS and Ubuntu are POSIX-compliant, meaning that software that adheres to POSIX standards should generally work across both. This includes system calls, utilities, and scripting.
 
