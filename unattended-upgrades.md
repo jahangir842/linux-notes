@@ -152,4 +152,98 @@ If you prefer manual updates:
 
 ---
 
-These settings and actions make `unattended-upgrades` a reliable solution for automated system maintenance. Adjust the configurations to align with your network and system requirements.
+## Example File:
+
+### **1. Allowed Origins**
+The section `Unattended-Upgrade::Allowed-Origins` specifies which repositories or origins are allowed to provide updates for unattended upgrades.
+
+#### Current Configuration:
+```
+// Allowed origins
+Unattended-Upgrade::Allowed-Origins {
+    "${distro_id}:${distro_codename}";
+    "${distro_id}:${distro_codename}-security";
+    "${distro_id}ESMApps:${distro_codename}-apps-security";
+    "${distro_id}ESM:${distro_codename}-infra-security";
+    // "${distro_id}:${distro_codename}-updates";
+    // "${distro_id}:${distro_codename}-proposed";
+    // "${distro_id}:${distro_codename}-backports";
+};
+```
+
+- **`${distro_id}:${distro_codename}`**: Includes general updates for the distribution.
+- **`${distro_id}:${distro_codename}-security`**: Includes security updates (enabled by default).
+- **`ESMApps` and `ESM`**: Extended Security Maintenance (for enterprise use). These entries are placeholders and may not be functional unless you enable ESM.
+- **Commented Lines**:
+  - `-updates`: General updates that are not necessarily security-related (disabled here).
+  - `-proposed`: Pre-release packages (disabled by default to avoid instability).
+  - `-backports`: Updates from the backports repository (disabled by default).
+
+---
+
+### **2. Package Blacklist**
+The `Unattended-Upgrade::Package-Blacklist` section allows you to **exclude specific packages** from being automatically upgraded.
+
+#### Current Configuration:
+```
+// Package Blacklist
+Unattended-Upgrade::Package-Blacklist {
+    // Exclude all packages starting with "linux-"
+    // "linux-";
+
+    // Exclude specific versions of libc6
+    // "libc6$";
+    // "libc6-dev$";
+    // "libc6-i686$";
+};
+```
+
+- Packages matching the patterns listed here will not be automatically updated.
+- Examples:
+  - `"linux-"`: Prevents kernel updates.
+  - `"libc6$"`: Matches exactly `libc6` (useful for avoiding potentially breaking updates).
+  - To enable exclusions, uncomment the corresponding lines.
+
+---
+
+### **3. What You Can Do**
+#### Enable Additional Updates
+To allow more updates (e.g., general updates or backports), uncomment the relevant lines:
+```
+// "${distro_id}:${distro_codename}-updates";
+// "${distro_id}:${distro_codename}-backports";
+```
+Change to:
+``` 
+"${distro_id}:${distro_codename}-updates";
+"${distro_id}:${distro_codename}-backports";
+```
+
+---
+
+#### Exclude Specific Packages
+If you want to exclude specific packages from being updated automatically, uncomment or add entries in the `Package-Blacklist` section.
+
+Example:
+To prevent kernel updates, uncomment this line:
+``` 
+"linux-";
+```
+
+---
+
+#### Test the Configuration
+Run this command to simulate unattended upgrades and confirm the configuration:
+```bash
+sudo unattended-upgrade --dry-run --debug
+```
+
+---
+
+### Summary:
+- **Allowed Origins**: Controls which repositories provide updates.
+- **Package Blacklist**: Specifies packages to exclude.
+- **Uncomment to Enable**: Uncomment lines to include `-updates` or other repositories.
+- Use the `unattended-upgrade --dry-run` command to verify your configuration without actually applying updates.
+
+Let me know if you need further assistance!
