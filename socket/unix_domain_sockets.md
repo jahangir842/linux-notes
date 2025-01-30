@@ -9,6 +9,44 @@ Unix Domain Sockets (UDS) are a form of inter-process communication (IPC) that a
 - **Security**: UDS use file system permissions for access control. Only authorized users or processes can access the socket.
 - **Socket Address**: The address of a Unix Domain Socket is a file path, e.g., `/tmp/socket_name`.
 
+---
+
+## Example:
+
+Nginx can be configured to pass PHP or other requests to the appropriate Unix Domain Sockets by using the `fastcgi_pass` directive for PHP, or similar directives for other services. Here’s a general approach:
+
+1. **Configure PHP with Unix Domain Sockets**:
+   In Nginx, you can set up PHP handling through FastCGI by pointing it to the PHP-FPM (FastCGI Process Manager) socket.
+
+2. **Example for PHP**:
+   In your Nginx configuration file (`/etc/nginx/sites-available/default` or similar), use this setup to pass PHP requests to a Unix Domain Socket:
+
+   ```nginx
+   server {
+       listen 80;
+       server_name example.com;
+
+       root /var/www/html;
+
+       location ~ \.php$ {
+           include fastcgi_params;
+           fastcgi_pass unix:/run/php/php7.4-fpm.sock;  # Specify the PHP-FPM socket
+           fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+           include fastcgi_params;
+       }
+   }
+   ```
+
+   - `fastcgi_pass unix:/run/php/php7.4-fpm.sock;` points to the PHP-FPM socket.
+   - `fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;` sets the correct script location.
+
+3. **Other Services**:
+   Similar configurations can be used for other services. For example, if you need Nginx to pass traffic to a different service (e.g., Python, Node.js), you can configure the `fastcgi_pass` or relevant directive to the correct socket for that service.
+
+In short, Nginx uses the `fastcgi_pass` directive (or other similar directives) to forward requests to the appropriate Unix Domain Socket for processing by the relevant backend service (PHP, Python, etc.).
+
+---
+
 #### **Use Cases of Unix Domain Sockets**
 
 Unix Domain Sockets are frequently used in a wide range of applications, especially where high-performance and local communication are crucial. Below are some key use cases:
