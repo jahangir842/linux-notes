@@ -124,14 +124,14 @@ From the provided logs, the configuration process appears to have completed succ
 
    Example:
    ```bash
-   ls -l /mnt/lfs/tools/bin
+   ls -l /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin
    ```
    - You should see binaries like `as`, `ld`, `objdump`, `nm`, etc.
 
 2. **Test the Binaries**:
    - Run one of the tools to confirm it works. For example:
      ```bash
-     /mnt/lfs/tools/bin/ld --version
+     /mnt/lfs/tools/x86_64-lfs-linux-gnu/bin/ld --version
      ```
      - This should display the version of the GNU linker.
 
