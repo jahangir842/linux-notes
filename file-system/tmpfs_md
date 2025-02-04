@@ -1,0 +1,107 @@
+### **What is tmpfs in Linux?**
+**tmpfs** (temporary file system) is a **RAM-based file system** in Linux that stores files in memory instead of on disk. It is designed for temporary storage and provides **fast read/write access**, making it ideal for caches, runtime data, and temporary files.
+
+---
+
+## **Key Features of tmpfs**
+1. **Stores Data in RAM (Volatile)**
+   - Data is **lost on reboot** since tmpfs does not persist data to disk.
+   - Faster than traditional disk storage.
+
+2. **Automatically Manages Space**
+   - Uses **swap space** when needed.
+   - Expands and shrinks dynamically based on usage.
+
+3. **Faster Than Disk-Based Storage**
+   - Since data is stored in **RAM**, read/write operations are much faster than SSDs or HDDs.
+
+4. **Mountable Anywhere**
+   - Unlike `/tmp`, which may be a regular disk partition, tmpfs can be mounted anywhere.
+
+---
+
+## **Where is tmpfs Used?**
+### 1️⃣ **Default tmpfs Mount Points**
+Most Linux distributions automatically mount tmpfs in locations like:
+```bash
+mount | grep tmpfs
+```
+Example output:
+```
+tmpfs on /run type tmpfs (rw,nosuid,nodev,mode=755)
+tmpfs on /tmp type tmpfs (rw,nosuid,nodev)
+tmpfs on /dev/shm type tmpfs (rw,nosuid,nodev)
+```
+
+| **Mount Point** | **Purpose** |
+|---------------|------------|
+| **`/run`** | Stores runtime system files (PID files, sockets) |
+| **`/tmp`** | Temporary user files (if configured) |
+| **`/dev/shm`** | Shared memory for inter-process communication |
+
+---
+
+## **How to Use tmpfs?**
+### **1️⃣ Check Mounted tmpfs File Systems**
+```bash
+df -h | grep tmpfs
+```
+Example output:
+```
+tmpfs           2.0G  12M  2.0G   1% /run
+tmpfs           4.0G   0   4.0G   0% /dev/shm
+```
+---
+
+### **2️⃣ Manually Mount tmpfs**
+You can mount a tmpfs directory anywhere:
+```bash
+sudo mount -t tmpfs -o size=1G tmpfs /mnt/tmpfs
+```
+- This creates a **1GB RAM disk** mounted at `/mnt/tmpfs`.
+
+To verify:
+```bash
+df -h /mnt/tmpfs
+```
+
+To remove the mount:
+```bash
+sudo umount /mnt/tmpfs
+```
+---
+
+### **3️⃣ Add tmpfs to `/etc/fstab` for Automatic Mounting**
+To make tmpfs persist across reboots, add this line to `/etc/fstab`:
+```
+tmpfs  /mnt/tmpfs  tmpfs  defaults,size=1G  0  0
+```
+Then reload with:
+```bash
+sudo mount -a
+```
+---
+
+### **4️⃣ Set tmpfs for `/tmp`**
+By default, `/tmp` might be stored on disk. You can configure it to use tmpfs by adding this to `/etc/fstab`:
+```
+tmpfs  /tmp  tmpfs  defaults,noatime,nosuid,nodev,size=2G  0  0
+```
+This ensures **temporary files in `/tmp` are stored in RAM**.
+
+---
+
+## **tmpfs vs. Other File Systems**
+| **File System** | **Storage Type** | **Persists on Reboot?** | **Usage** |
+|---------------|---------------|------------------|-------------|
+| **ext4, xfs** | Disk (HDD/SSD) | ✅ Yes | Standard storage |
+| **tmpfs** | RAM | ❌ No | Temporary files, caches |
+| **ramfs** | RAM | ❌ No | Similar to tmpfs, but without size limits |
+| **devtmpfs** | RAM | ✅ Yes | Auto-created device files in `/dev` |
+
+---
+
+## **Conclusion**
+tmpfs is a **fast, flexible, and efficient** way to store temporary files in RAM. It helps speed up system processes, reduce disk wear, and optimize performance.
+
+Would you like specific tmpfs optimizations for your system? 🚀
