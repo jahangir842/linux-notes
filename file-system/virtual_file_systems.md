@@ -1,6 +1,8 @@
 # **Linux Virtual File System (VFS) – Detailed Notes**  
 
-**Note:** These file systems are virtual: no disk space is used for them. The content of these file systems resides in memory. e.g. dev,proc,sys,run
+**Note:** These file systems are virtual: no disk space is used for them. The content of these file systems resides in memory. 
+
+**e.g.** dev,proc,sys,run
 
 ## **1. What is VFS?**  
 The **Virtual File System (VFS)** is an abstraction layer in Linux that allows different file systems (ext4, XFS, NTFS) to work under a unified interface. It enables applications to interact with files consistently, regardless of the underlying storage format.  
