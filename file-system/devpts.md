@@ -45,7 +45,10 @@ To manually mount `devpts` (if needed):
 ```sh
 mount -t devpts devpts /dev/pts
 ```
-
+- mount → Mounts a filesystem.
+- -t devpts → Specifies that we are mounting a devpts filesystem (used for pseudo-terminals).
+- devpts → The source of the filesystem (usually handled by the kernel, so we just specify "devpts").
+- /dev/pts → The directory where the filesystem will be mounted.
 ---
 
 ### **Common Issues & Fixes**
