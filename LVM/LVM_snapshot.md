@@ -4,6 +4,20 @@ LVM snapshots are **point-in-time copies** of a Logical Volume (LV). They allow 
 
 ---
 
+### 📌 How much a Snapshot size should be?
+A snapshot **doesn't duplicate the full volume**; it only stores changes made after the snapshot is created. So, a **10GB snapshot** means you can track up to 10GB of changes before it fills up.
+
+### ✅ How to Decide Snapshot Size?
+- If your volume is mostly **read-only** → Small snapshot (e.g., 5-10% of LV size) is enough.
+- If you expect **frequent writes** → Use a **larger snapshot** (e.g., 20-30% of LV size).
+- If your snapshot **fills up**, it will become invalid and unusable.
+
+### 🛠 Example:
+- If you expect **5GB of changes**, allocate at least **5GB snapshot**.
+- If you are unsure, start with **10GB** and monitor usage (`lvdisplay` → `COW-table` size).
+
+---
+
 ## **🚀 Use Cases of LVM Snapshots**
 ### **1️⃣ Backup and Recovery**
 - Snapshots allow **consistent backups** of live systems.
