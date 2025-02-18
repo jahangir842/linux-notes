@@ -1,0 +1,1 @@
+sonar-scanner.bat -D"sonar.projectKey=aiops_ad-tewav0.8_38602e81-50b6-4964-bad0-bc0ddefe94c8" -D"sonar.sources=." -D"sonar.host.url=http://192.168.1.207:9000" -D"sonar.token=sqp_9325ae1e430cf51a52ae2bc4a2489e82df16e4d7"

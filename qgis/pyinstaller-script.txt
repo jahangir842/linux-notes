@@ -1,0 +1,39 @@
+pyinstaller --onefile ^
+--paths=apps\qgis-ltr\bin ^
+--paths=apps\qgis-ltr\python ^
+--paths=apps\qgis-ltr\python\plugins ^
+--paths=apps\qgis-ltr\python\plugins\processing ^
+--paths=apps\qgis-ltr\python\plugins\processing\core ^
+--paths=apps\qgis-ltr\python\plugins\processing\algs\qgis ^
+--add-data "Code_Files/*;Code_Files" ^
+--add-data "Data_Files/*;Data_Files" ^
+--add-data "Images/*;Images" ^
+--add-data "Layers/*;Layers" ^
+--add-data "Documentation/*;Documentation" ^
+--add-data "ML_models/*;ML_models" ^
+--add-data "Recording_Files/*;Recording_Files" ^
+--add-data "C:\Program Files\QGIS 3.22.16\share\proj\*;proj_data" ^
+--add-binary "C:\Program Files\QGIS 3.22.16\apps\qgis-ltr\bin\qgis_core.dll;." ^
+--add-binary "C:\Program Files\QGIS 3.22.16\apps\qgis-ltr\bin\qgis_gui.dll;." ^
+--hidden-import=qgis.core ^
+--hidden-import=qgis.PyQt ^
+--hidden-import=qgis.gui ^
+--hidden-import=qgis._gui ^
+--hidden-import=PyQt5.QtPositioning ^
+--hidden-import=PyQt5.QtPrintSupport ^
+--hidden-import=PyQt5.QtSql ^
+--hidden-import=PyQt5.QtNetwork ^
+--hidden-import=PyQt5.QtXml ^
+--hidden-import=PyQt5.QtCore ^
+--hidden-import=PyQt5.QtGui ^
+--hidden-import=numpy ^
+--hidden-import=scipy ^
+--hidden-import=pyproj ^
+--hidden-import=threat_evaluation ^
+--hidden-import=weapon_assignment ^
+--hidden-import=simulate_PV_data ^
+--hidden-import=append_PV_data ^
+--hidden-import=clustering_file ^
+--hidden-import=config_parameters ^
+--hidden-import=projection_file ^
+gui_main.py
