@@ -24,17 +24,17 @@ nmcli connection show
 Identify the connection name (e.g., `ens192` or `Wired connection 1`).
 
 #### **2️⃣ Assign a Static IP**
-Replace `ens192` with your actual network interface name:
+Replace `enp0s3` with your actual network interface name:
 ```sh
-sudo nmcli connection modify ens192 ipv4.addresses 192.168.1.100/24
-sudo nmcli connection modify ens192 ipv4.gateway 192.168.1.1
-sudo nmcli connection modify ens192 ipv4.dns 8.8.8.8
-sudo nmcli connection modify ens192 ipv4.method manual
+sudo nmcli connection modify enp0s3 ipv4.addresses 192.168.1.100/24
+sudo nmcli connection modify enp0s3 ipv4.gateway 192.168.1.1
+sudo nmcli connection modify enp0s3 ipv4.dns 8.8.8.8
+sudo nmcli connection modify enp0s3 ipv4.method manual
 ```
 
 #### **3️⃣ Apply Changes**
 ```sh
-sudo nmcli connection up ens192
+sudo nmcli connection up enp0s3
 ```
 
 ---
@@ -47,11 +47,11 @@ If you prefer manual configuration:
 cd /etc/NetworkManager/system-connections/
 ls -l
 ```
-Locate the file corresponding to your network interface (e.g., `ens192.nmconnection`).
+Locate the file corresponding to your network interface (e.g., `enp0s3.nmconnection`).
 
 #### **2️⃣ Edit the Configuration File**
 ```sh
-sudo nano ens192.nmconnection
+sudo nano enp0s3.nmconnection
 ```
 
 #### **3️⃣ Modify or Add the Following Lines**
@@ -77,7 +77,7 @@ ip a
 ```
 or  
 ```sh
-nmcli device show ens192
+nmcli device show enp0s3
 ```
 
 These changes will **persist after a reboot**. 🚀 Let me know if you need any assistance!
