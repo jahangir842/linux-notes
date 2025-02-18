@@ -6,7 +6,7 @@ To build a **wheel (.whl) file** for **Windows and Linux** from a `.tar.gz` file
 - **For Window:** Build on Windows
 - **For Linux:** Build on Linux
 
-**For Sepecific Python Version:** Create Conda evn with that Python Version: 
+**For Sepecific Python Version:** Create Conda evn with that Python Version (e.g. for Python 3.9): 
 
 ```shell
 conda create --name myenv39 python=3.9 -y
@@ -34,11 +34,10 @@ pip wheel package-name.tar.gz dist/
 This will:
 - Build a **.whl** file directly from the `.tar.gz` source distribution.
 - Store the output inside the `dist/` directory.
-- 
 
 ---
 
-## **6. Install the Wheel File**
+## **4. Install the Wheel File**
 Once built, install it using:
 
 ```bash
