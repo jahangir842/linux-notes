@@ -3,8 +3,8 @@ To build a **wheel (.whl) file** for **Windows and Linux** from a `.tar.gz` file
 
 ---
 
--- **For Window:** Build on Windows
--- **For Linux:** Build on Linux
+- **For Window:** Build on Windows
+ **For Linux:** Build on Linux
 
 **For Sepecific Python Version:** Create Conda evn with that Python Version: 
 
