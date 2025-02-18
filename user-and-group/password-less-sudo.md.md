@@ -7,6 +7,12 @@ The `sudoers` file controls the sudo permissions for users. To edit it safely, u
 sudo visudo
 ```
 
+OR
+
+```bash
+sudo nano /etc/sudoers
+```
+
 This opens the `sudoers` file in a safe way that prevents syntax errors, which could otherwise lock you out of your system.
 
 ### Step 2: Grant Password-Less Access
