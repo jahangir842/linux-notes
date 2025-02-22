@@ -1,7 +1,3 @@
-Here’s a **detailed** and **well-structured** guide to **Nmap (Network Mapper)**, including **explanations of commands** and **examples**:  
-
----
-
 # **📌 Nmap (Network Mapper) Cheat Sheet with Explanations**  
 
 **Nmap (Network Mapper)** is an **open-source network scanning tool** used for **network discovery, security auditing, and vulnerability assessments**. It can detect **live hosts, open ports, running services, OS details, and even vulnerabilities** using its **scripting engine**.
