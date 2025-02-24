@@ -57,4 +57,28 @@ Example:
 setpriv --reuid=johndoe --regid=johndoe --clear-groups whoami
 ```
 
-Would you like an example for a specific use case?
+---
+
+## comparison:
+
+| Method             | Requires Root Privileges | Requires Password | Runs Command | Runs Interactive Shell | Notes |
+|--------------------|------------------------|-------------------|--------------|------------------------|-------|
+| `sudo -u username command` | Yes (if not configured otherwise) | No (if configured in sudoers) | ✅ | ❌ | Most commonly used, follows `sudoers` rules. |
+| `su - username -c "command"` | Yes | Yes (unless already root) | ✅ | ❌ | Runs command in a new login shell. |
+| `sudo -i -u username` | Yes | No (if configured in sudoers) | ✅ | ✅ | Starts an interactive shell for the user. |
+| `runuser -l username -c "command"` | Yes (must be root) | No | ✅ | ❌ | Used in scripts, doesn't prompt for a password. |
+| `setpriv --reuid=username --regid=username --clear-groups command` | Yes | No | ✅ | ❌ | Less common, modifies process privileges directly. |
+
+### **Key Differences:**
+1. **`sudo -u`** is best for running a single command as another user without requiring their password.
+2. **`su -c`** is useful but requires the target user's password unless run as root.
+3. **`sudo -i -u`** is ideal for switching to an interactive shell of another user.
+4. **`runuser`** is preferred in scripts because it doesn’t prompt for a password.
+5. **`setpriv`** is a low-level option mostly used for privilege isolation in scripts.
+
+### **Best Use Cases:**
+- If you **just need to run a command once** as another user → Use `sudo -u username command`.
+- If you **need an interactive shell** as another user → Use `sudo -i -u username`.
+- If you **are scripting and need to avoid password prompts** → Use `runuser`.
+- If you **want strict privilege control** without a shell → Use `setpriv`.
+
