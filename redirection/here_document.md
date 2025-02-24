@@ -1,8 +1,4 @@
-Below are detailed notes on the concept of a "Here Document" in Linux, written in a clear and structured format with explanations and examples. These notes aim to help you understand what a Here Document is, how it works, and its practical applications in Linux scripting and command-line usage.
-
----
-
-# **Notes on Here Document in Linux**
+# **Here Document in Linux**
 
 A **Here Document** (often shortened to "heredoc") is a special type of input redirection in Linux and Unix-like systems. It allows you to pass multiple lines of text directly to a command or script from within a shell session or script, without needing to store the text in a separate file. It’s a convenient way to provide input to commands that expect multi-line data, such as `cat`, `tee`, or interactive programs.
 
