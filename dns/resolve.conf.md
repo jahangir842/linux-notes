@@ -1,8 +1,4 @@
-Below are detailed notes on `/etc/resolv.conf` in Linux, explaining what it is, its purpose, how it works, and its relevance in network configuration. These notes are structured for clarity and include practical examples to help you understand its role in the system.
-
----
-
-# **Notes on resolv.conf in Linux**
+# **resolv.conf in Linux**
 
 `/etc/resolv.conf` is a configuration file in Linux (and other Unix-like systems) that defines the settings for the system's **DNS (Domain Name System)** resolution. It tells the system where to look up IP addresses for domain names (e.g., translating "google.com" to "142.250.190.14") by specifying DNS servers and related options.
 
@@ -236,5 +232,3 @@ EOF'
    ping google.com
    ```
 3. Revert: Restore the original or let the system regenerate it.
-
-Let me know if you need help with a specific `resolv.conf` issue! 🚀
