@@ -20,7 +20,9 @@ Linux and Unix are closely related but differ in terms of origin, licensing, arc
 
 Linux is **Unix-like** but **not Unix-based**. Here's why:  
 
-### **Linux vs. Unix: The Key Difference**
+--- 
+
+### The Key Difference**
 - **Linux is not derived from Unix** → It was written from scratch by **Linus Torvalds** in 1991.
 - **BSD is derived from Unix** → BSD was originally **a modified version of AT&T Unix**.
 
