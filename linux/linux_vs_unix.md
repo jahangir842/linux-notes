@@ -16,7 +16,7 @@ Linux and Unix are closely related but differ in terms of origin, licensing, arc
 
 ---
 
-## **Unix-like** vs **not Unix-based**
+**Unix-like** vs **Unix-based**
 
 Linux is **Unix-like** but **not Unix-based**. Here's why:  
 
