@@ -48,8 +48,6 @@ Linux is **Unix-like** but **not Unix-based**. Here's why:
 - **BSD is a direct descendant of Unix.**
 - **macOS, AIX, and Solaris are certified Unix OS.**
 
-Would you like help choosing between Linux and BSD for a specific use case? 🚀
-
 ---
 
 ## **2. Key Differences**
@@ -103,4 +101,4 @@ Would you like help choosing between Linux and BSD for a specific use case? 🚀
 - **Linux** is the best choice for most users due to its **free, open-source nature, vast support, and flexibility**.
 - **Unix** is mainly used in legacy enterprise environments, like banking, telecommunications, and high-end servers.
 
-Would you like details on specific distributions or Unix variants? 🚀
+---
