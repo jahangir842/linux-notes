@@ -1,8 +1,4 @@
-It seems like you’re asking about **`systemd-resolved`** in Linux, given the context of your previous question about `/etc/resolv.conf` and DNS. I’ll assume you meant "resolved" as shorthand for `systemd-resolved`, a component of the `systemd` suite that handles DNS resolution. Below are detailed notes explaining what `systemd-resolved` is, its purpose, how it works, and its role in Linux networking.
-
----
-
-# **Notes on systemd-resolved in Linux**
+# **systemd-resolved in Linux**
 
 **`systemd-resolved`** is a system service in Linux, part of the `systemd` ecosystem, that provides DNS name resolution (and related features) to local applications. It acts as a local DNS resolver, caching DNS queries and managing name resolution settings dynamically. It’s designed to replace or complement traditional static `/etc/resolv.conf` configurations in modern Linux distributions.
 
