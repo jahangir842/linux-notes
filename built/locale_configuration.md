@@ -1,5 +1,11 @@
 This guide explains how to configure the system locale on a Linux system, particularly when building Linux From Scratch (LFS). Here’s a summary and breakdown of the key points:
 
+---
+
+**More Info:** https://github.com/jahangir842/linux-notes/blob/main/time/locale.md
+
+---
+
 ### **1. Importance of Setting the Locale Correctly**
 Setting the locale properly ensures:
 - Program output appears in your preferred language.
