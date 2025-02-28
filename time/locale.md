@@ -89,6 +89,35 @@ reboot
 
 ---
 
+### **Change Locale in Urdu and English**  
+
+**Check Current Locale:**  
+```bash
+locale
+```
+
+**Set English (US):**  
+```bash
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+```
+
+**Set Urdu (PK):**  
+```bash
+sudo update-locale LANG=ur_PK.UTF-8 LC_ALL=ur_PK.UTF-8
+```
+
+**Apply Changes:**  
+```bash
+source /etc/default/locale  # or reboot
+```
+
+**Generate Missing Locales:**  
+```bash
+sudo locale-gen en_US.UTF-8 ur_PK.UTF-8 && sudo dpkg-reconfigure locales
+```
+
+---
+
 ## **Generating and Configuring Locales**
 If your desired locale is not available, generate it using:
 ```bash
