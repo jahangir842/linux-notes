@@ -35,11 +35,14 @@ LC_ALL=
 ```
 
 Each line represents a different category of locale settings:
+- `LC` (Locale Categories) in Linux controls how the system handles language, date formats, number formats, and other regional settings.
 - `LANG`: Defines the overall system language.
 - `LC_TIME`: Controls date and time format.
 - `LC_MONETARY`: Defines currency symbols.
 - `LC_MESSAGES`: Language for system messages.
-- `LC_ALL`: Overrides all other locale settings.
+- `LC_NUMERIC` → Number format
+- `LC_COLLATE` → Sorting order
+- `LC_ALL` → Overrides all `LC_*` settings (not recommended for permanent use)
 
 ---
 
