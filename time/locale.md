@@ -79,7 +79,8 @@ This setting will be **lost after reboot**.
 ### **Method 2: Permanent Locale Change (System-Wide)**
 To permanently set the locale:
 ```bash
-sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 LC_NUMERIC=en_US.UTF-8 LC_TIME=en_US.UTF-8 LC_MONETARY=en_US.UTF-8 LC_PAPER=en_US.UTF-8 LC_MEASUREMENT=en_US.UTF-8 LC_NAME=en_US.UTF-8 LC_ADDRESS=en_US.UTF-8 LC_TELEPHONE=en_US.UTF-8 LC_IDENTIFICATION=en_US.UTF-8
+
 ```
 Apply changes:
 ```bash
@@ -92,16 +93,11 @@ reboot
 
 ---
 
-### **Change Locale in Urdu and English**  
+### **Change Locale in Urdu**  
 
 **Check Current Locale:**  
 ```bash
 locale
-```
-
-**Set English (US):**  
-```bash
-sudo update-locale LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8
 ```
 
 **Set Urdu (PK):**  
