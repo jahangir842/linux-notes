@@ -2,7 +2,7 @@ This guide explains how to configure the system locale on a Linux system, partic
 
 ---
 
-**More Info:** https://github.com/jahangir842/linux-notes/blob/main/time/locale.md
+**What is Locale:** https://github.com/jahangir842/linux-notes/blob/main/time/locale.md
 
 ---
 
