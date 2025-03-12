@@ -1,8 +1,4 @@
-Below is an enhanced version of your previous guide, tailored specifically for a Python Flask application with an Nginx reverse proxy using a self-signed SSL certificate. I've incorporated elements from Christian Lempa’s tutorial and cheatsheet, refined the steps for clarity, and integrated best practices for Flask and Nginx deployment. This guide is streamlined for development/testing while providing a foundation for transitioning to production.
-
----
-
-### Enhanced Guide: Self-Signed SSL Certificate for Flask with Nginx Reverse Proxy
+### Self-Signed SSL Certificate for Flask with Nginx Reverse Proxy
 
 **References**:  
 - Christian Lempa Tutorial: [YouTube](https://www.youtube.com/watch?v=VH4gXcvkmOY&t=251s)  
