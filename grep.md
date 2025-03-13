@@ -28,7 +28,7 @@ Here’s a breakdown of frequently used `grep` options:
 | `-A n`            | Show `n` lines **after** each match.                                       |
 | `-B n`            | Show `n` lines **before** each match.                                      |
 | `-C n`            | Show `n` lines **before and after** each match (context).                  |
-| `--color`         | Highlight matching text in the output (often enabled by default).          |
+| `--color`         | Highlight matching text, value can be 'always', 'never', or 'auto'         |
 | `-e`              | Specify multiple patterns (e.g., `grep -e "pattern1" -e "pattern2"`).      |
 | `-f file`         | Read patterns from a file (one per line).                                  |
 | `-H`              | Display filenames with matches (useful when searching multiple files).     |
