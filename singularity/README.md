@@ -68,6 +68,9 @@ Imagine you’re a researcher running a machine learning model that requires Pyt
 
 ### Getting Started with Singularity
 1. **Installation**:
+
+https://docs.sylabs.io/guides/3.5/user-guide/quick_start.html#install
+
    - On Ubuntu, install via:
      ```bash
      sudo apt install singularity-container
