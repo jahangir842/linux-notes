@@ -68,6 +68,10 @@ Imagine you’re a researcher running a machine learning model that requires Pyt
 
 ### Installation
 
+Reference: 
+- https://github.com/sylabs/singularity/blob/main/INSTALL.md
+- https://docs.sylabs.io/guides/3.0/user-guide/installation.html
+
 ### **Installing Go 1.24.1 on Linux**  
 
 To install **Go 1.24.1** on Linux manually, follow these steps:
