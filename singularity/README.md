@@ -147,6 +147,12 @@ sudo apt-get install -y \
     wget \
     zlib1g-dev
 ```
+### **Step 3: Install Aditional Dependencies**
+On Ubuntu 24.04 and above install additional libsubid headers:
+
+```bash
+sudo apt-get install -y libsubid-dev
+```
 
 ### **Step 4: Download Singularity Source Code**
 Clone the SingularityCE repository from GitHub:
