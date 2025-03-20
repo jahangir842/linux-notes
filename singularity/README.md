@@ -124,19 +124,28 @@ sudo apt-get upgrade -y
 
 ### **Step 2: Install Dependencies**
 Install the required dependencies for building Singularity:
+
 ```bash
+# Ensure repositories are up-to-date
+sudo apt-get update
+# Install debian packages for dependencies
 sudo apt-get install -y \
-    build-essential \
-    libseccomp-dev \
-    libglib2.0-dev \
-    pkg-config \
-    squashfs-tools \
+    autoconf \
+    automake \
     cryptsetup \
-    curl \
-    wget \
+    fuse2fs \
     git \
-    libfuse3-dev \  # Optional: For FUSE3 support
-    libsubid-dev    # Required for user namespace subuid/subgid mapping
+    fuse \
+    libfuse-dev \
+    libseccomp-dev \
+    libtool \
+    pkg-config \
+    runc \
+    squashfs-tools \
+    squashfs-tools-ng \
+    uidmap \
+    wget \
+    zlib1g-dev
 ```
 
 
