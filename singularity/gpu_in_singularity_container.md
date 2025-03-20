@@ -53,7 +53,7 @@ You can either:
 #### **Option 1: Pull a Pre-Built GPU-Enabled Container**
 Singularity can pull containers directly from Docker Hub. For example, to pull an NVIDIA CUDA container:
 ```bash
-singularity pull docker://nvcr.io/nvidia/cuda:12.2.2-base
+singularity pull docker://nvidia/cuda:12.8.1-cudnn-devel-ubuntu22.04
 ```
 This will create a Singularity image file (e.g., `cuda_12.2.2-base.sif`).
 
