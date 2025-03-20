@@ -67,15 +67,208 @@ Imagine you’re a researcher running a machine learning model that requires Pyt
 ---
 
 ### Getting Started with Singularity
-1. **Installation**:
+### **Installation**:
 
-https://docs.sylabs.io/guides/3.5/user-guide/quick_start.html#install
 
-   - On Ubuntu, install via:
+---
+
+Here’s a **complete guide** for installing **SingularityCE** (Community Edition) on **Ubuntu**. This guide covers all steps, including dependency installation, configuration, building, and testing.
+
+---
+
+### **Step 1: Update the System**
+Before starting, ensure your system is up to date:
+```bash
+sudo apt-get update
+sudo apt-get upgrade -y
+```
+
+---
+
+### **Step 2: Install Dependencies**
+Install the required dependencies for building Singularity:
+```bash
+sudo apt-get install -y \
+    build-essential \
+    libseccomp-dev \
+    libglib2.0-dev \
+    pkg-config \
+    squashfs-tools \
+    cryptsetup \
+    curl \
+    wget \
+    git \
+    libfuse3-dev \  # Optional: For FUSE3 support
+    libsubid-dev    # Required for user namespace subuid/subgid mapping
+```
+
+---
+
+### **Step 3: Install Go**
+Singularity requires Go (version 1.20 or higher). Follow these steps to install Go:
+
+1. **Download Go**:
+   ```bash
+   wget https://go.dev/dl/go1.20.linux-amd64.tar.gz
+   ```
+
+2. **Extract Go**:
+   ```bash
+   sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
+   ```
+
+3. **Add Go to PATH**:
+   ```bash
+   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+
+4. **Verify Go Installation**:
+   ```bash
+   go version
+   ```
+   You should see output like:
+   ```
+   go version go1.20 linux/amd64
+   ```
+
+---
+
+### **Step 4: Download Singularity Source Code**
+Clone the SingularityCE repository from GitHub:
+```bash
+git clone https://github.com/sylabs/singularity.git
+cd singularity
+```
+
+---
+
+### **Step 5: Configure Singularity**
+Run the configuration script to prepare the build:
+```bash
+./mconfig
+```
+
+If some error while configuring, then use this command:
+```bash
+./mconfig --without-libsubid
+```
+
+This will generate a `builddir` directory with the necessary build files.
+
+---
+
+### **Step 6: Build and Install Singularity**
+1. Navigate to the `builddir` directory:
+   ```bash
+   cd builddir
+   ```
+
+2. Build Singularity:
+   ```bash
+   make
+   ```
+
+3. Install Singularity:
+   ```bash
+   sudo make install
+   ```
+
+---
+
+### **Step 7: Verify the Installation**
+Check that Singularity is installed correctly:
+```bash
+singularity --version
+```
+
+You should see output like:
+```
+singularity-ce version 4.3.0
+```
+
+---
+
+### **Step 8: Test Singularity**
+Run a simple test to ensure Singularity works:
+
+1. Pull a test container:
+   ```bash
+   singularity pull docker://alpine
+   ```
+
+2. Run the container:
+   ```bash
+   singularity run alpine_latest.sif
+   ```
+
+You should see a shell inside the Alpine container.
+
+---
+
+### **Optional: Enable Setuid for Full Functionality**
+For full functionality (e.g., building containers), enable setuid for the Singularity binary:
+```bash
+sudo chmod 4755 /usr/local/libexec/singularity/bin/singularity-suid
+```
+
+---
+
+### **Optional: Install NVIDIA Container Toolkit (for GPU Support)**
+If you plan to use Singularity with NVIDIA GPUs, install the NVIDIA Container Toolkit:
+
+1. Add the NVIDIA repository:
+   ```bash
+   distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+   curl -s -L https://nvidia.github.io/nvidia-container-runtime/gpgkey | sudo apt-key add -
+   curl -s -L https://nvidia.github.io/nvidia-container-runtime/$distribution/nvidia-container-runtime.list | sudo tee /etc/apt/sources.list.d/nvidia-container-runtime.list
+   sudo apt-get update
+   ```
+
+2. Install the NVIDIA Container Toolkit:
+   ```bash
+   sudo apt-get install -y nvidia-container-toolkit
+   ```
+
+3. Restart Docker (if applicable):
+   ```bash
+   sudo systemctl restart docker
+   ```
+
+---
+
+### **Troubleshooting**
+1. **`libsubid` Not Found**:
+   - Ensure `libsubid-dev` is installed:
      ```bash
-     sudo apt install singularity-container
+     sudo apt-get install -y libsubid-dev
      ```
-   - Or download from [Sylabs](https://sylabs.io/singularity/) or use Apptainer’s [instructions](https://apptainer.org/docs/).
+
+2. **FUSE3 Headers Missing**:
+   - Install FUSE3 headers (optional):
+     ```bash
+     sudo apt-get install -y libfuse3-dev
+     ```
+
+3. **Go Version Too Old**:
+   - Ensure you have Go 1.20 or higher installed. If not, download and install the correct version.
+
+4. **Permission Errors**:
+   - Ensure you have `sudo` privileges for installation and setuid configuration.
+
+---
+
+### **Uninstall Singularity**
+To uninstall Singularity, navigate to the `builddir` directory and run:
+```bash
+sudo make uninstall
+```
+
+---
+
+This guide provides a complete and detailed process for installing SingularityCE on Ubuntu. Let me know if you encounter any issues!
+
+---
 
 2. **Basic Commands**:
    - Pull a pre-built image:
