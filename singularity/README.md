@@ -103,7 +103,6 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
-For **Zsh users**, replace `~/.bashrc` with `~/.zshrc`.
 
 ---
 
@@ -118,6 +117,8 @@ go version go1.24.1 linux/amd64
 ```
 
 ---
+
+### Singularity Installation:
 
 ### **Step 1: Update the System**
 Before starting, ensure your system is up to date:
