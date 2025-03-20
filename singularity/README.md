@@ -162,7 +162,7 @@ sudo apt-get install -y libsubid-dev
 ### **Step 4: Download Singularity Source Code**
 Clone the SingularityCE repository from GitHub:
 ```bash
-git clone https://github.com/sylabs/singularity.git
+wget https://github.com/sylabs/singularity/releases/download/v4.3.0/singularity-ce-4.3.0.tar.gz
 cd singularity
 ```
 
