@@ -66,13 +66,52 @@ Imagine you’re a researcher running a machine learning model that requires Pyt
 
 ---
 
-### Getting Started with Singularity
-### **Installation**:
+### Installation
 
+### **Installing Go 1.24.1 on Linux**  
+
+To install **Go 1.24.1** on Linux manually, follow these steps:
+
+### **Step 1: Download Go 1.24.1**
+Run the following command to download the Go binary package:  
+```bash
+wget https://go.dev/dl/go1.24.1.linux-amd64.tar.gz
+```
+*(Make sure to check [Go’s official website](https://go.dev/dl/) for the latest version.)*
+
+### **Step 2: Remove Any Previous Go Installation**  
+If you have an older version installed, remove it first:  
+```bash
+sudo rm -rf /usr/local/go
+```
+
+### **Step 3: Extract and Install Go**  
+Extract the downloaded archive to `/usr/local`:  
+```bash
+sudo tar -C /usr/local -xzf go1.24.1.linux-amd64.tar.gz
+```
+
+### **Step 4: Configure Environment Variables**  
+Add Go’s binary path to your shell profile (`~/.bashrc`, `~/.profile`, or `~/.zshrc`):  
+```bash
+echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
+echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
+source ~/.bashrc
+```
+For **Zsh users**, replace `~/.bashrc` with `~/.zshrc`.
 
 ---
 
-Here’s a **complete guide** for installing **SingularityCE** (Community Edition) on **Ubuntu**. This guide covers all steps, including dependency installation, configuration, building, and testing.
+### **Step 5: Verify Installation**  
+Check if Go is installed correctly:  
+```bash
+go version
+```
+Expected output:  
+```
+go version go1.24.1 linux/amd64
+```
 
 ---
 
@@ -82,8 +121,6 @@ Before starting, ensure your system is up to date:
 sudo apt-get update
 sudo apt-get upgrade -y
 ```
-
----
 
 ### **Step 2: Install Dependencies**
 Install the required dependencies for building Singularity:
@@ -102,7 +139,6 @@ sudo apt-get install -y \
     libsubid-dev    # Required for user namespace subuid/subgid mapping
 ```
 
----
 
 ### **Step 3: Install Go**
 Singularity requires Go (version 1.20 or higher). Follow these steps to install Go:
@@ -132,7 +168,6 @@ Singularity requires Go (version 1.20 or higher). Follow these steps to install 
    go version go1.20 linux/amd64
    ```
 
----
 
 ### **Step 4: Download Singularity Source Code**
 Clone the SingularityCE repository from GitHub:
@@ -141,7 +176,6 @@ git clone https://github.com/sylabs/singularity.git
 cd singularity
 ```
 
----
 
 ### **Step 5: Configure Singularity**
 Run the configuration script to prepare the build:
