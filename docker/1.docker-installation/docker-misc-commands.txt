@@ -1,0 +1,46 @@
+
+********************************************************************************
+terminal access of container
+sudo docker exec -it prometheus sh
+
+
+
+
+********************************************************************************
+			Delete all Instances at once
+********************************************************************************
+sudo docker stop $(sudo docker ps -aq) && sudo docker rm $(sudo docker ps -aq)
+
+********************************************************************************
+			Delete all Images at once
+********************************************************************************
+
+sudo docker rmi -f $(sudo docker images -q)
+
+********************************************************************************
+			Delete all volumes at once
+********************************************************************************
+sudo docker volume ls | sudo awk '{if(NR>1) print $2}' | sudo xargs docker volume rm
+
+********************************************************************************
+			Delete all Images at once
+********************************************************************************
+
+sudo docker rmi -f $(sudo docker images -q)		
+			
+********************************************************************************		
+		Failed to connect. Is Docker running? (Vs Code)
+********************************************************************************
+Docker extention in VS Code.
+simply add the user to the docker group by typing:
+	sudo usermod -aG docker ${USER}
+Don't forget to restart the VS Code and the system if necessary.
+	sudo chmod 666 /var/run/docker.sock
+
+********************************************************************************
+sql restore in podman
+********************************************************************************
+
+podman exec -it Mariadb mysql -u root -p redmine < redmine_db_backup
+
+
