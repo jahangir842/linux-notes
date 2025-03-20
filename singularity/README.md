@@ -148,36 +148,6 @@ sudo apt-get install -y \
     zlib1g-dev
 ```
 
-
-### **Step 3: Install Go**
-Singularity requires Go (version 1.20 or higher). Follow these steps to install Go:
-
-1. **Download Go**:
-   ```bash
-   wget https://go.dev/dl/go1.20.linux-amd64.tar.gz
-   ```
-
-2. **Extract Go**:
-   ```bash
-   sudo tar -C /usr/local -xzf go1.20.linux-amd64.tar.gz
-   ```
-
-3. **Add Go to PATH**:
-   ```bash
-   echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bashrc
-   source ~/.bashrc
-   ```
-
-4. **Verify Go Installation**:
-   ```bash
-   go version
-   ```
-   You should see output like:
-   ```
-   go version go1.20 linux/amd64
-   ```
-
-
 ### **Step 4: Download Singularity Source Code**
 Clone the SingularityCE repository from GitHub:
 ```bash
