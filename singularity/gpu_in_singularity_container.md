@@ -23,6 +23,8 @@ Here’s a step-by-step guide to running a GPU within a Singularity container:
 ---
 
 ### **Step 2: Install NVIDIA Container Toolkit**
+- https://github.com/jahangir842/docker-notes/tree/main/gpu
+
 If you haven’t already installed the NVIDIA Container Toolkit, follow these steps:
 
 1. Add the NVIDIA repository:
