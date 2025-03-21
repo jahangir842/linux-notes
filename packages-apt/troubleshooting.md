@@ -11,17 +11,7 @@
 2. **Update Package Lists**  
    ```bash
    sudo apt-get update
-   ```
-   - This refreshes the package index, ensuring that `apt` has the latest information on available packages.
-
-3. **Upgrade Installed Packages**  
-   ```bash
    sudo apt-get upgrade
-   ```
-   - This installs any pending package updates.
-
-4. **Remove Unused Dependencies**  
-   ```bash
    sudo apt-get autoremove
    ```
    - This cleans up unnecessary packages that were automatically installed but are no longer needed.
