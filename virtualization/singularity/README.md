@@ -103,6 +103,11 @@ echo 'export GOPATH=$HOME/go' >> ~/.bashrc
 echo 'export PATH=$PATH:$GOPATH/bin' >> ~/.bashrc
 source ~/.bashrc
 ```
+🧠 Explanation:
+
+- /usr/local/go/bin contains the Go toolchain (go, gofmt, etc.)
+- $GOPATH is where your Go projects and packages live.
+- $GOPATH/bin contains binaries installed via go install.
 
 ---
 
