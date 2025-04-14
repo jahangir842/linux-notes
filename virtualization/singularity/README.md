@@ -196,7 +196,7 @@ This will generate a `builddir` directory with the necessary build files.
 
 2. Build Singularity:
    ```bash
-   make
+   make -j$(nproc)
    ```
 
 3. Install Singularity:
