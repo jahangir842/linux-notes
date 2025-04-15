@@ -38,6 +38,14 @@ NVIDIA has several GPU brands, each targeting different markets—**gaming, prof
 
 **Tip:** **VAH** (first V came, then A and latest H)
 
+### Why "Tesla"?
+The Tesla branding (2007–2020) was NVIDIA’s way of distinguishing its data center and professional compute GPUs from its GeForce (gaming) and Quadro (workstation) lines.
+
+Later, NVIDIA replaced the Tesla branding with "NVIDIA Data Center GPUs" (e.g., A100, H100 under the Ampere and Hopper architectures).
+
+### Is Tesla the same as the car company?
+No relation—NVIDIA’s Tesla GPUs predate Elon Musk’s Tesla Motors (now Tesla, Inc.) becoming well-known, but the naming caused occasional confusion.
+
 ---
 
 ### **4. Tegra (Mobile & Embedded Systems)**  
