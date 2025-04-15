@@ -48,15 +48,91 @@ sudo ls /root
 
 If it works without prompting for a password, the configuration is successful.
 
+---
+
 ### Optional: Limit Commands
-If you only want the user to execute specific commands without a password (for security reasons), you can modify the configuration. For example, to allow the user to run only the `last` command without a password, add:
+
+### 🔐 Granting Passwordless `sudo` Permissions for Specific Commands or Paths
+
+To allow a user to run certain commands as root **without being prompted for a password**, use the `sudoers` configuration safely via:
 
 ```bash
-username ALL=(ALL) NOPASSWD:/usr/bin/last
+sudo visudo
 ```
 
-This allows password-less execution for the `last` command only.
+This ensures syntax validation before saving.
 
+#### 🔧 Basic Syntax in `/etc/sudoers` or Drop-in Files (`/etc/sudoers.d/`)
+
+```bash
+username ALL=(ALL) NOPASSWD: /full/path/to/command
+```
+
+> ✅ `NOPASSWD:` disables the password prompt for listed commands.
+
+---
+
+### 🧪 Example 1: Allow `user1` to restart Nginx without a password
+
+```bash
+user1 ALL=(ALL) NOPASSWD: /bin/systemctl restart nginx
+```
+
+- This lets `user1` run:
+  ```bash
+  sudo /bin/systemctl restart nginx
+  ```
+  without entering their password.
+
+---
+
+### 🧪 Example 2: Allow `deploy` to copy files to `/opt/webapp` without password
+
+```bash
+deploy ALL=(ALL) NOPASSWD: /usr/bin/rsync, /bin/cp /home/deploy/* /opt/webapp/
+```
+
+- You can now allow:
+  ```bash
+  sudo /bin/cp /home/deploy/index.html /opt/webapp/
+  ```
+  without password prompts.
+
+---
+
+### 🧪 Example 3: Passwordless permission for entire directory actions
+
+Let’s say you want to let `backupuser` read/write files under `/mnt/backups`:
+
+1. Create a script:
+   ```bash
+   /usr/local/bin/backup_push.sh
+   ```
+   with:
+   ```bash
+   #!/bin/bash
+   cp /home/backupuser/data.tar.gz /mnt/backups/
+   ```
+   2. Then allow passwordless execution:
+   ```bash
+   backupuser ALL=(ALL) NOPASSWD: /usr/local/bin/backup_push.sh
+   ```
+
+---
+
+### ⚠️ Best Practices
+
+- Always use **full path** to the command (use `which` to find it, e.g., `which systemctl`)
+- Limit permissions to **specific commands** or **scripts** only.
+- Avoid wildcards like `*` unless absolutely necessary.
+- Use the `/etc/sudoers.d/username` file for better modularity:
+  ```bash
+  sudo visudo -f /etc/sudoers.d/deploy
+  ```
+
+---
+
+Let me know if you want examples with `ansible.builtin.lineinfile` or `ansible.builtin.copy` to automate this configuration as well.
 ---
 
 The `sudoers` file is located at:
