@@ -93,17 +93,9 @@ sudo apt install cuda -y
 
 To use CUDA from the terminal, add it to your `PATH` and `LD_LIBRARY_PATH`.
 
-Edit your `.bashrc` or `.zshrc`:
-
 ```bash
-nano ~/.bashrc
-```
-
-Add the following lines at the bottom:
-
-```bash
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+echo 'export PATH=/usr/local/cuda/bin:$PATH' >> ~/.bashrc
+echo 'export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH' >> ~/.bashrc
 ```
 
 Apply the changes:
