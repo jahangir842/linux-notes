@@ -37,6 +37,7 @@ NVIDIA has several GPU brands, each targeting different markets—**gaming, prof
      - Older: **V100 (Volta), P100 (Pascal), K80 (Kepler)**.  
 
 **Tip:** **VAH** (first V came, then A and latest H)
+
 ---
 
 ### **4. Tegra (Mobile & Embedded Systems)**  
