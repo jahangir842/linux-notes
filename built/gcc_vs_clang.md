@@ -2,6 +2,36 @@
 
 ---
 
+### 🔧 Which one is used by default for compiling C/C++?**
+
+Check which compiler your system uses by default for `cc` and `c++`:
+
+```bash
+which cc
+cc --version
+```
+
+```bash
+which c++
+c++ --version
+```
+
+#### Example:
+If `cc` points to `gcc`, you'll see:
+```bash
+/usr/bin/cc
+gcc (Ubuntu 13.2.0) ...
+```
+
+If `cc` points to `clang`, you'll see:
+```bash
+/usr/bin/cc
+clang version 16.0.6 ...
+```
+
+
+---
+
 ### 🔧 **GCC (GNU Compiler Collection)**
 
 - **Full name:** GNU Compiler Collection
@@ -63,3 +93,23 @@ clang hello.c -o hello
 - **For modern tooling and better developer UX**: Try **Clang**.
 
 Both are excellent, and many projects support building with either. Let me know if you want to see a comparison with performance benchmarks or error message examples!
+
+---
+
+### 🔄 **4. Switch between compilers (optional)**
+
+If both are installed and you want to switch:
+
+#### Use `update-alternatives`:
+```bash
+sudo update-alternatives --config cc
+```
+
+You'll be prompted to choose between `gcc` and `clang`.
+
+Same for C++:
+```bash
+sudo update-alternatives --config c++
+```
+
+---
