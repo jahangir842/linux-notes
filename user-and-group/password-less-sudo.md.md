@@ -7,6 +7,7 @@ The `sudoers` file controls the sudo permissions for users. To edit it safely, u
 sudo visudo
 ```
 
+
 OR
 
 ```bash
