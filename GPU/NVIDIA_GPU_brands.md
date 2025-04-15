@@ -36,6 +36,7 @@ NVIDIA has several GPU brands, each targeting different markets—**gaming, prof
      - **A100** (Ampere, 2020) – Still widely used.  
      - Older: **V100 (Volta), P100 (Pascal), K80 (Kepler)**.  
 
+**Tip:** **VAH** (first V came, then A and latest H)
 ---
 
 ### **4. Tegra (Mobile & Embedded Systems)**  
