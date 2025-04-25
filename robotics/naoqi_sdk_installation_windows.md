@@ -32,7 +32,6 @@ Ensure your Windows system meets the following requirements:
 
 - Visit the Aldebaran NAO6 software downloads page:  
   https://aldebaran.com/en/support/kb/nao6/downloads/nao6-software-downloads/
-- Log in with your Aldebaran account or provide the universal license key if prompted (e.g., `654e-4564-153c-6518-2f44-7562-206e-4c60-5f47-5f45`).
 - Locate the “SDKs” or “NAOqi SDK” section and download the Python SDK for Windows (version 2.8.6 or later).
 - Extract the downloaded `.zip` archive to a directory of your choice, e.g., `C:\NAOqiSDK`.
 
