@@ -63,9 +63,6 @@ sudo apt-get upgrade -y
 Install the required dependencies for building Singularity:
 
 ```bash
-# Ensure repositories are up-to-date
-sudo apt-get update
-# Install debian packages for dependencies
 sudo apt-get install -y \
     autoconf \
     automake \
