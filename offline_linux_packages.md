@@ -13,6 +13,17 @@ Below is a categorized list of **essential packages** commonly needed for admin/
 
 ---
 
+
+### ✅ Must Have
+
+```bash
+sudo dnf install epel-release
+sudo dnf install htop nano git
+```
+
+---
+
+
 ### ✅ Core System Utilities
 
 ```bash
