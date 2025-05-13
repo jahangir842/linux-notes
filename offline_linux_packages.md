@@ -18,7 +18,7 @@ Below is a categorized list of **essential packages** commonly needed for admin/
 
 ```bash
 sudo dnf install epel-release
-sudo dnf install htop nano git
+sudo dnf install htop nano git bash-completion tmux
 ```
 
 ---
