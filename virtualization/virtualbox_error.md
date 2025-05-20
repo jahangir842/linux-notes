@@ -85,5 +85,3 @@ sudo reboot
 ``
 
 ---
-
-Let me know if this resolves your issue or if you need further assistance!
