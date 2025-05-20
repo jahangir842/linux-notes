@@ -76,4 +76,14 @@ sudo apt-get install build-essential dkms linux-headers-$(uname -r)
 
 This ensures that the kernel headers and essential build tools are installed.
 
+### 6. Reboot System
+
+Reboot the system to finalise the installation.
+
+```bash
+sudo reboot
+``
+
+---
+
 Let me know if this resolves your issue or if you need further assistance!
