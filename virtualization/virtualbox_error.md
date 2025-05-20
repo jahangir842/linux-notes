@@ -82,6 +82,6 @@ Reboot the system to finalise the installation.
 
 ```bash
 sudo reboot
-``
+```
 
 ---
