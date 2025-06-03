@@ -1,6 +1,6 @@
 # 🧠 NVIDIA TAO Toolkit
 
-The **NVIDIA TAO Toolkit** is a low-code AI development framework built on **TensorFlow** and **PyTorch**. It abstracts away the complexity of model training, optimization, and deployment by providing a simple command-line interface and set of APIs for transfer learning and deployment on NVIDIA GPUs.
+The **NVIDIA TAO Toolkit** is a low-code AI development framework built on **TensorFlow** and **PyTorch**. It simplifies the complexity of model training, optimization, and deployment by providing a streamlined command-line interface and APIs for transfer learning and deployment on NVIDIA GPUs.
 
 ---
 
@@ -8,38 +8,34 @@ The **NVIDIA TAO Toolkit** is a low-code AI development framework built on **Ten
 
 **TAO** stands for "**Train, Adapt, Optimize**".
 
-- It provides pre-trained models and workflows for object detection, classification, segmentation, pose estimation, and more.
-- Built for **enterprise-grade AI** and **edge deployment**, it helps data scientists and developers accelerate AI model development using transfer learning.
-- It supports training with minimal code using a declarative spec file and is designed for both cloud and on-premise systems.
+* Offers pre-trained models and workflows for object detection, classification, segmentation, pose estimation, and more.
+* Designed for **enterprise-grade AI** and **edge deployment**, enabling data scientists and developers to accelerate AI model development using transfer learning.
+* Supports minimal-code training through declarative spec files, suitable for both cloud and on-premise environments.
 
-> “TAO = A Sample Notebook” — NVIDIA simplifies development via ready-to-run Jupyter notebooks.
+> “TAO = A Sample Notebook” — NVIDIA provides ready-to-run Jupyter notebooks to simplify development.
 
 ---
 
-## 🛠 Installation Overview
+## 🛠 Usage Overview
 
-TAO Toolkit can be used via:
+TAO Toolkit is accessible via:
 
-- **TAO CLI** (Docker-based)
-- **TAO Launcher** (Python virtual environment)
+* **TAO CLI** (Docker-based interface)
+* **TAO Launcher** (Python virtual environment)
 
-In this guide, we focus on the **TAO Launcher**, installed in:
+This guide assumes the TAO Launcher and TAO CLI are installed and configured. Separate guides cover the installation procedures for both.
 
-```bash
-/opt/tao-venv
-```
+---
 
-Make sure your system meets the following:
-
-### ✅ Prerequisites
+## ✅ Prerequisites
 
 * Ubuntu 20.04+ (Ubuntu 22.04 recommended)
 * NVIDIA GPU with CUDA support
-* Docker (for some workflows)
+* Docker (required for some workflows)
 * Python 3.8–3.10
 * `ngc` CLI installed and configured
 
-> For help installing NGC CLI, refer to the [NGC CLI Installation Guide](#).
+> For help installing the NGC CLI, see the [NGC CLI Installation Guide](#).
 
 ---
 
@@ -52,11 +48,9 @@ git clone https://github.com/NVIDIA/tao_tutorials.git
 cd tao_tutorials
 ```
 
-### Step 2: Launch Notebook or Scripts
+### Step 2: Activate TAO Environment and Run Commands
 
-You can run example notebooks or scripts directly using the preconfigured launcher.
-
-Example:
+Example of running a training command via TAO Launcher environment:
 
 ```bash
 source /opt/tao-venv/bin/activate
@@ -85,25 +79,25 @@ tao detectnet_v2 train -e /path/to/spec.yaml
 
 ---
 
-## 📁 TAO Launcher Directory Structure
-
-After installation, files typically reside in:
+## 📁 Typical Directory Structure
 
 ```bash
 /opt/tao-venv/        # Python virtual environment for TAO Launcher
-~/.tao/               # TAO cache and configuration
-~/tao_tutorials/      # Sample training workflows and notebooks
+~/.tao/               # TAO cache and configuration files
+~/tao_tutorials/      # Sample training workflows and Jupyter notebooks
 ```
 
 ---
 
-## 🚀 Run Your First Model
+## 🚀 Running a Model Example
+
+To run a model training session inside the TAO Launcher environment:
 
 ```bash
 tao detectnet_v2 run /bin/bash
 ```
 
-Then inside the container:
+Then inside the container shell:
 
 ```bash
 detectnet_v2 train -e /path/to/experiment_spec.yaml
@@ -117,3 +111,4 @@ detectnet_v2 train -e /path/to/experiment_spec.yaml
 * [TAO Toolkit Discussion Board](https://forums.developer.nvidia.com/c/tao-toolkit/)
 
 ---
+
