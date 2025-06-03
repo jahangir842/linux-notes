@@ -64,7 +64,7 @@ Upgrade pip and install required Python packages for TAO Launcher (replace with 
 
 ```bash
 pip install --upgrade pip setuptools wheel
-pip install nvidia-tao-toolkit
+pip install nvidia-tao
 ```
 
 ---
