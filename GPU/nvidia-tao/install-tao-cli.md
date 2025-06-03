@@ -65,7 +65,7 @@ Pull the latest TAO CLI container image:
 docker pull nvcr.io/nvidia/tao/tao-toolkit:<version>
 ```
 
-Replace `<version>` with the desired TAO Toolkit version tag.
+Replace `<version>` with the desired TAO Toolkit version tag. you can check it from https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/containers/tao-toolkit
 
 ---
 
