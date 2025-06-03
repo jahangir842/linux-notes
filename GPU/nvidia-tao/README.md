@@ -1,8 +1,3 @@
-Here is a professional and well-organized `README.md` file for **NVIDIA TAO**, incorporating the installation context and the resources you provided:
-
----
-
-
 # 🧠 NVIDIA TAO Toolkit
 
 The **NVIDIA TAO Toolkit** is a low-code AI development framework built on **TensorFlow** and **PyTorch**. It abstracts away the complexity of model training, optimization, and deployment by providing a simple command-line interface and set of APIs for transfer learning and deployment on NVIDIA GPUs.
