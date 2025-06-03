@@ -35,7 +35,7 @@ This guide assumes the TAO Launcher and TAO CLI are installed and configured. Se
 * Python 3.8–3.10
 * `ngc` CLI installed and configured
 
-> For help installing the NGC CLI, see the [NGC CLI Installation Guide](#).
+> For help installing the NGC CLI, see the [NGC CLI Installation Guide](https://github.com/jahangir842/linux-notes/blob/main/GPU/nvidia-tao/install-ngc-cli.md).
 
 ---
 
