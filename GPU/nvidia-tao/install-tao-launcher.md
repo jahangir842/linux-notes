@@ -4,6 +4,10 @@ The **TAO Launcher** provides a convenient Python virtual environment to run TAO
 
 ---
 
+**Official Guide:** https://www.youtube.com/watch?v=kErfKDZ50To&list=PL5B692fm6--uVOY7csa54jjkjE1NYf1Un
+
+---
+
 ## 📋 Prerequisites
 
 * **Operating System:** Ubuntu 20.04+ (Ubuntu 22.04 recommended)
