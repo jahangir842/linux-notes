@@ -56,7 +56,7 @@ docker run --rm --gpus all nvidia/cuda:11.0-base nvidia-smi
 Login to NVIDIA NGC:
 
 ```bash
-ngc registry login
+docker login nvcr.io
 ```
 
 Pull the latest TAO CLI container image:
