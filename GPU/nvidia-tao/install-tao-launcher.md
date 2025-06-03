@@ -4,7 +4,8 @@ The **TAO Launcher** provides a convenient Python virtual environment to run TAO
 
 ---
 
-**Official Guide:** https://www.youtube.com/watch?v=kErfKDZ50To&list=PL5B692fm6--uVOY7csa54jjkjE1NYf1Un
+- **Official Guide:** https://docs.nvidia.com/tao/tao-toolkit-archive/tao-30-2205/text/tao_toolkit_quick_start_guide.html
+- **Official Videos:** https://www.youtube.com/watch?v=kErfKDZ50To&list=PL5B692fm6--uVOY7csa54jjkjE1NYf1Un
 
 ---
 
