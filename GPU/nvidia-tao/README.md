@@ -117,11 +117,3 @@ detectnet_v2 train -e /path/to/experiment_spec.yaml
 * [TAO Toolkit Discussion Board](https://forums.developer.nvidia.com/c/tao-toolkit/)
 
 ---
-
-© NVIDIA Corporation. All rights reserved.
-
-```
-
----
-
-
