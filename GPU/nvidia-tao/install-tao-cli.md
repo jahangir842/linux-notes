@@ -67,10 +67,16 @@ docker pull nvcr.io/nvidia/tao/tao-toolkit:<version>
 
 - Replace `<version>` with the desired TAO Toolkit version tag. you can check it from https://catalog.ngc.nvidia.com/orgs/nvidia/teams/tao/containers/tao-toolkit
 
-### Example:
+### Example Enterprise Container (Paid):
 
 ```bash
 docker pull nvcr.io/nvidia/tao/texttospeech_notebook:v1.1
+```
+
+### Example Enterprise Container (Paid):
+
+```bash
+docker pull nvcr.io/nvidia/nvhpc:25.5-devel-cuda12.9-ubuntu22.04
 ```
 
 ---
