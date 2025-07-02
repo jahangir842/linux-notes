@@ -1,7 +1,3 @@
-Great to hear that QGIS is successfully installed! Here's a clean, professional guide tailored to your case — **Installing QGIS 3.34.11 LTR on Ubuntu 22.04** — including all the pinning steps you followed to avoid version mismatch.
-
----
-
 # ✅ QGIS 3.34.11 Installation Guide on Ubuntu 22.04 (Jammy)
 
 This guide outlines how to install **QGIS 3.34.11 (LTR)** on Ubuntu while avoiding version conflicts and ensuring stability using APT pinning.
