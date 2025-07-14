@@ -23,6 +23,14 @@ where: suplibOsInit what: 3 VERR_VM_DRIVER_NOT_INSTALLED (-1908) - The support d
 
 It seems that `gcc-12` is missing or not installed properly on your system. You can install it using the following command:
 
+Check the GCC version:
+
+```bash
+gcc --version
+```
+
+Install gcc-12 g++-12 
+
 ```bash
 sudo apt-get update
 sudo apt-get install gcc-12 g++-12
