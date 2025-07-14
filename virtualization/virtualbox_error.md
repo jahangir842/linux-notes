@@ -76,13 +76,12 @@ This should compile the modules using GCC 12 and resolve the error.
 
 ### 5. Additional Troubleshooting
 
-If you still face issues after these steps, ensure that you have all the required build dependencies. You can install the necessary packages by running:
+If you still face issues, the following command is used on Debian-based Linux systems (such as Ubuntu) to install essential packages required for compiling kernel modules and building software from source.
+
 
 ```bash
 sudo apt-get install build-essential dkms linux-headers-$(uname -r)
 ```
-
-This ensures that the kernel headers and essential build tools are installed.
 
 ### 6. Reboot System
 
