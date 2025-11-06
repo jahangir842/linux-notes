@@ -1,7 +1,9 @@
 # 🧭 **Timeshift Complete Reference Guide (CLI & GUI)**
 
 Timeshift is a powerful Linux backup and restore utility designed to protect your **system files** (not personal data).
-It creates snapshots (like Windows restore points) using **rsync** or **Btrfs** and lets you roll back your system safely.
+It creates snapshots (like Windows restore points) using **RSYNC** or **Btrfs** and lets you roll back your system safely.
+
+> ⚠️ **Important:** Timeshift **snapshots must be stored on a Linux filesystem** (`ext4` or `btrfs`). NTFS, FAT32, or exFAT **cannot** be used as the snapshot destination. You can, however, include files from NTFS drives by mounting them and pointing Timeshift to the Linux partition as the backup location.
 
 ---
 
@@ -32,10 +34,10 @@ sudo pacman -S timeshift
 
 Timeshift supports **two snapshot modes**:
 
-| Type      | Description                            | Backend                   |
-| --------- | -------------------------------------- | ------------------------- |
-| **RSYNC** | Uses rsync to copy files incrementally | Works on any filesystem   |
-| **BTRFS** | Uses Btrfs subvolumes                  | Requires Btrfs filesystem |
+| Type      | Description                            | Backend                       |
+| --------- | -------------------------------------- | ----------------------------- |
+| **RSYNC** | Uses rsync to copy files incrementally | Works on any Linux filesystem |
+| **BTRFS** | Uses Btrfs subvolumes                  | Requires Btrfs filesystem     |
 
 🧠 *Memorization Trick:*
 
@@ -55,9 +57,11 @@ sudo timeshift-gtk
 This opens the Timeshift GUI for quick setup:
 
 1. Choose snapshot type (RSYNC or BTRFS)
-2. Select snapshot device (usually another drive or partition)
+2. Select **snapshot device** (must be a Linux filesystem, e.g., ext4 or Btrfs)
 3. Set schedule (hourly, daily, weekly, monthly)
 4. Choose whether to include home directories
+
+> ⚠️ **Tip:** If you have important files on an NTFS drive, mount it (e.g., `/mnt/sda1`) and include its contents in the snapshot by adding the path to the `include` list in the Timeshift JSON.
 
 ---
 
@@ -74,6 +78,8 @@ Set default snapshot device:
 ```bash
 sudo timeshift --snapshot-device /dev/sdb2
 ```
+
+> ⚠️ Ensure `/dev/sdb2` is a Linux partition (`ext4` or `btrfs`). Timeshift cannot store snapshots on NTFS.
 
 Check current configuration:
 
@@ -191,7 +197,7 @@ Add something like:
 
 If you want to use another drive (e.g., `/dev/sdb2`):
 
-1. Mount the new drive:
+1. Mount the new drive (must be Linux):
 
    ```bash
    sudo mkdir -p /mnt/timeshift_backup
@@ -202,6 +208,8 @@ If you want to use another drive (e.g., `/dev/sdb2`):
    ```bash
    sudo timeshift --snapshot-device /dev/sdb2
    ```
+
+> ⚠️ NTFS or FAT drives **cannot be used as the snapshot target**. Only Linux partitions (`ext4`/`btrfs`) are supported.
 
 ---
 
@@ -226,6 +234,8 @@ Sample excerpt:
   "schedule_hourly": false
 }
 ```
+
+> ⚠️ Add any NTFS paths you want to include by **mounting them and adding the path to `"include"`**.
 
 ---
 
@@ -264,6 +274,8 @@ Then verify existence:
 ls /run/timeshift/backup/timeshift/snapshots/
 ```
 
+> ⚠️ Snapshots must exist on a Linux filesystem; otherwise integrity checks may fail.
+
 ---
 
 ## 🧭 13. Troubleshooting
@@ -273,7 +285,7 @@ ls /run/timeshift/backup/timeshift/snapshots/
 | “Config file not found” | Run `sudo timeshift --setup` or GUI once to generate default config |
 | “Not enough space”      | Delete old snapshots with `--delete`                                |
 | “Unknown tag O”         | Use `B`, `D`, `W`, or `M` instead                                   |
-| “Mount error”           | Check drive mount with `lsblk` and permissions                      |
+| “Mount error”           | Ensure the snapshot target is a Linux partition (`ext4`/`btrfs`)    |
 
 ---
 
@@ -294,12 +306,17 @@ ls /run/timeshift/backup/timeshift/snapshots/
 
 ## 🧠 Quick Summary
 
-| Command                                             | Purpose                |
-| --------------------------------------------------- | ---------------------- |
-| `sudo timeshift --create --comments "..." --tags D` | Create snapshot        |
-| `sudo timeshift --list`                             | List snapshots         |
-| `sudo timeshift --restore`                          | Restore snapshot       |
-| `sudo timeshift --delete --tags D`                  | Delete daily snapshots |
-| `sudo timeshift --snapshot-device /dev/sdb2`        | Change backup device   |
+| Command                                             | Purpose                                        |
+| --------------------------------------------------- | ---------------------------------------------- |
+| `sudo timeshift --create --comments "..." --tags D` | Create snapshot                                |
+| `sudo timeshift --list`                             | List snapshots                                 |
+| `sudo timeshift --restore`                          | Restore snapshot                               |
+| `sudo timeshift --delete --tags D`                  | Delete daily snapshots                         |
+| `sudo timeshift --snapshot-device /dev/sdb2`        | Change backup device (must be Linux partition) |
 
 ---
+
+This version emphasizes **Linux partition requirement** and guides NTFS users on how to safely include their files without using NTFS as the snapshot device.
+
+---
+
