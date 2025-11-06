@@ -234,7 +234,7 @@ Sample excerpt:
 Edit exclusion list:
 
 ```
-/etc/timeshift.json
+/etc/timeshift/timeshift.json
 ```
 
 Or GUI → Filters → Exclude paths
@@ -242,8 +242,10 @@ Or GUI → Filters → Exclude paths
 Example:
 
 ```
-/home/user/Downloads
-/var/cache
+"exclude" : [
+    "/home/user/**",
+    "/root/**"
+]
 ```
 
 ---
