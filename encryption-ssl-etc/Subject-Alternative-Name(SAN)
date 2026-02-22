@@ -1,0 +1,150 @@
+## What is SAN?
+
+**SAN** stands for **Subject Alternative Name**.
+
+It is a field inside an SSL/TLS certificate that lists **all the domain names the certificate is valid for**.
+
+---
+
+## Why SAN Exists
+
+Originally, certificates only had:
+
+```
+CN (Common Name) = example.com
+```
+
+But that allows only one domain.
+
+Modern websites often need:
+
+* example.com
+* [www.example.com](http://www.example.com)
+* api.example.com
+* shop.example.com
+
+So SAN was introduced to support multiple domains in one certificate.
+
+---
+
+## 🔐 Example Certificate
+
+```
+Subject: CN=example.com
+
+X509v3 Subject Alternative Name:
+DNS:example.com
+DNS:www.example.com
+DNS:api.example.com
+```
+
+Now the certificate is valid for all three.
+
+---
+
+## 🚨 How Browsers Use SAN
+
+Modern browsers:
+
+✔ Ignore Common Name for validation
+✔ Validate against SAN only
+
+If the domain you visit is **not inside SAN**, you get:
+
+```
+NET::ERR_CERT_COMMON_NAME_INVALID
+```
+
+Even if CN matches.
+
+---
+
+## 🧠 Example Scenarios
+
+### ✅ Works
+
+Certificate SAN contains:
+
+```
+DNS:example.com
+DNS:www.example.com
+```
+
+User visits:
+
+```
+https://www.example.com
+```
+
+✔ Valid
+
+---
+
+### ❌ Fails
+
+Certificate SAN contains:
+
+```
+DNS:example.com
+```
+
+User visits:
+
+```
+https://api.example.com
+```
+
+🚫 Not listed → certificate error
+
+---
+
+## 🛠 How to Check SAN
+
+```bash
+openssl s_client -connect example.com:443 -servername example.com
+```
+
+Then look for:
+
+```
+X509v3 Subject Alternative Name:
+```
+
+---
+
+## 🔎 Types of SAN Entries
+
+SAN can include:
+
+* DNS names → `DNS:example.com`
+* Wildcards → `DNS:*.example.com`
+* IP addresses → `IP:192.168.1.1`
+* Email addresses (rare)
+
+---
+
+## 🌍 Real-World Example
+
+If using:
+
+* A CDN like Cloudflare
+* A reverse proxy (Nginx, HAProxy)
+* A load balancer
+
+The certificate must include every hostname users might request.
+
+Otherwise, some users get certificate warnings.
+
+---
+
+## 🎯 Memory Trick
+
+Think:
+
+> **CN = Main domain**
+> **SAN = Full guest list**
+
+If your domain isn’t on the guest list → you’re not allowed in.
+
+---
+
