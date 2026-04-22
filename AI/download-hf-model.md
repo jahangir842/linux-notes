@@ -57,3 +57,75 @@ hf download meta-llama/Llama-4-Maverick-17B-128E-Instruct \
 >     sleep 10
 > done
 > ```
+
+---
+
+### The Auto-Resume Script (`download_llama.sh`)
+
+Create a file named `download_llama.sh` in your current directory:
+
+```bash
+nano download_llama.sh
+```
+
+Put this in the file:
+
+```bash
+#!/bin/bash
+
+# Configuration
+MODEL_ID="meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+LOCAL_DIR="./Llama-4-Maverick-17B-128E-Instruct"
+
+echo "Starting download for $MODEL_ID..."
+
+# Loop until the command exits successfully (status 0)
+until hf download "$MODEL_ID" \
+    --local-dir "$LOCAL_DIR" \
+    --max-workers 1; do
+    
+    # If the command fails, it enters this block
+    EXIT_CODE=$?
+    echo "--------------------------------------------------------"
+    echo "Download interrupted (Exit Code: $EXIT_CODE)."
+    echo "Likely cause: Session expired or network timeout."
+    echo "Retrying in 10 seconds..."
+    echo "--------------------------------------------------------"
+    sleep 10
+done
+
+echo "Success! Model download is complete."
+```
+
+---
+
+### How to use it:
+
+1.  **Make the script executable:**
+    ```bash
+    chmod +x download_llama.sh
+    ```
+2.  **Run it:**
+    ```bash
+    ./download_llama.sh
+    ```
+
+### Why this script is perfect for your current status:
+
+* **Zero Manual Effort:** When Shard 15 (your current 21GB hurdle) eventually causes a timeout, the script catches the error and restarts the `hf download` command immediately.
+* **Sequential Progress:** By keeping `--max-workers 1`, it ensures that even if it takes 48 hours, the shards are completed one by one without cluttering your bandwidth with multiple failing streams.
+* **Verification:** Once all 69 files (weights + configs) are finished, the loop will naturally break, and you'll see the "Success!" message.
+
+### Monitoring Tip:
+Since you are inside a `vllm-deployment` folder, you can run this script in a `screen` or `tmux` session. That way, you can close your terminal window and the download will continue in the background.
+
+```bash
+# Start a new session
+screen -S llama_download
+
+# Run your script
+./download_llama.sh
+
+# Press Ctrl+A then D to detach (background it)
+# To come back later and check: screen -r llama_download
+```
