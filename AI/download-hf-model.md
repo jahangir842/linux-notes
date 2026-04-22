@@ -7,7 +7,6 @@ Ensure you have the latest version of the Hugging Face Hub tools.
 ```bash
 pip install -U "huggingface_hub[cli]"
 
-# Log in to authenticate your session for restricted models like Llama
 hf auth login
 ```
 
