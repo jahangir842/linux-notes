@@ -128,3 +128,64 @@ screen -S llama_download
 # Press Ctrl+A then D to detach (background it)
 # To come back later and check: screen -r llama_download
 ```
+
+---
+
+## How to use `screen` command
+
+### 1. Create a New Session
+Open a new session and give it a name so you can find it easily later. Run this from your `~/projects/vllm-deployment/vllm` folder:
+
+```bash
+screen -S llama-dl
+```
+*Your terminal will clear. You are now "inside" the screen session.*
+
+---
+
+### 2. Start Your Script
+Now, run the auto-resume script we created:
+
+```bash
+./download_llama.sh
+```
+
+---
+
+### 3. "Detach" from the Session
+This is the most important part. You want the script to keep running, but you want your terminal back (or you want to close it).
+
+* Press **`Ctrl + A`**, then let go and immediately press **`D`**.
+* You will see a message: `[detached from llama-dl]`
+
+**You can now safely close your terminal or turn off your local PC (if you are SSH'ing into `pc3`).** The download will continue on the server.
+
+---
+
+### 4. How to Check Progress Later
+When you want to see how many shards are finished or check the current speed, log back into your machine and "re-attach":
+
+```bash
+screen -r llama-dl
+```
+
+---
+
+### 5. Common Screen Commands
+If you forget where you are or what's running, use these:
+
+| Goal | Command |
+| :--- | :--- |
+| **List all active screens** | `screen -ls` |
+| **Detach (leave it running)** | `Ctrl + A` then `D` |
+| **Re-attach to a session** | `screen -r llama-dl` |
+| **Kill/Stop a session** | `Ctrl + A` then `K` (or just `exit` the script and type `exit`) |
+
+### Troubleshooting: "There is no screen to be resumed"
+If you try `screen -r` and it says it's already "Attached" but you can't see it (perhaps a previous SSH session hung), force it to detach from the old ghost session and attach to you:
+
+```bash
+screen -d -r llama-dl
+```
+
+**Status Check:** Once you've moved the process into `screen`, you can relax. Even if your internet at home blips, as long as `pc3` stays online, that script will keep retrying until all 55 shards are sitting in your folder.
