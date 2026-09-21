@@ -196,6 +196,121 @@ ovftool "/path/to/vm-name.ova" "/path/to/vm-name-normalized.ova"
 - If using separate OVF files, keep the `.ovf`, `.vmdk`, and `.mf` files together and
   select/upload all files required by the deployment wizard.
 
+### ESXi rejects a VirtualBox OVA hardware definition
+
+If ESXi reports an unsupported OVF hardware type, unpack the OVA and inspect its OVF
+descriptor. The following example assumes the appliance is named `redmine.ova` and
+the commands are run from the directory that contains it:
+
+```bash
+mkdir redmine-ova-edit
+tar -xf redmine.ova -C redmine-ova-edit
+ls redmine-ova-edit
+
+# Find the OVF descriptor.
+find redmine-ova-edit -maxdepth 1 -name '*.ovf'
+```
+
+Open the returned `.ovf` filename in Nano (replace `redmine.ovf` if needed):
+
+```bash
+nano redmine-ova-edit/redmine.ovf
+```
+
+In Nano, press <kbd>Ctrl</kbd>+<kbd>W</kbd> and search for `VirtualHardwareSection`.
+If it exists, confirm that it is inside `<VirtualSystem ...>` and contains the
+hardware `<Item>` entries. If it does not exist, search for `<Item>`: the item blocks
+must be inside a `VirtualHardwareSection`; do not add an empty section separately.
+Save with <kbd>Ctrl</kbd>+<kbd>O</kbd>, press <kbd>Enter</kbd>, and exit with
+<kbd>Ctrl</kbd>+<kbd>X</kbd>.
+
+To display the relevant XML with line numbers for review, run:
+
+```bash
+nl -ba redmine-ova-edit/*.ovf | sed -n '1,160p'
+```
+
+Only the `.ovf` text is relevant for this diagnosis. Do not share or inspect the
+contents of any `.vmdk` virtual-disk file.
+
+#### Replace the VirtualBox virtual hardware version
+
+A VirtualBox export can declare the unsupported type below:
+
+```xml
+<vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>
+```
+
+For ESXi 7, change only that value to the conservative VMware-compatible value
+`vmx-14`:
+
+```xml
+<vssd:VirtualSystemType>vmx-14</vssd:VirtualSystemType>
+```
+
+From the directory containing `redmine-ova-edit`, make the replacement and confirm
+it:
+
+```bash
+sed -i.bak \
+  's#<vssd:VirtualSystemType>virtualbox-2.2</vssd:VirtualSystemType>#<vssd:VirtualSystemType>vmx-14</vssd:VirtualSystemType>#' \
+  redmine-ova-edit/*.ovf
+
+grep VirtualSystemType redmine-ova-edit/*.ovf
+```
+
+The `grep` output should include:
+
+```xml
+<vssd:VirtualSystemType>vmx-14</vssd:VirtualSystemType>
+```
+
+Rebuild the appliance without its old `.mf` manifest, because the descriptor edit
+invalidates that file's checksum:
+
+```bash
+cd redmine-ova-edit
+tar -cvf ../redmine-esxi.ova *.ovf *.vmdk
+```
+
+Upload and deploy `redmine-esxi.ova`.
+
+#### Remove the unsupported VirtualBox sound card
+
+ESXi does not support OVF `ResourceType` `35`, which is the VirtualBox sound device.
+Remove the entire matching `<Item>` block from the `.ovf`:
+
+```xml
+<Item>
+  <rasd:AddressOnParent>3</rasd:AddressOnParent>
+  <rasd:AutomaticAllocation>false</rasd:AutomaticAllocation>
+  <rasd:Caption>sound</rasd:Caption>
+  <rasd:Description>Sound Card</rasd:Description>
+  <rasd:ElementName>sound</rasd:ElementName>
+  <rasd:InstanceID>7</rasd:InstanceID>
+  <rasd:ResourceSubType>ensoniq1371</rasd:ResourceSubType>
+  <rasd:ResourceType>35</rasd:ResourceType>
+</Item>
+```
+
+Open the descriptor:
+
+```bash
+nano redmine-ova-edit/*.ovf
+```
+
+Search for `<rasd:InstanceID>7</rasd:InstanceID>`, then delete from its opening
+`<Item>` through its closing `</Item>`. Save with <kbd>Ctrl</kbd>+<kbd>O</kbd>, press
+<kbd>Enter</kbd>, and exit with <kbd>Ctrl</kbd>+<kbd>X</kbd>. Rebuild the OVA again:
+
+```bash
+cd redmine-ova-edit
+tar -cvf ../redmine-esxi.ova *.ovf *.vmdk
+```
+
+Deploy the rebuilt OVA. The server VM will have no virtual sound device, which is
+normally fine for a service such as Redmine.
+
 ### The VM cannot find a boot device
 
 - Confirm that BIOS/EFI mode matches VirtualBox.
