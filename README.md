@@ -414,6 +414,9 @@ Essential command-line tools and utilities:
 - [`Symbolic-Link.md`](Symbolic-Link.md) - Symbolic link management
 - [`uuid.md`](uuid.md) - UUID generation and handling
 
+### **Media**
+- [`ffmpeg.md`](ffmpeg.md) - Combining video and audio
+
 ### **System Information**
 - [`uname.md`](uname.md) - System information
 - [`type.md`](type.md) - Command type identification
